@@ -4,149 +4,2104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amigo Learning - Free University Materials</title>
+
+    <title>Amigo Learning | Free University Learning Materials in South Sudan</title>
+
+    <meta name="description"
+        content="Amigo Learning provides free educational materials, university notes, past papers and study resources for students in South Sudan.">
+
+    <meta name="keywords"
+        content="Amigo Learning, South Sudan students, university notes, past papers, free education, study materials">
+
+    <meta name="author" content="Amigo Learning">
+
     <style>
+        /* =====================================================
+           GLOBAL STYLES
+        ===================================================== */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f7fb;
+            color: #263238;
+            line-height: 1.7;
         }
 
-        header {
-            background: #1a73e8;
-            color: white;
-            text-align: center;
-            padding: 25px 20px;
+        a {
+            text-decoration: none;
         }
 
-        .logo {
-            max-width: 100px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-        }
-
-        .banner {
-            width: 100%;
-            max-height: 350px;
-            object-fit: cover;
-            display: block;
+        img {
+            max-width: 100%;
         }
 
         .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 30px;
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* =====================================================
+           TOP BAR
+        ===================================================== */
+
+        .top-bar {
+            background: #082c5c;
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        header {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
         }
 
-        h1 {
-            font-size: 32px;
-            margin-bottom: 8px;
+        .navbar {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
         }
 
-        h2 {
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .brand-text h2 {
+            color: #0d47a1;
+            font-size: 22px;
+            line-height: 1.1;
+        }
+
+        .brand-text span {
+            color: #555;
+            font-size: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #263238;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
             color: #1a73e8;
-            margin: 25px 0 15px 0;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
         }
 
-        .download-btn {
+        .nav-button {
+            background: #1a73e8;
+            color: white !important;
+            padding: 11px 18px;
+            border-radius: 8px;
+        }
+
+        .nav-button:hover {
+            background: #0d47a1;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #0d47a1;
+        }
+
+        /* =====================================================
+           HERO SECTION
+        ===================================================== */
+
+        .hero {
+            background:
+                linear-gradient(rgba(5, 38, 82, 0.78),
+                    rgba(13, 71, 161, 0.72)),
+                url("banner.png") center/cover no-repeat;
+
+            min-height: 560px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            background: white;
+            border-radius: 20px;
+            padding: 8px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ffd54f;
+        }
+
+        .hero p {
+            font-size: 21px;
+            max-width: 750px;
+            margin: auto;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
             display: inline-block;
+            padding: 15px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
             background: #34a853;
             color: white;
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 20px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #278b42;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0d47a1;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            background: #f0f0f0;
+        }
+
+        /* =====================================================
+           SEARCH
+        ===================================================== */
+
+        .search-section {
+            margin-top: -35px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .search-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .search-box h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #0d47a1;
+        }
+
+        .search-form {
+            display: flex;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .search-form input {
+            flex: 1;
+            padding: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px 0 0 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-form input:focus {
+            border-color: #1a73e8;
+        }
+
+        .search-form button {
+            border: none;
+            background: #1a73e8;
+            color: white;
+            padding: 0 25px;
+            border-radius: 0 8px 8px 0;
             font-weight: bold;
-            margin: 20px 0;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(52, 168, 83, 0.3);
+            cursor: pointer;
         }
 
-        .download-btn:hover {
-            background: #2d9147;
-            transform: translateY(-2px);
+        /* =====================================================
+           GENERAL SECTION
+        ===================================================== */
+
+        section {
+            padding: 75px 0;
         }
 
-        ul {
-            margin-left: 25px;
-            margin-top: 10px;
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
         }
 
-        ul li {
+        .section-title h2 {
+            color: #0d47a1;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #667085;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* =====================================================
+           STATISTICS
+        ===================================================== */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-card h3 {
+            color: #1a73e8;
+            font-size: 38px;
+        }
+
+        .stat-card p {
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* =====================================================
+           WELCOME SECTION
+        ===================================================== */
+
+        .welcome {
+            background: white;
+        }
+
+        .welcome-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .welcome-text h2 {
+            color: #0d47a1;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .founder-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-left: 5px solid #1a73e8;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .founder-box h3 {
+            color: #0d47a1;
+            margin-bottom: 15px;
+        }
+
+        /* =====================================================
+           COURSES
+        ===================================================== */
+
+        .courses {
+            background: #f5f7fb;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #e8edf3;
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            border-color: #1a73e8;
+        }
+
+        .course-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .course-card h3 {
+            color: #0d47a1;
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+            color: #667085;
+            margin-bottom: 20px;
+        }
+
+        .small-btn {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #0d47a1;
+            padding: 9px 16px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        /* =====================================================
+           MATERIALS
+        ===================================================== */
+
+        .materials {
+            background: white;
+        }
+
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .material-card {
+            border: 1px solid #e1e7ef;
+            padding: 22px;
+            border-radius: 12px;
+            background: #fff;
+            transition: 0.3s;
+        }
+
+        .material-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .material-card h3 {
+            color: #0d47a1;
+            font-size: 18px;
             margin-bottom: 8px;
         }
 
-        footer {
+        .material-card p {
+            color: #667085;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .material-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .download-small {
+            background: #34a853;
+            color: white;
+            padding: 9px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* =====================================================
+           DOWNLOAD ALL
+        ===================================================== */
+
+        .download-section {
+            background: linear-gradient(135deg, #0d47a1, #1a73e8);
+            color: white;
             text-align: center;
-            padding: 25px;
+        }
+
+        .download-section h2 {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .download-section p {
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        /* =====================================================
+           HOW IT WORKS
+        ===================================================== */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .step-number {
+            width: 65px;
+            height: 65px;
             background: #1a73e8;
             color: white;
-            margin-top: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            color: #0d47a1;
+            margin-bottom: 10px;
+        }
+
+        /* =====================================================
+           WHATSAPP
+        ===================================================== */
+
+        .whatsapp-section {
+            background: #eafaf0;
+            text-align: center;
+        }
+
+        .whatsapp-section h2 {
+            color: #128c7e;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            background: #1eae55;
+        }
+
+        /* =====================================================
+           REQUEST MATERIAL
+        ===================================================== */
+
+        .request-box {
+            background: white;
+            max-width: 800px;
+            margin: auto;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d8dee8;
+            border-radius: 7px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #1a73e8;
+        }
+
+        /* =====================================================
+           FAQ
+        ===================================================== */
+
+        .faq {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e4e8ef;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: white;
+            border: none;
+            padding: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #0d47a1;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 20px;
+            color: #555;
+        }
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+            background: #f5f7fb;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-card .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            color: #0d47a1;
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: #1a73e8;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #082c5c;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 35px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #dbe7f5;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #dbe7f5;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            text-align: center;
+            color: #dbe7f5;
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           FLOATING WHATSAPP
+        ===================================================== */
+
+        .whatsapp-float {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25d366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            z-index: 999;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* =====================================================
+           RESPONSIVE DESIGN
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .material-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                right: 0;
+                background: white;
+                display: none;
+                flex-direction: column;
+                padding: 25px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .welcome-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .top-bar-content {
+                flex-direction: column;
+                gap: 3px;
+                text-align: center;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .search-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .search-form input,
+            .search-form button {
+                width: 100%;
+                border-radius: 8px;
+                padding: 15px;
+            }
+
+            .stats,
+            .course-grid,
+            .material-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .welcome-text h2 {
+                font-size: 28px;
+            }
+
+            .request-box {
+                padding: 22px;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                right: 18px;
+                bottom: 18px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <img src="logo.png" alt="Amigo Learning Logo" class="logo">
-        <h1>Amigo Learning</h1>
-        <p>Empowering Students in South Sudan with Free Education</p>
-    </header>
+    <!-- =====================================================
+     TOP BAR
+===================================================== -->
 
-    <img src="banner.png" alt="Amigo Learning Banner" class="banner">
-
-    <div class="container">
-        <h2>Welcome to Amigo Learning</h2>
-        <p>
-            Get free access to university course materials, notes, and past papers.
-            Everything you need to succeed in Accounting, Economics, Management,
-            BCS, and Communication Skills - all in one place.
-        </p>
-
-        <h2>Download All Materials</h2>
-        <p>Click the button below to download all courses as 1 zip file. Includes PDFs and Documents.</p>
-
-        <center>
-            <a href="Course-Materials.zip" download class="download-btn">
-                📚 DOWNLOAD ALL MATERIALS.zip
-            </a>
-        </center>
-
-        <h2>What's Inside the Zip File:</h2>
-        <ul>
-            <li><b>Accounting:</b> Notes, Past Papers, Exams</li>
-            <li><b>Economics:</b> Lecture Notes, Assignments</li>
-            <li><b>Management:</b> Course Materials</li>
-            <li><b>BCS:</b> Business Communication Skills</li>
-            <li><b>Communication Skills:</b> Guides and Examples</li>
-            <li><b>And More!</b></li>
-        </ul>
-
-        <h2>How to Use:</h2>
-        <p>
-            1. Click the green download button above<br>
-            2. Extract the .zip file on your computer or phone<br>
-            3. Open the folders and start studying!
-        </p>
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span>🇸🇸 Serving Students Across South Sudan</span>
+            <span>📱 WhatsApp: +211 927 471 234</span>
+        </div>
     </div>
 
+
+    <!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <a href="#home" class="brand">
+
+                <img src="logo.png" alt="Amigo Learning Logo">
+
+                <div class="brand-text">
+                    <h2>Amigo Learning</h2>
+                    <span>Learn. Share. Succeed.</span>
+                </div>
+
+            </a>
+
+            <div class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#courses">Courses</a>
+                </li>
+
+                <li>
+                    <a href="#materials">Materials</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#faq">FAQ</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+                <li>
+                    <a href="#materials" class="nav-button">
+                        Study Now
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+     HERO
+===================================================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <img src="logo.png" alt="Amigo Learning" class="hero-logo">
+
+            <h1>
+                Welcome to
+                <span>Amigo Learning</span>
+            </h1>
+
+            <p>
+                Free educational resources, university notes,
+                past papers and study materials for students
+                in South Sudan.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#courses" class="btn btn-primary">
+                    📚 Explore Courses
+                </a>
+
+                <a href="#materials" class="btn btn-secondary">
+                    ⬇ View Materials
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     SEARCH
+===================================================== -->
+
+    <div class="container search-section">
+
+        <div class="search-box">
+
+            <h3>🔎 Find Your Learning Materials</h3>
+
+            <div class="search-form">
+
+                <input type="text" id="searchInput" placeholder="Search Accounting, Economics, BCS, Communication..."
+                    onkeyup="searchMaterials()">
+
+                <button onclick="searchMaterials()">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     STATISTICS
+===================================================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <h3>11+</h3>
+                    <p>Learning Materials</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>4+</h3>
+                    <p>Subjects</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Free Access</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>24/7</h3>
+                    <p>Online Access</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     ABOUT / WELCOME
+===================================================== -->
+
+    <section class="welcome" id="about">
+
+        <div class="container">
+
+            <div class="welcome-grid">
+
+                <div class="welcome-text">
+
+                    <h2>
+                        Education Should Be Accessible to Everyone
+                    </h2>
+
+                    <p>
+                        Amigo Learning was created to help students
+                        access useful educational resources without
+                        financial barriers.
+                    </p>
+
+                    <p>
+                        We provide free notes, past papers,
+                        questions and other learning resources
+                        that students can use to improve their
+                        academic performance.
+                    </p>
+
+                    <p>
+                        Our goal is simple: help students learn,
+                        prepare for examinations and build a
+                        brighter future for South Sudan.
+                    </p>
+
+                </div>
+
+
+                <div class="founder-box">
+
+                    <h3>
+                        📢 A Message from the Founder
+                    </h3>
+
+                    <p>
+                        "Welcome to Amigo Learning! I created this
+                        learning space because I believe every
+                        student in South Sudan deserves free access
+                        to quality education.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Here you will find notes, past papers and
+                        study materials to help you succeed in your
+                        university courses.
+                    </p>
+
+                    <br>
+
+                    <strong>
+                        — John Marial Chol, Founder
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     COURSES
+===================================================== -->
+
+    <section class="courses" id="courses">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Explore Our Courses</h2>
+
+                <p>
+                    Choose a subject and access the learning
+                    materials available for students.
+                </p>
+
+            </div>
+
+
+            <div class="course-grid">
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+                        📊
+                    </div>
+
+                    <h3>Accounting</h3>
+
+                    <p>
+                        Notes, tests, questions and past papers
+                        for accounting students.
+                    </p>
+
+                    <a href="#materials" class="small-btn">
+                        View Materials →
+                    </a>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+                        💰
+                    </div>
+
+                    <h3>Economics</h3>
+
+                    <p>
+                        Economics notes, MCQs, questions and
+                        examination resources.
+                    </p>
+
+                    <a href="#materials" class="small-btn">
+                        View Materials →
+                    </a>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+                        💻
+                    </div>
+
+                    <h3>BCS</h3>
+
+                    <p>
+                        Business Computing and computer-related
+                        learning materials.
+                    </p>
+
+                    <a href="#materials" class="small-btn">
+                        View Materials →
+                    </a>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+                        🗣️
+                    </div>
+
+                    <h3>Communication Skills</h3>
+
+                    <p>
+                        Communication notes, questions and
+                        past examination materials.
+                    </p>
+
+                    <a href="#materials" class="small-btn">
+                        View Materials →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     MATERIALS
+===================================================== -->
+
+    <section class="materials" id="materials">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Learning Materials</h2>
+
+                <p>
+                    Browse the available resources and download
+                    the materials you need.
+                </p>
+
+            </div>
+
+
+            <div class="material-grid" id="materialGrid">
+
+
+                <!-- ACCOUNTING -->
+
+                <div class="material-card">
+
+                    <h3>📊 Accounting Past Paper</h3>
+
+                    <p>
+                        Accounting examination preparation
+                        material.
+                    </p>
+
+                    <div class="material-actions">
+
+                        <a href="Course-Materials.zip" class="download-small" download>
+                            ⬇ Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="material-card">
+
+                    <h3>📊 Student Accounting Notes</h3>
+
+                    <p>
+                        Accounting notes for university students.
+                    </p>
+
+                    <div class="material-actions">
+
+                        <a href="Course-Materials.zip" class="download-small" download>
+                            ⬇ Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="material-card">
+
+                    <h3>📊 Accounting Test</h3>
+
+                    <p>
+                        Accounting test and revision material.
+                    </p>
+
+                    <div class="material-actions">
+
+                        <a href="Course-Materials.zip" class="download-small" download>
+                            ⬇ Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ECONOMICS -->
+
+                <div class="material-card">
+
+                    <h3>💰 Comprehensive Economics Notes</h3>
+
+                    <p>
+                        Comprehensive Economics study notes.
+                    </p>
+
+                    <div class="material-actions">
+
+                        <a href="Course-Materials.zip" class="download-small" download>
+                            ⬇ Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="material-card">
+
+                    <h3>💰 Economics Answers</h3>
+
+                    <p>
+                        Economics questions and answers.
+                    </p>
+
+                    <div class="material-actions">
+
+                        <a href="Course-Materials.zip" class="download-small" download>
+                            ⬇ Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="material-card">
+
+                    <h3>💰 Principles of Economics MCQs</h3>
+
+                    <p>
+                        Multiple-choice questions for revision.
+                    </p>
+
+                    <div class="material-actions">
+
+                        <a href="Course-Materials.zip" class="download-small" download>
+                            ⬇ Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="material-card">
+
+                    <h3>💰 Economics Sample Questions</h3>
+
+                    <p>
+                        Sample Economics questions for students.
+                    </p>
+
+                    <div class="material-actions">
+
+                        <a href="Course-Materials.zip" class="download-small" download>
+                            ⬇ Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BCS -->
+
+                <div class="material-card">
+
+                    <h3>💻 BCS</h3>
+
+                    <p>
+                        Business Computing learning material.
+                    </p>
+
+                    <div class="material-actions">
+
+                        <a href="Course-Materials.zip" class="download-small" download>
+                            ⬇ Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COMMUNICATION -->
+
+                <div class="material-card">
+
+                    <h3>🗣️ Communication Skills Past Paper</h3>
+
+                    <p>
+                        Communication Skills past examination
+                        paper.
+                    </p>
+
+                    <div class="material-actions">
+
+                        <a href="Course-Materials.zip" class="download-small" download>
+                            ⬇ Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="material-card">
+
+                    <h3>🗣️ Communication Questions & Answers</h3>
+
+                    <p>
+                        Communication Skills questions and answers.
+                    </p>
+
+                    <div class="material-actions">
+
+                        <a href="Course-Materials.zip" class="download-small" download>
+                            ⬇ Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="material-card">
+
+                    <h3>🗣️ Comprehensive Communication</h3>
+
+                    <p>
+                        Updated comprehensive communication
+                        learning material.
+                    </p>
+
+                    <div class="material-actions">
+
+                        <a href="Course-Materials.zip" class="download-small" download>
+                            ⬇ Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     DOWNLOAD ALL
+===================================================== -->
+
+    <section class="download-section">
+
+        <div class="container">
+
+            <h2>📚 Get All Course Materials</h2>
+
+            <p>
+                Download the complete collection of available
+                Amigo Learning materials in one ZIP file.
+            </p>
+
+            <a href="Course-Materials.zip" download class="btn btn-primary">
+                ⬇ DOWNLOAD ALL MATERIALS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>How Amigo Learning Works</h2>
+
+                <p>
+                    Getting started is simple.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+                    <h3>Find</h3>
+
+                    <p>
+                        Choose your course and find the
+                        materials you need.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+                    <h3>Learn</h3>
+
+                    <p>
+                        Read your notes, practice questions
+                        and prepare for examinations.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+                    <h3>Download</h3>
+
+                    <p>
+                        Download your resources and continue
+                        studying even when offline.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     WHATSAPP
+===================================================== -->
+
+    <section class="whatsapp-section">
+
+        <div class="container">
+
+            <h2>💬 Join the Amigo Learning Community</h2>
+
+            <p>
+                Connect with other students, ask questions,
+                share ideas and receive learning updates.
+            </p>
+
+            <a href="https://wa.me/211927471234?text=Hello%20Amigo%20Learning!%20I%20want%20to%20join%20the%20study%20group."
+                target="_blank" class="whatsapp-button">
+                📱 JOIN OUR WHATSAPP GROUP
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     REQUEST MATERIAL
+===================================================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>📚 Can't Find Your Material?</h2>
+
+                <p>
+                    Tell us what you are looking for and we will
+                    consider adding it to Amigo Learning.
+                </p>
+
+            </div>
+
+
+            <div class="request-box">
+
+                <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+
+                    <div class="form-group">
+
+                        <label>
+                            Your Name
+                        </label>
+
+                        <input type="text" name="name" placeholder="Enter your name" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            University / Institution
+                        </label>
+
+                        <input type="text" name="university" placeholder="Enter your university or institution">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Course / Subject
+                        </label>
+
+                        <input type="text" name="course" placeholder="Example: Economics" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Material Requested
+                        </label>
+
+                        <textarea name="message" placeholder="Tell us what learning material you need..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">
+                        📤 Submit Request
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     FAQ
+===================================================== -->
+
+    <section id="faq">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Frequently Asked Questions</h2>
+
+                <p>
+                    Answers to common questions about
+                    Amigo Learning.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Is Amigo Learning free?
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. Amigo Learning is designed to
+                            provide free access to educational
+                            resources for students.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Who can use Amigo Learning?
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Students looking for educational
+                            notes, past papers, questions and
+                            other study resources can use the
+                            platform.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I download the materials?
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. Available materials can be
+                            downloaded for study and educational
+                            purposes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I request a course or material?
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. Use the material request form
+                            above to tell us what you need.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How can I contact Amigo Learning?
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            You can contact Amigo Learning through
+                            WhatsApp or email using the contact
+                            details below.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     CONTACT
+===================================================== -->
+
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Contact Amigo Learning</h2>
+
+                <p>
+                    Have a question, suggestion or learning
+                    material to share? Get in touch.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <div class="contact-card">
+
+                    <div class="icon">
+                        📱
+                    </div>
+
+                    <h3>WhatsApp</h3>
+
+                    <a href="https://wa.me/211927471234" target="_blank">
+                        +211 927 471 234
+                    </a>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="icon">
+                        📧
+                    </div>
+
+                    <h3>Email</h3>
+
+                    <a href="mailto:amigo.learning.ss@email.com">
+                        amigo.learning.ss@email.com
+                    </a>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="icon">
+                        🇸🇸
+                    </div>
+
+                    <h3>Location</h3>
+
+                    <p>
+                        South Sudan
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     FOOTER
+===================================================== -->
+
     <footer>
-        <p>&copy; 2026 Amigo Learning. Built for Students in South Sudan.</p>
-        <p>Contact: amigo.learning.ss@email.com</p>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <div>
+
+                    <h3>
+                        📚 Amigo Learning
+                    </h3>
+
+                    <p>
+                        Empowering students in South Sudan
+                        through free access to educational
+                        resources.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Learn. Share. Succeed.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="#home">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="#courses">Courses</a>
+                        </li>
+
+                        <li>
+                            <a href="#materials">Materials</a>
+                        </li>
+
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Contact
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            📱 +211 927 471 234
+                        </li>
+
+                        <li>
+                            📧 amigo.learning.ss@email.com
+                        </li>
+
+                        <li>
+                            🇸🇸 South Sudan
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+
+                <p>
+                    © 2026 Amigo Learning. All Rights Reserved.
+                </p>
+
+                <p>
+                    For Students, By Students | South Sudan
+                </p>
+
+                <p>
+                    Built with ❤️ by John Marial Chol
+                </p>
+
+            </div>
+
+        </div>
+
     </footer>
+
+
+    <!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
+    <a href="https://wa.me/211927471234?text=Hello%20Amigo%20Learning!" target="_blank" class="whatsapp-float"
+        title="Contact Amigo Learning on WhatsApp">
+        💬
+    </a>
+
+
+    <!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+    <script>
+
+        /* MOBILE MENU */
+
+        function toggleMenu() {
+
+            const nav = document.getElementById("navLinks");
+
+            nav.classList.toggle("active");
+
+        }
+
+
+        /* CLOSE MOBILE MENU WHEN LINK IS CLICKED */
+
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+
+        /* SEARCH MATERIALS */
+
+        function searchMaterials() {
+
+            const input =
+                document
+                    .getElementById("searchInput")
+                    .value
+                    .toLowerCase();
+
+            const materials =
+                document.querySelectorAll(".material-card");
+
+            materials.forEach(function (card) {
+
+                const text =
+                    card.textContent.toLowerCase();
+
+                if (text.includes(input)) {
+
+                    card.style.display = "block";
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+
+        /* FAQ */
+
+        function toggleFAQ(button) {
+
+            const answer =
+                button.nextElementSibling;
+
+            if (answer.style.display === "block") {
+
+                answer.style.display = "none";
+
+            } else {
+
+                answer.style.display = "block";
+
+            }
+
+        }
+
+    </script>
 
 </body>
 
