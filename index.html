@@ -806,7 +806,7 @@
             flex: 1;
         }
 
-        /* Unified Quiz System Styles */
+        /* Quiz System Styles */
         .quiz-panel {
             background: #fff;
             border-radius: 22px;
@@ -816,21 +816,22 @@
         }
 
         .quiz-tabs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            display: flex;
             gap: 10px;
+            flex-wrap: wrap;
             margin-bottom: 22px;
         }
 
         .quiz-tabs button {
             border: 1px solid var(--blue);
             background: #fff;
-            padding: 12px 10px;
+            padding: 10px 14px;
             border-radius: 12px;
             font-weight: 700;
             color: var(--blue);
             cursor: pointer;
             transition: .2s;
+            font-size: 13px;
         }
 
         .quiz-tabs button.active,
@@ -1464,7 +1465,7 @@
                 <div class="stats">
                     <div class="stat"><b>2026</b><span>Year Founded</span></div>
                     <div class="stat"><b>20+</b><span>Subject Areas</span></div>
-                    <div class="stat"><b>50+</b><span>Quiz Modules</span></div>
+                    <div class="stat"><b>10</b><span>Active Quiz Modules</span></div>
                     <div class="stat"><b>24/7</b><span>Digital Access</span></div>
                 </div>
             </div>
@@ -1744,13 +1745,14 @@
             </div>
         </section>
 
-        <!-- Fully Rebuilt Unified Quiz Center -->
+        <!-- 10-Course Unified Quiz Center -->
         <section class="section alt" id="quizzes">
             <div class="container">
                 <div class="section-head">
                     <span class="eyebrow">University Quiz Centre</span>
                     <h2>Interactive Self-Assessment</h2>
-                    <p>Test your knowledge with multiple-choice questions and short-answer model revision.</p>
+                    <p>Select from 10 university course modules to test your knowledge with multiple-choice questions
+                        and short-answer revision models.</p>
                 </div>
 
                 <div class="quiz-panel">
@@ -1762,7 +1764,7 @@
                             <div style="font-size:13px;color:var(--muted)">Select the best answers, then submit to see
                                 your score.</div>
                         </div>
-                        <div class="quiz-badge" id="scoreBadge">6 Questions</div>
+                        <div class="quiz-badge" id="scoreBadge">Questions</div>
                     </div>
 
                     <div id="quizQuestionsContainer"></div>
@@ -2056,8 +2058,13 @@
             { name: "Business Administration", cat: "business", desc: "Management principles, strategic planning, organizational behaviour.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
             { name: "Accounting & Finance", cat: "business", desc: "Financial accounting, double-entry ledger, balance sheets, auditing.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
             { name: "Economics", cat: "business", desc: "Microeconomics, macroeconomics, supply and demand models, market policy.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
-            { name: "Computer Science", cat: "stem", desc: "Programming, algorithms, data structures, software engineering.", level: "Degree / Diploma", mat: "Pending", vid: "Ready", quiz: "Ready" },
-            { name: "Communication Skills", cat: "social", desc: "Academic writing, public speaking, business correspondence.", level: "All Levels", mat: "Ready", vid: "Ready", quiz: "Ready" }
+            { name: "Business Computing", cat: "stem", desc: "Database fundamentals, business IT infrastructure, algorithms & spreadsheets.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
+            { name: "Communication Skills", cat: "social", desc: "Academic writing, public speaking, business correspondence & reporting.", level: "All Levels", mat: "Ready", vid: "Ready", quiz: "Ready" },
+            { name: "Introduction to Law", cat: "social", desc: "Legal systems, jurisprudence, constitutional law, and contract principles.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
+            { name: "Marketing Management", cat: "business", desc: "Marketing mix (4 Ps), consumer behavior, market research, branding.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
+            { name: "Business Statistics", cat: "stem", desc: "Probability distributions, statistical inference, regression, data analysis.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
+            { name: "Human Resource Management", cat: "business", desc: "Talent acquisition, performance appraisal, labor relations, leadership.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
+            { name: "Public Administration", cat: "social", desc: "Governance models, public policy development, civil service structures.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" }
         ];
 
         function renderCourses(category = "all") {
@@ -2127,7 +2134,7 @@
             renderVideos(e.target.value.toLowerCase().trim());
         });
 
-        /* Unified Multi-Subject Quiz Dataset */
+        /* Expanded 10-Course Unified Quiz Dataset */
         const quizDataset = [
             {
                 title: "Principles of Management",
@@ -2150,10 +2157,12 @@
                     { q: "What is the fundamental accounting equation?", options: ["Assets = Liabilities - Equity", "Assets = Liabilities + Equity", "Liabilities = Assets + Equity", "Revenue = Expenses + Capital"], answer: 1 },
                     { q: "Which financial statement reports revenues and expenses for a specific period?", options: ["Balance Sheet", "Income Statement", "Statement of Cash Flows", "Trial Balance"], answer: 1 },
                     { q: "What type of account is 'Unearned Revenue'?", options: ["Asset", "Expense", "Liability", "Owner's Equity"], answer: 2 },
-                    { q: "According to standard double-entry accounting rules, a debit entry increases:", options: ["Liabilities", "Owner's Equity", "Assets", "Revenues"], answer: 2 }
+                    { q: "According to standard double-entry accounting rules, a debit entry increases:", options: ["Liabilities", "Owner's Equity", "Assets", "Revenues"], answer: 2 },
+                    { q: "Which inventory accounting method assumes that the oldest inventory items are sold first?", options: ["LIFO", "FIFO", "Weighted Average", "Specific Identification"], answer: 1 }
                 ],
                 shortQuestions: [
-                    { q: "Explain the concept of Accrual Accounting.", ans: "Accrual accounting records revenues when earned and expenses when incurred, regardless of when cash is physically received or disbursed." }
+                    { q: "Explain the concept of Accrual Accounting.", ans: "Accrual accounting records revenues when earned and expenses when incurred, regardless of when cash is physically received or disbursed." },
+                    { q: "What is the purpose of preparing a Trial Balance?", ans: "A trial balance checks the mathematical equality of debit and credit balances in the general ledger before preparing financial statements." }
                 ]
             },
             {
@@ -2161,10 +2170,90 @@
                 questions: [
                     { q: "The Law of Demand states that, all else equal, an increase in price causes:", options: ["An increase in demand", "A decrease in quantity demanded", "A shift of the demand curve right", "An increase in supply"], answer: 1 },
                     { q: "What term describes the value of the next best alternative given up when making a choice?", options: ["Sunk Cost", "Fixed Cost", "Opportunity Cost", "Marginal Cost"], answer: 2 },
-                    { q: "Market equilibrium occurs at the point where:", options: ["Quantity supplied equals quantity demanded", "Prices are at their highest", "Government sets price ceilings", "Surplus exceeds shortage"], answer: 0 }
+                    { q: "Market equilibrium occurs at the point where:", options: ["Quantity supplied equals quantity demanded", "Prices are at their highest", "Government sets price ceilings", "Surplus exceeds shortage"], answer: 0 },
+                    { q: "If a good has an income elasticity greater than 1, it is classified as a:", options: ["Inferior good", "Necessity good", "Luxury good", "Giffen good"], answer: 2 }
                 ],
                 shortQuestions: [
-                    { q: "What is GDP and what does it measure?", ans: "Gross Domestic Product (GDP) measures the total market value of all final goods and services produced within a country during a specified time frame." }
+                    { q: "What is GDP and what does it measure?", ans: "Gross Domestic Product (GDP) measures the total market value of all final goods and services produced within a country during a specified time frame." },
+                    { q: "Distinguish between Microeconomics and Macroeconomics.", ans: "Microeconomics examines individual consumers, households, and business firms. Macroeconomics analyzes aggregate economy-wide phenomena like inflation, unemployment, and total national output." }
+                ]
+            },
+            {
+                title: "Business Computing",
+                questions: [
+                    { q: "Which software program function is primarily used for tabular calculations and financial modeling?", options: ["Word Processor", "Spreadsheet (e.g. MS Excel)", "Presentation Tool", "Database Engine"], answer: 1 },
+                    { q: "What does the abbreviation DBMS stand for in computer science?", options: ["Data Business Management System", "Database Management System", "Digital Binary Management Service", "Direct Base Management Structure"], answer: 1 },
+                    { q: "Which cell reference in Excel remains fixed when formulas are copied across cells?", options: ["Relative reference (A1)", "Absolute reference ($A$1)", "Mixed reference (A$1)", "Dynamic reference"], answer: 1 },
+                    { q: "Which network protocol is the standard foundation for transmitting web page data across the Internet?", options: ["FTP", "HTTP/HTTPS", "SMTP", "SNMP"], answer: 1 }
+                ],
+                shortQuestions: [
+                    { q: "Define the term Cloud Computing in a business context.", ans: "Cloud computing refers to delivering hosted computing services over the internet—including servers, storage, databases, networking, and software—allowing access on demand without owning physical data infrastructure." }
+                ]
+            },
+            {
+                title: "Communication Skills",
+                questions: [
+                    { q: "Which component of the communication process transforms ideas into symbolic messages or words?", options: ["Decoding", "Encoding", "Feedback", "Noise"], answer: 1 },
+                    { q: "Non-verbal communication includes which of the following signals?", options: ["Body language & posture", "Facial expressions", "Tone of voice", "All of the above"], answer: 3 },
+                    { q: "In formal academic writing, what is the primary purpose of proper citation?", options: ["To increase word count", "To acknowledge original sources and avoid plagiarism", "To impress the reader", "To organize headers"], answer: 1 }
+                ],
+                shortQuestions: [
+                    { q: "What are the 7 Cs of Effective Communication?", ans: "Completeness, Conciseness, Consideration, Clarity, Concreteness, Courtesy, and Correctness." }
+                ]
+            },
+            {
+                title: "Introduction to Law",
+                questions: [
+                    { q: "Which source of law is enacted directly by a legislative body or Parliament?", options: ["Customary Law", "Statutory Law / Legislation", "Common Law Precedent", "Executive Decree"], answer: 1 },
+                    { q: "In criminal law proceedings, the burden of proof rests on the prosecution to prove guilt:", options: ["On the balance of probabilities", "Beyond a reasonable doubt", "By a simple majority", "Without documentation"], answer: 1 },
+                    { q: "An essential element required to form a legally binding contract is:", options: ["Offer & Acceptance", "Consideration", "Intention to create legal relations", "All of the above"], answer: 3 }
+                ],
+                shortQuestions: [
+                    { q: "Differentiate between Criminal Law and Civil Law.", ans: "Criminal law deals with conduct deemed harmful to society as a whole and prosecuted by the state. Civil law resolves private disputes between individuals or organizations, offering remedies such as compensation or injunctions." }
+                ]
+            },
+            {
+                title: "Marketing Management",
+                questions: [
+                    { q: "What are the traditional '4 Ps' of the marketing mix?", options: ["Product, Price, Place, Promotion", "People, Process, Product, Plan", "Positioning, Pricing, Profit, Promotion", "Public, Private, Product, Profit"], answer: 0 },
+                    { q: "Dividing a broad consumer market into distinct sub-groups based on shared characteristics is known as:", options: ["Market Targeting", "Market Segmentation", "Market Positioning", "Market Research"], answer: 1 },
+                    { q: "Which stage of the Product Life Cycle (PLC) typically sees rapid sales growth and initial profit realization?", options: ["Introduction", "Growth", "Maturity", "Decline"], answer: 1 }
+                ],
+                shortQuestions: [
+                    { q: "What is the primary objective of Brand Positioning?", ans: "Brand positioning aims to establish a distinct, desirable place for a product or service in the minds of target consumers relative to competing products." }
+                ]
+            },
+            {
+                title: "Business Statistics",
+                questions: [
+                    { q: "Which measure of central tendency is calculated by summing all values and dividing by the total count?", options: ["Median", "Mode", "Arithmetic Mean", "Variance"], answer: 2 },
+                    { q: "The difference between the highest value and lowest value in a dataset is called the:", options: ["Standard Deviation", "Variance", "Range", "Interquartile Range"], answer: 2 },
+                    { q: "A correlation coefficient value of -0.95 indicates:", options: ["Weak positive correlation", "Strong negative correlation", "No correlation", "Perfect positive correlation"], answer: 1 }
+                ],
+                shortQuestions: [
+                    { q: "Explain the difference between Primary Data and Secondary Data.", ans: "Primary data is collected directly first-hand by researchers specifically for the study at hand. Secondary data refers to pre-existing data previously collected and published by other individuals or institutions." }
+                ]
+            },
+            {
+                title: "Human Resource Management",
+                questions: [
+                    { q: "The systematic process of identifying duties, responsibilities, and qualifications for a job role is called:", options: ["Job Recruitment", "Job Analysis", "Performance Appraisal", "Orientation"], answer: 1 },
+                    { q: "Onboarding and orientation programs are primarily designed to help new employees:", options: ["Pass probation exams", "Integrate into organizational culture and workflows", "Negotiate higher wages", "Evaluate managers"], answer: 1 },
+                    { q: "360-Degree Feedback in performance management involves collecting evaluations from:", options: ["Direct managers only", "External customers only", "Supervisors, peers, subordinates, and self", "Human Resource directors only"], answer: 2 }
+                ],
+                shortQuestions: [
+                    { q: "What is the distinction between Recruitment and Selection?", ans: "Recruitment is the positive process of attracting a pool of qualified candidates for job openings. Selection is the screening and decision-making process of choosing the best candidate from that pool." }
+                ]
+            },
+            {
+                title: "Public Administration",
+                questions: [
+                    { q: "Max Weber's model of ideal bureaucracy is characterized by:", options: ["Hierarchical authority", "Division of labor", "Formal rules and impersonality", "All of the above"], answer: 3 },
+                    { q: "The cycle phase where a policy concept is translated into action and programs by public agencies is:", options: ["Agenda setting", "Policy formulation", "Policy implementation", "Policy evaluation"], answer: 2 },
+                    { q: "Good governance principles in public administration emphasize:", options: ["Transparency and accountability", "Equity and rule of law", "Public participation", "All of the above"], answer: 3 }
+                ],
+                shortQuestions: [
+                    { q: "Define Public Policy.", ans: "Public policy is a system of laws, regulatory measures, courses of action, and funding priorities promulgated by a governmental entity or its representatives." }
                 ]
             }
         ];
