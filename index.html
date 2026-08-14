@@ -2,3516 +2,2903 @@
 <html lang="en">
 
 <head>
-
-    <!-- =====================================================
-         BASIC PAGE INFORMATION
-    ====================================================== -->
-
     <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b5cab">
     <meta name="description"
-        content="Amigo Learning is a student learning and knowledge community platform founded in South Sudan on 14 August 2026.">
-
-    <meta name="keywords"
-        content="Amigo Learning, South Sudan students, university learning, study materials, past papers, online learning, student community, Rumbek">
-
-    <meta name="author" content="John Marial Chol - Amigo Learning">
-
-    <meta name="theme-color" content="#0757a0">
-
-    <title>
-        Amigo Learning | Learn • Connect • Grow • Succeed
-    </title>
-
-
-    <!-- =====================================================
-         FAVICON
-    ====================================================== -->
-
-    <link rel="icon" type="image/png" href="logo.png">
-
-
-    <!-- =====================================================
-         STYLES
-    ====================================================== -->
+        content="Amigo Learning — a student learning, resource and knowledge-sharing platform founded in South Sudan on 14 August 2026.">
+    <meta name="author" content="John Marial Chol">
+    <title>Amigo Learning | Learn • Connect • Grow • Succeed</title>
 
     <style>
-        /* =====================================================
-           RESET
-        ====================================================== */
+        :root {
+            --navy: #082b52;
+            --blue: #0b5cab;
+            --blue2: #147bd1;
+            --sky: #eaf4ff;
+            --green: #16a05d;
+            --green2: #0c8a4c;
+            --gold: #f6c945;
+            --ink: #16283f;
+            --muted: #66758a;
+            --line: #e5ebf2;
+            --bg: #f6f9fc;
+            --white: #ffffff;
+            --danger: #d9534f;
+            --shadow: 0 14px 40px rgba(8, 43, 82, .10);
+            --radius: 18px;
+        }
 
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box
         }
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 88px
         }
 
         body {
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            background: #f5f8fc;
-            color: #253858;
-            line-height: 1.6;
-
+            font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.65;
             overflow-x: hidden;
         }
 
         img {
             max-width: 100%;
-            display: block;
+            display: block
         }
 
         a {
             text-decoration: none;
+            color: inherit
         }
 
         button,
         input,
         textarea,
         select {
-            font-family: inherit;
+            font: inherit
         }
 
         .container {
-            width: 92%;
-            max-width: 1200px;
-            margin: auto;
+            width: min(1180px, 92%);
+            margin: auto
         }
 
-
-        /* =====================================================
-           TOP BAR
-        ====================================================== */
-
-        .top-bar {
-            background: #062b55;
-            color: white;
-            font-size: 13px;
+        .section {
+            padding: 88px 0
         }
 
-        .top-bar-content {
+        .section.alt {
+            background: #fff
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 45px
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: var(--sky);
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase
+        }
+
+        .section-head h2 {
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.12;
+            margin: 14px 0 12px;
+            color: var(--navy)
+        }
+
+        .section-head p {
+            color: var(--muted);
+            font-size: 16px
+        }
+
+        .topline {
+            background: var(--navy);
+            color: #dcecff;
+            font-size: 13px
+        }
+
+        .topline .container {
             min-height: 38px;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            gap: 20px;
+            gap: 20px
         }
 
-
-        /* =====================================================
-           HEADER
-        ====================================================== */
+        .topline strong {
+            color: #fff
+        }
 
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-
-            background: white;
-
-            box-shadow:
-                0 3px 18px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, .96);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(229, 235, 242, .9)
         }
 
         .navbar {
-            min-height: 76px;
-
+            height: 78px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            position: relative;
+            gap: 24px
         }
 
         .brand {
             display: flex;
             align-items: center;
             gap: 11px;
+            min-width: 210px
         }
 
-        .brand-logo {
-            width: 52px;
-            height: 52px;
-
+        .brand img {
+            width: 48px;
+            height: 48px;
             object-fit: contain;
-
-            border-radius: 10px;
+            border-radius: 12px
         }
 
-        .brand-text h2 {
-            color: #0757a0;
-            font-size: 21px;
-            line-height: 1.1;
+        .brand-name {
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--navy);
+            line-height: 1.1
         }
 
-        .brand-text p {
-            color: #667085;
+        .brand-tag {
             font-size: 10px;
-            margin-top: 3px;
+            color: var(--muted);
+            font-weight: 700;
+            letter-spacing: .04em
         }
 
-
-        /* =====================================================
-           NAVIGATION
-        ====================================================== */
-
-        .nav-links {
+        .nav {
             display: flex;
             align-items: center;
-
-            list-style: none;
-
-            gap: 20px;
+            gap: 18px;
+            list-style: none
         }
 
-        .nav-links a {
-            color: #344054;
-
-            font-size: 14px;
-            font-weight: 600;
-
-            transition: 0.25s;
+        .nav a {
+            font-size: 13px;
+            font-weight: 750;
+            color: #34465c;
+            transition: 0.2s
         }
 
-        .nav-links a:hover {
-            color: #0d79d7;
+        .nav a:hover,
+        .nav a:focus {
+            color: var(--blue)
         }
 
-        .nav-button {
-            background: #0d79d7;
-            color: white !important;
-
-            padding: 10px 17px;
-
-            border-radius: 7px;
+        .nav .cta {
+            background: var(--blue);
+            color: #fff;
+            padding: 11px 16px;
+            border-radius: 10px
         }
 
-        .menu-button {
+        .nav .cta:hover {
+            background: var(--blue2)
+        }
+
+        .menu {
             display: none;
-
-            border: none;
+            border: 0;
             background: transparent;
-
-            font-size: 28px;
-            color: #0757a0;
-
-            cursor: pointer;
+            color: var(--navy);
+            font-size: 29px;
+            cursor: pointer
         }
-
-
-        /* =====================================================
-           HERO
-        ====================================================== */
 
         .hero {
-            min-height: 620px;
-
+            position: relative;
+            min-height: 650px;
             display: flex;
             align-items: center;
-
-            text-align: center;
-
-            color: white;
-
+            color: #fff;
+            overflow: hidden;
             background:
-                linear-gradient(rgba(3, 38, 79, 0.84),
-                    rgba(8, 91, 168, 0.72)),
-                url("banner.png") center center / cover no-repeat;
+                linear-gradient(105deg, rgba(5, 31, 60, .94) 0%, rgba(8, 75, 137, .82) 52%, rgba(11, 91, 171, .67) 100%),
+                url("banner.png") center/cover no-repeat;
+        }
+
+        .hero:after {
+            content: "";
+            position: absolute;
+            inset: auto -10% -120px -10%;
+            height: 250px;
+            background: var(--bg);
+            transform: rotate(-3deg)
         }
 
         .hero-content {
-            width: 100%;
-            max-width: 900px;
-
-            margin: auto;
-
-            padding: 85px 15px;
+            position: relative;
+            z-index: 2;
+            padding: 95px 0 120px;
+            max-width: 850px
         }
 
-        .hero-logo {
-            width: 110px;
-            height: 110px;
-
-            margin: 0 auto 25px;
-
-            padding: 8px;
-
-            background: white;
-
-            border-radius: 22px;
-
-            object-fit: contain;
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 13px;
+            border: 1px solid rgba(255, 255, 255, .22);
+            background: rgba(255, 255, 255, .10);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 800
         }
 
         .hero h1 {
-            font-size: clamp(38px, 7vw, 70px);
-
-            line-height: 1.08;
-
-            margin-bottom: 20px;
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.02;
+            margin: 20px 0
         }
 
         .hero h1 span {
-            color: #ffd54f;
+            color: var(--gold)
         }
 
-        .hero-description {
-            max-width: 800px;
-
-            margin: auto;
-
-            font-size: 20px;
-
-            color: #f1f7ff;
+        .hero p {
+            max-width: 760px;
+            color: #e7f3ff;
+            font-size: 18px
         }
 
-        .hero-tagline {
-            margin-top: 18px;
-
-            color: #d8ebff;
-
-            font-size: 17px;
-
-            font-weight: 600;
-        }
-
-        .hero-buttons {
+        .hero-actions {
             display: flex;
-
-            justify-content: center;
-
             flex-wrap: wrap;
-
             gap: 12px;
-
-            margin-top: 32px;
+            margin-top: 30px
         }
-
-
-        /* =====================================================
-           BUTTONS
-        ====================================================== */
 
         .btn {
             display: inline-flex;
-
-            justify-content: center;
             align-items: center;
-
+            justify-content: center;
+            gap: 8px;
             min-height: 48px;
-
-            padding: 12px 23px;
-
-            border-radius: 8px;
-
-            font-weight: 700;
-
-            border: none;
-
+            padding: 12px 19px;
+            border: 0;
+            border-radius: 10px;
+            font-weight: 800;
             cursor: pointer;
-
-            transition: 0.25s;
+            transition: .2s;
+            text-align: center
         }
 
         .btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-2px)
         }
 
         .btn-primary {
-            background: #1eaa57;
-            color: white;
+            background: var(--green);
+            color: #fff
         }
 
-        .btn-blue {
-            background: #0d79d7;
-            color: white;
+        .btn-primary:hover {
+            background: var(--green2)
         }
 
         .btn-white {
-            background: white;
-            color: #0757a0;
+            background: #fff;
+            color: var(--navy)
         }
 
-        .btn-yellow {
-            background: #ffd54f;
-            color: #202020;
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, .35);
+            color: #fff;
+            background: rgba(255, 255, 255, .08)
         }
 
+        .btn-blue {
+            background: var(--blue);
+            color: #fff
+        }
 
-        /* =====================================================
-           SEARCH
-        ====================================================== */
+        .btn-blue:hover {
+            background: var(--blue2)
+        }
 
-        .search-area {
-            margin-top: -38px;
+        .btn-soft {
+            background: var(--sky);
+            color: var(--blue)
+        }
 
+        .quick {
             position: relative;
-
             z-index: 10;
+            margin-top: -55px
         }
 
-        .search-box {
-            background: white;
-
-            padding: 25px;
-
-            border-radius: 15px;
-
-            box-shadow:
-                0 10px 35px rgba(0, 0, 0, 0.12);
-        }
-
-        .search-box h3 {
-            text-align: center;
-
-            color: #0757a0;
-
-            margin-bottom: 15px;
-        }
-
-        .search-form {
-            display: flex;
-
-            max-width: 850px;
-
-            margin: auto;
-        }
-
-        .search-form input {
-            flex: 1;
-
-            padding: 14px 16px;
-
-            border: 2px solid #e4e7ec;
-
-            border-radius: 8px 0 0 8px;
-
-            outline: none;
-
-            font-size: 15px;
-        }
-
-        .search-form input:focus {
-            border-color: #0d79d7;
-        }
-
-        .search-form button {
-            border: none;
-
-            background: #0d79d7;
-
-            color: white;
-
-            padding: 0 24px;
-
-            border-radius: 0 8px 8px 0;
-
-            cursor: pointer;
-
-            font-weight: bold;
-        }
-
-
-        /* =====================================================
-           SECTIONS
-        ====================================================== */
-
-        section {
-            padding: 75px 0;
-        }
-
-        .section-heading {
-            text-align: center;
-
-            margin-bottom: 42px;
-        }
-
-        .section-heading h2 {
-            color: #0757a0;
-
-            font-size: clamp(28px, 4vw, 38px);
-
-            margin-bottom: 9px;
-        }
-
-        .section-heading p {
-            max-width: 760px;
-
-            margin: auto;
-
-            color: #667085;
-        }
-
-
-        /* =====================================================
-           STATISTICS
-        ====================================================== */
-
-        .statistics {
+        .quick-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 18px;
             display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 18px;
+            grid-template-columns: 1fr auto;
+            gap: 15px;
+            align-items: center
         }
 
-        .stat-card {
-            background: white;
+        .search {
+            display: flex;
+            gap: 9px
+        }
 
+        .search input {
+            flex: 1;
+            border: 1px solid var(--line);
+            background: #f9fbfd;
+            border-radius: 10px;
+            padding: 13px 15px;
+            outline: 0
+        }
+
+        .search input:focus {
+            border-color: var(--blue)
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .quick-links a {
+            padding: 10px 13px;
+            border-radius: 9px;
+            background: #f2f6fa;
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 800
+        }
+
+        .quick-links a:hover {
+            background: var(--sky);
+            color: var(--blue)
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px
+        }
+
+        .stat {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 24px;
             text-align: center;
-
-            padding: 28px 15px;
-
-            border-radius: 13px;
-
-            box-shadow:
-                0 5px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 7px 24px rgba(8, 43, 82, .05)
         }
 
-        .stat-card h3 {
-            color: #0d79d7;
-
-            font-size: 34px;
+        .stat b {
+            display: block;
+            font-size: 30px;
+            color: var(--blue);
+            line-height: 1.1
         }
 
-        .stat-card p {
-            color: #667085;
-
-            font-weight: 600;
-        }
-
-
-        /* =====================================================
-           ABOUT
-        ====================================================== */
-
-        .about {
-            background: white;
+        .stat span {
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 700
         }
 
         .about-grid {
             display: grid;
-
-            grid-template-columns:
-                1.1fr 0.9fr;
-
-            gap: 45px;
-
-            align-items: center;
+            grid-template-columns: 1.25fr .75fr;
+            gap: 55px;
+            align-items: center
         }
 
-        .about-text h2 {
-            color: #0757a0;
-
-            font-size: 36px;
-
-            margin-bottom: 18px;
+        .about-copy h2 {
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.12;
+            color: var(--navy);
+            margin: 12px 0 18px
         }
 
-        .about-text p {
-            color: #555;
-
-            margin-bottom: 15px;
+        .about-copy p {
+            color: var(--muted);
+            margin: 0 0 15px
         }
 
-        .founder-card {
-            background:
-                linear-gradient(135deg,
-                    #e9f5ff,
-                    #d6eaff);
-
-            padding: 30px;
-
-            border-radius: 14px;
-
-            border-left: 5px solid #0d79d7;
+        .founder {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(145deg, #082b52, #0b5cab);
+            color: #fff;
+            border-radius: 22px;
+            padding: 32px;
+            box-shadow: var(--shadow)
         }
 
-        .founder-card h3 {
-            color: #0757a0;
-
-            margin-bottom: 15px;
+        .founder:before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            right: -70px;
+            top: -70px;
+            background: rgba(255, 255, 255, .08)
         }
 
-        .founder-badge {
-            display: inline-block;
-
-            margin-top: 15px;
-
-            background: #0757a0;
-
-            color: white;
-
-            padding: 7px 12px;
-
-            border-radius: 20px;
-
+        .founder .small {
+            color: #bcdcff;
             font-size: 12px;
-
-            font-weight: bold;
+            font-weight: 800;
+            text-transform: uppercase
         }
 
+        .founder h3 {
+            font-size: 27px;
+            margin: 8px 0 16px
+        }
 
-        /* =====================================================
-           FEATURES
-        ====================================================== */
+        .founder p {
+            color: #e3f1ff;
+            margin: 6px 0
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 18px;
+            background: var(--gold);
+            color: #17263a;
+            padding: 7px 11px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 900
+        }
 
         .feature-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 17px
         }
 
-        .feature-card {
-            background: white;
+        .feature {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            padding: 24px;
+            transition: .2s
+        }
 
-            padding: 27px 20px;
+        .feature:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow)
+        }
 
-            text-align: center;
-
+        .icon {
+            width: 46px;
+            height: 46px;
             border-radius: 13px;
-
-            border: 1px solid #e5eaf0;
-
-            transition: 0.25s;
+            background: var(--sky);
+            display: grid;
+            place-items: center;
+            font-size: 22px;
+            margin-bottom: 15px
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 10px 28px rgba(0, 0, 0, 0.08);
+        .feature h3 {
+            font-size: 17px;
+            color: var(--navy);
+            margin-bottom: 7px
         }
 
-        .feature-icon {
-            font-size: 42px;
-
-            margin-bottom: 10px;
+        .feature p {
+            font-size: 13px;
+            color: var(--muted)
         }
 
-        .feature-card h3 {
-            color: #0757a0;
-
-            margin-bottom: 8px;
-        }
-
-        .feature-card p {
-            color: #667085;
-
-            font-size: 14px;
-        }
-
-
-        /* =====================================================
-           COURSES
-        ====================================================== */
-
-        .courses {
-            background: #f5f8fc;
+        .course-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            justify-content: center
         }
 
         .course-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 22px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px
         }
 
-        .course-card {
-            background: white;
-
-            padding: 28px 20px;
-
-            text-align: center;
-
-            border-radius: 14px;
-
-            border: 1px solid #e5eaf0;
-
-            transition: 0.25s;
+        .course {
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 260px;
+            transition: .2s
         }
 
-        .course-card:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 10px 28px rgba(0, 0, 0, 0.08);
+        .course:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow)
         }
 
-        .course-icon {
-            font-size: 48px;
-
-            margin-bottom: 10px;
+        .course .cat-tag {
+            font-size: 11px;
+            color: var(--blue);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 8px
         }
 
-        .course-card h3 {
-            color: #0757a0;
+        .course h3 {
+            font-size: 19px;
+            margin: 6px 0;
+            color: var(--navy)
         }
 
-        .course-card p {
-            color: #667085;
-
-            font-size: 14px;
-
-            margin: 8px 0 18px;
-        }
-
-        .course-link {
-            color: #0d79d7;
-
-            font-weight: bold;
-        }
-
-
-        /* =====================================================
-           RESOURCE LIBRARY
-        ====================================================== */
-
-        .resource-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-        .resource-card {
-            background: white;
-
-            padding: 23px;
-
-            border-radius: 12px;
-
-            border: 1px solid #e4e7ec;
-
-            transition: 0.25s;
-        }
-
-        .resource-card:hover {
-            box-shadow:
-                0 8px 24px rgba(0, 0, 0, 0.07);
-        }
-
-        .resource-card h3 {
-            color: #0757a0;
-
-            font-size: 17px;
-        }
-
-        .resource-card p {
-            color: #667085;
-
-            font-size: 14px;
-
-            margin: 7px 0 16px;
-        }
-
-        .download-btn {
-            display: inline-block;
-
-            background: #1eaa57;
-
-            color: white;
-
-            padding: 9px 14px;
-
-            border-radius: 6px;
-
+        .course p {
             font-size: 13px;
-
-            font-weight: bold;
+            color: var(--muted);
+            margin-bottom: 15px
         }
 
-
-        /* =====================================================
-           DOWNLOAD ALL
-        ====================================================== */
-
-        .download-section {
-            background:
-                linear-gradient(135deg,
-                    #062b55,
-                    #0d79d7);
-
-            text-align: center;
-
-            color: white;
+        .course-meta {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+            font-size: 11px;
+            font-weight: 700
         }
 
-        .download-section h2 {
-            margin-bottom: 8px;
+        .meta-pill {
+            background: #f0f4f8;
+            padding: 4px 8px;
+            border-radius: 6px;
+            color: #43546a
         }
 
-        .download-section p {
-            color: #dceeff;
-        }
-
-
-        /* =====================================================
-           FUTURE SELF LEARNING
-        ====================================================== */
-
-        .self-learning {
-            background:
-                linear-gradient(135deg,
-                    #062b55,
-                    #0d79d7);
-
-            color: white;
-        }
-
-        .self-learning .section-heading h2 {
-            color: white;
-        }
-
-        .self-learning .section-heading p {
-            color: #dceeff;
-        }
-
-        .learning-grid {
+        /* Universities */
+        .univ-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 22px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
         }
 
-        .learning-card {
-            background:
-                rgba(255, 255, 255, 0.1);
-
-            border:
-                1px solid rgba(255, 255, 255, 0.18);
-
-            padding: 28px;
-
-            border-radius: 13px;
+        .univ-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .02)
         }
 
-        .learning-card h3 {
-            margin-bottom: 10px;
+        .univ-card h3 {
+            color: var(--navy);
+            font-size: 20px;
+            margin-bottom: 6px
         }
 
-        .learning-card p {
-            color: #e0efff;
+        .univ-card .loc {
+            font-size: 12px;
+            color: var(--blue);
+            font-weight: 800;
+            margin-bottom: 12px
+        }
 
-            font-size: 14px;
+        .univ-card ul {
+            list-style: none;
+            font-size: 13px;
+            color: var(--muted);
+            margin: 12px 0
+        }
+
+        .univ-card li {
+            margin-bottom: 6px;
+            padding-left: 14px;
+            position: relative
+        }
+
+        .univ-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--blue)
+        }
+
+        .univ-card .v-date {
+            font-size: 11px;
+            color: #8898aa;
+            margin-top: 10px;
+            font-style: italic
+        }
+
+        .dir-box {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 25px;
+            margin-top: 30px
+        }
+
+        .dir-controls {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 20px
+        }
+
+        .dir-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 13px
+        }
+
+        .dir-table th,
+        .dir-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .dir-table th {
+            background: var(--sky);
+            color: var(--navy);
+            font-weight: 800
+        }
+
+        /* Resource Library */
+        .library-toolbar {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 22px
+        }
+
+        .library-toolbar .count {
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 700
+        }
+
+        .filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .filter {
+            border: 1px solid var(--line);
+            background: #fff;
+            padding: 9px 13px;
+            border-radius: 9px;
+            cursor: pointer;
+            color: #43546a;
+            font-size: 12px;
+            font-weight: 800;
+            transition: .2s
+        }
+
+        .filter.active,
+        .filter:hover {
+            background: var(--blue);
+            color: #fff;
+            border-color: var(--blue)
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px
+        }
+
+        .resource {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 21px;
+            display: flex;
+            flex-direction: column;
+            min-height: 220px
+        }
+
+        .resource-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px
+        }
+
+        .resource-type {
+            font-size: 10px;
+            font-weight: 900;
+            color: var(--blue);
+            background: var(--sky);
+            padding: 5px 8px;
+            border-radius: 999px
+        }
+
+        .resource h3 {
+            font-size: 16px;
+            color: var(--navy);
+            margin: 14px 0 7px
+        }
+
+        .resource p {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 17px
+        }
+
+        .resource .download {
+            margin-top: auto;
+            display: inline-flex;
+            width: max-content
+        }
+
+        /* Video Hub */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .video {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column
+        }
+
+        .video-cover {
+            min-height: 160px;
+            background: linear-gradient(135deg, rgba(8, 43, 82, .92), rgba(11, 123, 209, .75));
+            display: grid;
+            place-items: center;
+            color: #fff;
+            font-size: 45px
+        }
+
+        .video-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1
+        }
+
+        .video-body h3 {
+            font-size: 17px;
+            color: var(--navy);
+            margin-bottom: 6px
+        }
+
+        .video-body p {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 15px;
+            flex: 1
+        }
+
+        /* Quiz Section */
+        .quiz-container {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 35px;
+            box-shadow: var(--shadow);
+            max-width: 850px;
+            margin: auto
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .progress-bar-wrap {
+            width: 100%;
+            background: #f0f4f8;
+            height: 10px;
+            border-radius: 999px;
+            margin-bottom: 25px;
+            overflow: hidden
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--blue);
+            width: 0%;
+            transition: width 0.3s
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 20px 0
+        }
+
+        .quiz-opt-btn {
+            text-align: left;
+            padding: 15px 20px;
+            border: 1px solid var(--line);
+            background: #f9fbfd;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--ink);
+            transition: 0.2s
+        }
+
+        .quiz-opt-btn:hover {
+            background: var(--sky);
+            border-color: var(--blue)
+        }
+
+        .quiz-opt-btn.correct {
+            background: #e8f8f0;
+            border-color: var(--green);
+            color: var(--green2)
+        }
+
+        .quiz-opt-btn.incorrect {
+            background: #fde8e8;
+            border-color: var(--danger);
+            color: var(--danger)
+        }
+
+        .feedback-box {
+            padding: 18px;
+            border-radius: 12px;
+            margin: 20px 0;
+            display: none
+        }
+
+        .feedback-box.correct {
+            background: #e8f8f0;
+            border: 1px solid var(--green);
+            color: var(--green2)
+        }
+
+        .feedback-box.incorrect {
+            background: #fde8e8;
+            border: 1px solid var(--danger);
+            color: #a94442
+        }
+
+        .quiz-review-item {
+            padding: 15px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            background: #fcfdfe
+        }
+
+        /* Pathways */
+        .pathway-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            background: #fff;
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            margin-top: 20px
+        }
+
+        .path-step {
+            text-align: center;
+            flex: 1;
+            min-width: 110px
+        }
+
+        .path-step .step-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--sky);
+            color: var(--blue);
+            display: grid;
+            place-items: center;
+            margin: 0 auto 8px;
+            font-weight: 900
+        }
+
+        .path-arrow {
+            color: var(--muted);
+            font-weight: 900
+        }
+
+        /* Dashboards */
+        .dash-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 25px
+        }
+
+        .dash-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0
+        }
+
+        .dash-stat {
+            background: var(--bg);
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--line)
+        }
+
+        .dash-stat b {
+            font-size: 24px;
+            color: var(--blue);
+            display: block
+        }
+
+        .dash-stat span {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 700
+        }
+
+        .notice {
+            background: linear-gradient(100deg, var(--navy), var(--blue));
+            color: #fff;
+            border-radius: 22px;
+            padding: 34px 38px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px
+        }
+
+        .notice h2 {
+            font-size: 28px;
+            margin-bottom: 5px
+        }
+
+        .notice p {
+            color: #d7eaff;
+            font-size: 14px
+        }
+
+        .future {
+            background: var(--navy);
+            color: #fff
+        }
+
+        .future .section-head h2 {
+            color: #fff
+        }
+
+        .future .section-head p {
+            color: #c9ddf2
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px
+        }
+
+        .future-card {
+            border: 1px solid rgba(255, 255, 255, .15);
+            background: rgba(255, 255, 255, .06);
+            border-radius: 17px;
+            padding: 25px
+        }
+
+        .future-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px
+        }
+
+        .future-card p {
+            font-size: 13px;
+            color: #c8dced
         }
 
         .future-label {
             display: inline-block;
-
-            margin-top: 15px;
-
-            background: #ffd54f;
-
-            color: #222;
-
-            padding: 5px 10px;
-
-            border-radius: 20px;
-
-            font-size: 11px;
-
-            font-weight: bold;
+            margin-top: 17px;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: var(--gold);
+            color: #17263a;
+            font-size: 10px;
+            font-weight: 900
         }
 
-
-        /* =====================================================
-           VIDEO SECTION
-        ====================================================== */
-
-        .video-section {
-            background: white;
+        .community-box {
+            background: linear-gradient(135deg, #eaf9f1, #f3fbf7);
+            border: 1px solid #d7efdf;
+            border-radius: 22px;
+            padding: 42px;
+            text-align: center
         }
 
-        .video-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 25px;
+        .community-box h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            color: #087c47
         }
 
-        .video-card {
-            background: #f8fafc;
-
-            border-radius: 13px;
-
-            overflow: hidden;
-
-            border: 1px solid #e4e7ec;
-        }
-
-        .video-wrapper {
-            position: relative;
-
-            width: 100%;
-
-            padding-bottom: 56.25%;
-
-            background: #0b1727;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
-
-            border: 0;
-        }
-
-        .video-info {
-            padding: 18px;
-        }
-
-        .video-info h3 {
-            color: #0757a0;
-
-            font-size: 17px;
-        }
-
-        .video-info p {
-            color: #667085;
-
-            font-size: 13px;
-        }
-
-
-        /* =====================================================
-           COMMUNITY
-        ====================================================== */
-
-        .community {
-            background: #eaf8ef;
-
-            text-align: center;
-        }
-
-        .community h2 {
-            color: #128c62;
-
-            font-size: clamp(28px, 4vw, 38px);
-        }
-
-        .community-description {
-            max-width: 780px;
-
+        .community-box p {
+            max-width: 760px;
             margin: 12px auto;
-
-            color: #4b6357;
+            color: #4e6659
         }
 
-        .community-buttons {
-            margin-top: 22px;
-
+        .community-actions {
             display: flex;
-
             justify-content: center;
-
             flex-wrap: wrap;
-
             gap: 10px;
+            margin-top: 22px
         }
 
-        .whatsapp-button {
+        .whatsapp {
             background: #25d366;
-
-            color: white;
-
-            padding: 14px 24px;
-
-            border-radius: 8px;
-
-            font-weight: bold;
+            color: #fff
         }
 
-        .whatsapp-chat-button {
-            background: #128c7e;
-
-            color: white;
-
-            padding: 14px 24px;
-
-            border-radius: 8px;
-
-            font-weight: bold;
+        .whatsapp:hover {
+            background: #1eaa53
         }
 
-
-        /* =====================================================
-           REQUEST FORM
-        ====================================================== */
-
-        .request-section {
-            background: #f5f8fc;
+        .form-wrap {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 25px;
+            align-items: stretch
         }
 
-        .form-box {
-            max-width: 800px;
-
-            margin: auto;
-
-            background: white;
-
-            padding: 35px;
-
-            border-radius: 14px;
-
-            box-shadow:
-                0 6px 25px rgba(0, 0, 0, 0.07);
+        .info-panel {
+            background: var(--navy);
+            color: #fff;
+            border-radius: 20px;
+            padding: 30px
         }
 
-        .form-group {
-            margin-bottom: 17px;
+        .info-panel h3 {
+            font-size: 25px;
+            margin-bottom: 12px
         }
 
-        .form-group label {
+        .info-panel p {
+            color: #cbdced;
+            font-size: 14px;
+            margin-bottom: 18px
+        }
+
+        .info-list {
+            list-style: none
+        }
+
+        .info-list li {
+            margin: 11px 0;
+            color: #dcecff;
+            font-size: 14px
+        }
+
+        .form {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(8, 43, 82, .05)
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px
+        }
+
+        .field {
+            margin-bottom: 15px
+        }
+
+        .field.full {
+            grid-column: 1/-1
+        }
+
+        .field label {
             display: block;
-
-            font-weight: 600;
-
+            font-size: 12px;
+            font-weight: 850;
             margin-bottom: 6px;
+            color: #34465c
         }
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .field input,
+        .field textarea,
+        .field select {
             width: 100%;
-
-            padding: 13px;
-
-            border: 1px solid #d5dbe5;
-
-            border-radius: 7px;
-
-            outline: none;
-
-            font-size: 15px;
+            padding: 12px 13px;
+            border: 1px solid #d8e1ea;
+            border-radius: 9px;
+            outline: 0;
+            background: #fbfcfe;
+            color: var(--ink)
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: #0d79d7;
+        .field textarea {
+            min-height: 125px;
+            resize: vertical
         }
 
-        .form-group textarea {
-            min-height: 120px;
-
-            resize: vertical;
+        .field input:focus,
+        .field textarea:focus,
+        .field select:focus {
+            border-color: var(--blue)
         }
-
-
-        /* =====================================================
-           FAQ
-        ====================================================== */
 
         .faq {
             max-width: 900px;
-
-            margin: auto;
+            margin: auto
         }
 
         .faq-item {
-            background: white;
-
-            border: 1px solid #e4e7ec;
-
-            border-radius: 9px;
-
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
             margin-bottom: 10px;
-
-            overflow: hidden;
+            overflow: hidden
         }
 
-        .faq-question {
+        .faq-q {
             width: 100%;
-
-            background: white;
-
-            border: none;
-
+            border: 0;
+            background: #fff;
             padding: 18px;
-
             text-align: left;
-
-            font-weight: bold;
-
-            color: #0757a0;
-
-            cursor: pointer;
-
             display: flex;
-
             justify-content: space-between;
+            gap: 15px;
+            color: var(--navy);
+            font-weight: 850;
+            cursor: pointer
         }
 
-        .faq-answer {
+        .faq-a {
             display: none;
-
             padding: 0 18px 18px;
-
-            color: #667085;
+            color: var(--muted);
+            font-size: 14px
         }
 
+        .faq-item.open .faq-a {
+            display: block
+        }
 
-        /* =====================================================
-           CONTACT
-        ====================================================== */
-
-        .contact {
-            background: white;
+        .faq-item.open .faq-q span:last-child {
+            transform: rotate(45deg)
         }
 
         .contact-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px
         }
 
         .contact-card {
-            background: #f8fafc;
-
-            padding: 27px;
-
-            text-align: center;
-
-            border-radius: 12px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            padding: 25px;
+            text-align: center
         }
 
-        .contact-icon {
-            font-size: 38px;
-
-            margin-bottom: 7px;
+        .contact-card .icon {
+            margin: 0 auto 13px
         }
 
         .contact-card h3 {
-            color: #0757a0;
+            color: var(--navy);
+            font-size: 17px
         }
 
+        .contact-card p,
         .contact-card a {
-            color: #0d79d7;
-
-            word-break: break-word;
+            color: var(--muted);
+            font-size: 13px
         }
-
-
-        /* =====================================================
-           FOOTER
-        ====================================================== */
 
         footer {
-            background: #062b55;
-
-            color: white;
-
-            padding: 55px 0 20px;
+            background: #061f3b;
+            color: #fff;
+            padding: 60px 0 20px
         }
 
         .footer-grid {
             display: grid;
-
-            grid-template-columns:
-                2fr 1fr 1fr;
-
-            gap: 35px;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 35px
         }
 
         footer h3 {
-            margin-bottom: 14px;
+            font-size: 16px;
+            margin-bottom: 13px
         }
 
         footer p,
         footer li,
         footer a {
-            color: #dbe7f5;
-
-            font-size: 14px;
+            color: #bcd0e4;
+            font-size: 13px
         }
 
         footer ul {
-            list-style: none;
+            list-style: none
         }
 
         footer li {
-            margin-bottom: 8px;
+            margin: 8px 0
         }
 
         footer a:hover {
-            color: white;
+            color: #fff
+        }
+
+        .footer-brand {
+            font-size: 22px;
+            color: #fff;
+            font-weight: 900
         }
 
         .copyright {
+            border-top: 1px solid rgba(255, 255, 255, .12);
             margin-top: 35px;
-
-            padding-top: 20px;
-
-            border-top:
-                1px solid rgba(255, 255, 255, 0.2);
-
-            text-align: center;
-        }
-
-
-        /* =====================================================
-           FLOATING WHATSAPP
-        ====================================================== */
-
-        .floating-whatsapp {
-            position: fixed;
-
-            right: 20px;
-            bottom: 20px;
-
-            width: 60px;
-            height: 60px;
-
-            border-radius: 50%;
-
-            background: #25d366;
-
-            color: white;
-
+            padding-top: 18px;
             display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            font-size: 29px;
-
-            box-shadow:
-                0 5px 20px rgba(0, 0, 0, 0.25);
-
-            z-index: 999;
-
-            transition: 0.25s;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap
         }
 
-        .floating-whatsapp:hover {
-            transform: scale(1.08);
+        .float-wa {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 1100;
+            width: 57px;
+            height: 57px;
+            border-radius: 50%;
+            background: #25d366;
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 27px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .2)
         }
 
-
-        /* =====================================================
-           TABLET
-        ====================================================== */
-
-        @media (max-width: 1050px) {
-
-            .nav-links {
-                gap: 13px;
+        @media(max-width:1050px) {
+            .nav {
+                gap: 12px
             }
 
             .feature-grid,
             .course-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr)
             }
 
-            .statistics {
-                grid-template-columns:
-                    repeat(2, 1fr);
+            .resources,
+            .univ-grid,
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr)
             }
 
-            .resource-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr
             }
 
+            .dash-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .dir-controls {
+                grid-template-columns: repeat(2, 1fr)
+            }
         }
 
-
-        /* =====================================================
-           MOBILE NAVIGATION
-        ====================================================== */
-
-        @media (max-width: 850px) {
-
-            .top-bar-content {
+        @media(max-width:850px) {
+            .topline .container {
                 justify-content: center;
-
-                text-align: center;
-
                 flex-wrap: wrap;
-
-                padding: 7px 0;
+                padding: 7px 0
             }
 
-            .menu-button {
-                display: block;
+            .menu {
+                display: block
             }
 
-            .nav-links {
-
+            .nav {
                 display: none;
-
                 position: absolute;
-
-                top: 76px;
-
                 left: 0;
-
-                width: 100%;
-
-                background: white;
-
+                right: 0;
+                top: 78px;
+                background: #fff;
+                border-top: 1px solid var(--line);
+                padding: 10px 4%;
                 flex-direction: column;
-
                 align-items: stretch;
-
                 gap: 0;
-
-                padding: 12px 0;
-
-                box-shadow:
-                    0 12px 25px rgba(0, 0, 0, 0.12);
+                box-shadow: 0 16px 25px rgba(8, 43, 82, .10)
             }
 
-            .nav-links.active {
-                display: flex;
+            .nav.open {
+                display: flex
             }
 
-            .nav-links li {
-                width: 100%;
-            }
-
-            .nav-links a {
+            .nav li a {
                 display: block;
-
-                padding: 13px 25px;
+                padding: 13px 10px
             }
 
-            .nav-button {
-                margin: 8px 20px;
-                text-align: center;
+            .nav .cta {
+                margin: 6px 0;
+                text-align: center
             }
 
             .about-grid,
-            .video-grid,
-            .learning-grid,
-            .contact-grid,
-            .footer-grid {
-                grid-template-columns: 1fr;
+            .form-wrap {
+                grid-template-columns: 1fr
             }
 
+            .future-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .quick-card {
+                grid-template-columns: 1fr
+            }
+
+            .pathway-flow {
+                flex-direction: column
+            }
+
+            .path-arrow {
+                transform: rotate(90deg)
+            }
         }
 
-
-        /* =====================================================
-           SMALL MOBILE PHONES
-        ====================================================== */
-
-        @media (max-width: 600px) {
-
-            .container {
-                width: 92%;
+        @media(max-width:650px) {
+            .section {
+                padding: 62px 0
             }
 
-            section {
-                padding: 55px 0;
+            .brand {
+                min-width: 0
             }
 
-            .brand-logo {
-                width: 45px;
-                height: 45px;
+            .brand img {
+                width: 43px;
+                height: 43px
             }
 
-            .brand-text h2 {
-                font-size: 18px;
+            .brand-name {
+                font-size: 18px
             }
 
-            .brand-text p {
-                font-size: 9px;
+            .brand-tag {
+                font-size: 8px
             }
 
             .hero {
-                min-height: 560px;
+                min-height: 600px
             }
 
             .hero-content {
-                padding: 65px 10px;
+                padding: 75px 0 110px
             }
 
-            .hero-logo {
-                width: 90px;
-                height: 90px;
+            .hero p {
+                font-size: 16px
             }
 
-            .hero-description {
-                font-size: 16px;
+            .hero-actions {
+                flex-direction: column
             }
 
-            .hero-tagline {
-                font-size: 15px;
+            .hero-actions .btn {
+                width: 100%
             }
 
-            .hero-buttons {
-                flex-direction: column;
-
-                width: 100%;
-            }
-
-            .hero-buttons .btn {
-                width: 100%;
-            }
-
-            .search-area {
-                margin-top: -25px;
-            }
-
-            .search-box {
-                padding: 18px;
-            }
-
-            .search-form {
-                flex-direction: column;
-
-                gap: 8px;
-            }
-
-            .search-form input,
-            .search-form button {
-                width: 100%;
-
-                border-radius: 7px;
-
-                padding: 14px;
-            }
-
-            .statistics,
+            .stats,
             .feature-grid,
             .course-grid,
-            .resource-grid {
-                grid-template-columns: 1fr;
+            .resources,
+            .future-grid,
+            .video-grid,
+            .contact-grid,
+            .univ-grid {
+                grid-template-columns: 1fr
             }
 
-            .about-text h2 {
-                font-size: 29px;
+            .library-toolbar {
+                align-items: flex-start;
+                flex-direction: column
             }
 
-            .form-box {
-                padding: 22px;
-            }
-
-            .community-buttons {
+            .notice {
                 flex-direction: column;
+                align-items: flex-start;
+                padding: 28px
             }
 
-            .whatsapp-button,
-            .whatsapp-chat-button {
-                width: 100%;
+            .form-grid,
+            .dir-controls {
+                grid-template-columns: 1fr
             }
 
-            .floating-whatsapp {
-                width: 54px;
-                height: 54px;
-
-                right: 15px;
-                bottom: 15px;
-
-                font-size: 25px;
+            .field.full {
+                grid-column: auto
             }
 
+            .form,
+            .info-panel {
+                padding: 23px
+            }
+
+            .community-box {
+                padding: 30px 20px
+            }
+
+            .community-actions {
+                flex-direction: column
+            }
+
+            .community-actions .btn {
+                width: 100%
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .copyright {
+                flex-direction: column;
+                text-align: center
+            }
+
+            .dash-grid {
+                grid-template-columns: 1fr
+            }
+
+            .dir-table-wrap {
+                overflow-x: auto
+            }
         }
 
-
-        /* =====================================================
-           EXTRA SMALL PHONES
-        ====================================================== */
-
-        @media (max-width: 380px) {
-
-            .brand-text p {
-                display: none;
+        @media(max-width:400px) {
+            .container {
+                width: 90%
             }
 
             .hero h1 {
-                font-size: 35px;
+                font-size: 38px
             }
 
-            .hero-logo {
-                width: 78px;
-                height: 78px;
+            .hero-kicker {
+                font-size: 10px
             }
 
-            .section-heading h2 {
-                font-size: 26px;
+            .footer-grid {
+                grid-template-columns: 1fr
             }
-
         }
 
-
-        /* =====================================================
-           ACCESSIBILITY
-        ====================================================== */
-
-        :focus-visible {
-            outline: 3px solid #ffd54f;
-
-            outline-offset: 3px;
-        }
-
-
-        /* =====================================================
-           PRINT
-        ====================================================== */
-
-        @media print {
-
-            header,
-            .top-bar,
-            .floating-whatsapp,
-            .hero-buttons,
-            .search-area,
-            footer {
-                display: none !important;
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                scroll-behavior: auto !important;
+                transition: none !important
             }
-
-            body {
-                background: white;
-            }
-
         }
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- =====================================================
-     TOP BAR
-====================================================== -->
-
-    <div class="top-bar">
-
-        <div class="container top-bar-content">
-
-            <span>
-                🇸🇸 Proudly supporting students in South Sudan
-            </span>
-
-            <span>
-                Founded 14 August 2026
-            </span>
-
+    <div class="topline">
+        <div class="container">
+            <span>🇸🇸 <strong>Amigo Learning</strong> — built for learners in South Sudan</span>
+            <span>Founded <strong>14 August 2026</strong></span>
         </div>
-
     </div>
-
-
-    <!-- =====================================================
-     NAVIGATION
-====================================================== -->
 
     <header>
-
         <div class="container navbar">
-
-            <a href="#home" class="brand">
-
-                <img src="logo.png" alt="Amigo Learning Logo" class="brand-logo">
-
-                <div class="brand-text">
-
-                    <h2>
-                        Amigo Learning
-                    </h2>
-
-                    <p>
-                        Learn • Connect • Grow • Succeed
-                    </p>
-
+            <a class="brand" href="#home" aria-label="Amigo Learning home">
+                <img src="logo.png" alt="Amigo Learning logo"
+                    onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\' viewBox=\'0 0 48 48\'><rect width=\'48\' height=\'48\' rx=\'12\' fill=\'%230b5cab\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-weight=\'bold\' font-size=\'20\'>AL</text></svg>'">
+                <div>
+                    <div class="brand-name">Amigo Learning</div>
+                    <div class="brand-tag">LEARN • CONNECT • GROW • SUCCEED</div>
                 </div>
-
             </a>
 
+            <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
 
-            <!-- Mobile menu button -->
-
-            <button class="menu-button" id="menuButton" aria-label="Open navigation menu">
-                ☰
-            </button>
-
-
-            <ul class="nav-links" id="navLinks">
-
-                <li>
-                    <a href="#home">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#about">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#courses">
-                        Courses
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#materials">
-                        Resources
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#learning">
-                        Self-Learning
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#videos">
-                        Videos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#community">
-                        Community
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#contact">
-                        Contact
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#courses" class="nav-button">
-                        Start Learning
-                    </a>
-                </li>
-
+            <ul class="nav" id="nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#universities">Universities</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#quizzes">Quizzes</a></li>
+                <li><a href="#academy">Academy</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-
         </div>
-
     </header>
 
-
-    <!-- =====================================================
-     HERO
-====================================================== -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-content">
-
-            <img src="logo.png" alt="Amigo Learning" class="hero-logo">
-
-            <h1>
-
-                Welcome to
-                <span>
-                    Amigo Learning
-                </span>
-
-            </h1>
-
-            <p class="hero-description">
-
-                A growing student learning and knowledge
-                community created to help learners access
-                educational resources, connect with one another,
-                share knowledge and succeed academically.
-
-            </p>
-
-            <p class="hero-tagline">
-
-                📚 Learn &nbsp; • &nbsp;
-                🤝 Connect &nbsp; • &nbsp;
-                💡 Share &nbsp; • &nbsp;
-                🚀 Grow
-
-            </p>
-
-
-            <div class="hero-buttons">
-
-                <a href="#courses" class="btn btn-primary">
-                    📚 Explore Courses
-                </a>
-
-                <a href="#community" class="btn btn-white">
-                    🤝 Join Community
-                </a>
-
-                <a href="#learning" class="btn btn-yellow">
-                    🎓 Future Self-Learning
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     SEARCH
-====================================================== -->
-
-    <div class="container search-area">
-
-        <div class="search-box">
-
-            <h3>
-                🔎 Search Amigo Learning
-            </h3>
-
-            <div class="search-form">
-
-                <input type="search" id="searchInput" placeholder="Search notes, courses, past papers..."
-                    aria-label="Search learning resources">
-
-                <button type="button" id="searchButton">
-                    Search
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-     STATISTICS
-====================================================== -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="statistics">
-
-                <div class="stat-card">
-
-                    <h3>
-                        2026
-                    </h3>
-
-                    <p>
-                        Founded
-                    </p>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <h3>
-                        11+
-                    </h3>
-
-                    <p>
-                        Current Resources
-                    </p>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <h3>
-                        4+
-                    </h3>
-
-                    <p>
-                        Learning Areas
-                    </p>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <h3>
-                        24/7
-                    </h3>
-
-                    <p>
-                        Learning Access
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     ABOUT AMIGO
-====================================================== -->
-
-    <section class="about" id="about">
-
-        <div class="container">
-
-            <div class="about-grid">
-
-
-                <div class="about-text">
-
-                    <h2>
-                        More Than a Learning Forum
-                    </h2>
-
-                    <p>
-
-                        Amigo Learning was founded on
-                        <strong>14 August 2026</strong>
-                        with a simple vision: to create a useful,
-                        accessible and student-centered learning
-                        environment.
-
-                    </p>
-
-                    <p>
-
-                        Amigo Learning is being developed as more
-                        than a place to download notes. It is a
-                        growing student platform where learners
-                        can access academic materials, discover
-                        educational videos, exchange ideas,
-                        participate in study communities and
-                        request resources.
-
-                    </p>
-
-                    <p>
-
-                        In the future, Amigo Learning will expand
-                        into structured online self-learning,
-                        interactive lessons, quizzes, student
-                        accounts, learning progress and other
-                        digital education services.
-
-                    </p>
-
-                </div>
-
-
-                <div class="founder-card">
-
-                    <h3>
-                        👨‍🎓 Founder
-                    </h3>
-
-                    <p>
-
-                        <strong>
-                            John Marial Chol
-                        </strong>
-
-                    </p>
-
-                    <br>
-
-                    <p>
-
-                        Second-Year Student
-
-                    </p>
-
-                    <p>
-
-                        Bachelor of Arts in Business
-                        Administration
-
-                    </p>
-
-                    <p>
-
-                        Catholic University of South Sudan
-
-                    </p>
-
-                    <p>
-
-                        Rumbek Campus
-
-                    </p>
-
-                    <span class="founder-badge">
-
-                        AMIGO LEARNING • 2026
-
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     FEATURES
-====================================================== -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <h2>
-                    What Amigo Learning Offers
-                </h2>
-
-                <p>
-
-                    We are building a complete student learning
-                    and knowledge-sharing environment.
-
-                </p>
-
-            </div>
-
-
-            <div class="feature-grid">
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        📚
+    <main>
+
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-kicker">🎓 Student learning • resources • community</div>
+                    <h1>Welcome to <span>Amigo Learning</span></h1>
+                    <p>"Your growing digital learning hub for students in South Sudan."</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#courses">📚 Explore Courses</a>
+                        <a class="btn btn-white" href="#quizzes">📝 Take a Quiz</a>
+                        <a class="btn btn-outline" href="#resources">📂 Study Resources</a>
                     </div>
-
-                    <h3>
-                        Study Materials
-                    </h3>
-
-                    <p>
-                        Notes, past papers, questions and
-                        revision resources.
-                    </p>
-
                 </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        🎥
-                    </div>
-
-                    <h3>
-                        Learning Videos
-                    </h3>
-
-                    <p>
-                        Useful educational videos and tutorials
-                        from trusted learning sources.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        🤝
-                    </div>
-
-                    <h3>
-                        Student Community
-                    </h3>
-
-                    <p>
-                        Connect with other learners, discuss
-                        studies and share knowledge.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        📝
-                    </div>
-
-                    <h3>
-                        Resource Requests
-                    </h3>
-
-                    <p>
-                        Tell us what study materials students
-                        need.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        🎓
-                    </div>
-
-                    <h3>
-                        Self-Learning
-                    </h3>
-
-                    <p>
-                        Future structured online lessons for
-                        independent learning.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        💡
-                    </div>
-
-                    <h3>
-                        Knowledge Sharing
-                    </h3>
-
-                    <p>
-                        Share study tips, ideas and useful
-                        academic resources.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        📢
-                    </div>
-
-                    <h3>
-                        Announcements
-                    </h3>
-
-                    <p>
-                        Important platform updates and learning
-                        opportunities.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        📱
-                    </div>
-
-                    <h3>
-                        Mobile Learning
-                    </h3>
-
-                    <p>
-                        Designed for phones, tablets, laptops
-                        and desktop computers.
-                    </p>
-
-                </div>
-
             </div>
+        </section>
 
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     COURSES
-====================================================== -->
-
-    <section class="courses" id="courses">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <h2>
-                    📖 Learning Areas
-                </h2>
-
-                <p>
-
-                    Start with the current learning areas and
-                    expand as Amigo Learning grows.
-
-                </p>
-
-            </div>
-
-
-            <div class="course-grid">
-
-
-                <div class="course-card">
-
-                    <div class="course-icon">
-                        📊
+        <section class="quick">
+            <div class="container">
+                <div class="quick-card">
+                    <div class="search">
+                        <input id="searchInput" type="search"
+                            placeholder="Search Accounting, Economics, Computing, Business, Law..."
+                            aria-label="Search resources">
+                        <button class="btn btn-blue" id="searchBtn" type="button">Search</button>
                     </div>
-
-                    <h3>
-                        Accounting
-                    </h3>
-
-                    <p>
-                        Notes, tests, questions and revision
-                        materials.
-                    </p>
-
-                    <a href="#materials" class="course-link">
-                        View Resources →
-                    </a>
-
-                </div>
-
-
-                <div class="course-card">
-
-                    <div class="course-icon">
-                        💰
+                    <div class="quick-links">
+                        <a href="#courses">Courses</a>
+                        <a href="#resources">Resources</a>
+                        <a href="#videos">Videos</a>
+                        <a href="#quizzes">Quizzes</a>
+                        <a href="#community">WhatsApp Community</a>
                     </div>
-
-                    <h3>
-                        Economics
-                    </h3>
-
-                    <p>
-                        Economics notes, questions and revision
-                        resources.
-                    </p>
-
-                    <a href="#materials" class="course-link">
-                        View Resources →
-                    </a>
-
                 </div>
-
-
-                <div class="course-card">
-
-                    <div class="course-icon">
-                        💻
-                    </div>
-
-                    <h3>
-                        Business Computing
-                    </h3>
-
-                    <p>
-                        Business Computing and technology
-                        learning resources.
-                    </p>
-
-                    <a href="#materials" class="course-link">
-                        View Resources →
-                    </a>
-
-                </div>
-
-
-                <div class="course-card">
-
-                    <div class="course-icon">
-                        🗣️
-                    </div>
-
-                    <h3>
-                        Communication Skills
-                    </h3>
-
-                    <p>
-                        Communication learning and examination
-                        preparation.
-                    </p>
-
-                    <a href="#materials" class="course-link">
-                        View Resources →
-                    </a>
-
-                </div>
-
             </div>
+        </section>
 
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     RESOURCE LIBRARY
-====================================================== -->
-
-    <section id="materials">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <h2>
-                    📚 Learning Resource Library
-                </h2>
-
-                <p>
-
-                    Browse the current Amigo Learning resource
-                    collection.
-
-                </p>
-
+        <section class="section">
+            <div class="container">
+                <div class="stats">
+                    <div class="stat"><b>2026</b><span>Year Founded</span></div>
+                    <div class="stat"><b>20+</b><span>Subject Areas</span></div>
+                    <div class="stat"><b>40+</b><span>Interactive Quizzes</span></div>
+                    <div class="stat"><b>24/7</b><span>Digital Access</span></div>
+                </div>
             </div>
-
-
-            <div class="resource-grid" id="resourceGrid">
-
-
-                <div class="resource-card">
-
-                    <h3>
-                        📊 Accounting Past Paper
-                    </h3>
-
-                    <p>
-                        Accounting examination preparation.
-                    </p>
-
-                    <a href="Course-Materials.zip" download class="download-btn">
-                        ⬇ Download
-                    </a>
-
-                </div>
-
-
-                <div class="resource-card">
-
-                    <h3>
-                        📊 Student Accounting Notes
-                    </h3>
-
-                    <p>
-                        Accounting study notes.
-                    </p>
-
-                    <a href="Course-Materials.zip" download class="download-btn">
-                        ⬇ Download
-                    </a>
-
-                </div>
-
-
-                <div class="resource-card">
-
-                    <h3>
-                        📊 Accounting Test
-                    </h3>
-
-                    <p>
-                        Accounting revision and testing.
-                    </p>
-
-                    <a href="Course-Materials.zip" download class="download-btn">
-                        ⬇ Download
-                    </a>
-
-                </div>
-
-
-                <div class="resource-card">
-
-                    <h3>
-                        💰 Comprehensive Economics Notes
-                    </h3>
-
-                    <p>
-                        Economics study notes.
-                    </p>
-
-                    <a href="Course-Materials.zip" download class="download-btn">
-                        ⬇ Download
-                    </a>
-
-                </div>
-
-
-                <div class="resource-card">
-
-                    <h3>
-                        💰 Economics Answers
-                    </h3>
-
-                    <p>
-                        Economics questions and answers.
-                    </p>
-
-                    <a href="Course-Materials.zip" download class="download-btn">
-                        ⬇ Download
-                    </a>
-
-                </div>
-
-
-                <div class="resource-card">
-
-                    <h3>
-                        💰 Principles of Economics MCQs
-                    </h3>
-
-                    <p>
-                        Multiple-choice revision questions.
-                    </p>
-
-                    <a href="Course-Materials.zip" download class="download-btn">
-                        ⬇ Download
-                    </a>
-
-                </div>
-
-
-                <div class="resource-card">
-
-                    <h3>
-                        💰 Economics Sample Questions
-                    </h3>
-
-                    <p>
-                        Sample examination questions.
-                    </p>
-
-                    <a href="Course-Materials.zip" download class="download-btn">
-                        ⬇ Download
-                    </a>
-
-                </div>
-
-
-                <div class="resource-card">
-
-                    <h3>
-                        💻 Business Computing
-                    </h3>
-
-                    <p>
-                        Business Computing study materials.
-                    </p>
-
-                    <a href="Course-Materials.zip" download class="download-btn">
-                        ⬇ Download
-                    </a>
-
-                </div>
-
-
-                <div class="resource-card">
-
-                    <h3>
-                        🗣️ Communication Skills Past Paper
-                    </h3>
-
-                    <p>
-                        Examination preparation resources.
-                    </p>
-
-                    <a href="Course-Materials.zip" download class="download-btn">
-                        ⬇ Download
-                    </a>
-
-                </div>
-
-
-                <div class="resource-card">
-
-                    <h3>
-                        🗣️ Communication Questions & Answers
-                    </h3>
-
-                    <p>
-                        Questions and answers for revision.
-                    </p>
-
-                    <a href="Course-Materials.zip" download class="download-btn">
-                        ⬇ Download
-                    </a>
-
-                </div>
-
-
-                <div class="resource-card">
-
-                    <h3>
-                        🗣️ Comprehensive Communication
-                    </h3>
-
-                    <p>
-                        Communication learning resources.
-                    </p>
-
-                    <a href="Course-Materials.zip" download class="download-btn">
-                        ⬇ Download
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     DOWNLOAD ALL
-====================================================== -->
-
-    <section class="download-section">
-
-        <div class="container">
-
-            <h2>
-                📦 Complete Resource Pack
-            </h2>
-
-            <p>
-                Download the current Amigo Learning materials
-                together.
-            </p>
-
-            <br>
-
-            <a href="Course-Materials.zip" download class="btn btn-primary">
-                📥 Download All Materials
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     FUTURE SELF-LEARNING
-====================================================== -->
-
-    <section class="self-learning" id="learning">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <h2>
-                    🎓 The Future of Amigo Learning
-                </h2>
-
-                <p>
-
-                    Amigo Learning is planned to grow from a
-                    resource platform into a complete online
-                    self-learning environment.
-
-                </p>
-
-            </div>
-
-
-            <div class="learning-grid">
-
-
-                <div class="learning-card">
-
-                    <h3>
-                        📖 Structured Online Lessons
-                    </h3>
-
-                    <p>
-
-                        Students will eventually be able to
-                        study structured lessons online at their
-                        own pace.
-
-                    </p>
-
-                    <span class="future-label">
-                        FUTURE
-                    </span>
-
-                </div>
-
-
-                <div class="learning-card">
-
-                    <h3>
-                        📝 Quizzes & Assessments
-                    </h3>
-
-                    <p>
-
-                        Future courses can include quizzes,
-                        exercises and assessments.
-
-                    </p>
-
-                    <span class="future-label">
-                        FUTURE
-                    </span>
-
-                </div>
-
-
-                <div class="learning-card">
-
-                    <h3>
-                        📊 Learning Progress
-                    </h3>
-
-                    <p>
-
-                        Students will eventually be able to
-                        monitor their own learning progress.
-
-                    </p>
-
-                    <span class="future-label">
-                        FUTURE
-                    </span>
-
-                </div>
-
-
-                <div class="learning-card">
-
-                    <h3>
-                        🎥 Original Video Lessons
-                    </h3>
-
-                    <p>
-
-                        Amigo Learning can develop its own
-                        educational videos and tutorials.
-
-                    </p>
-
-                    <span class="future-label">
-                        PLANNED
-                    </span>
-
-                </div>
-
-
-                <div class="learning-card">
-
-                    <h3>
-                        🏆 Certificates
-                    </h3>
-
-                    <p>
-
-                        Future completed courses may include
-                        certificates or learning recognition.
-
-                    </p>
-
-                    <span class="future-label">
-                        PLANNED
-                    </span>
-
-                </div>
-
-
-                <div class="learning-card">
-
-                    <h3>
-                        👨‍🎓 Student Accounts
-                    </h3>
-
-                    <p>
-
-                        Students will eventually have personal
-                        accounts and learning dashboards.
-
-                    </p>
-
-                    <span class="future-label">
-                        PLANNED
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     YOUTUBE VIDEOS
-====================================================== -->
-
-    <section class="video-section" id="videos">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <h2>
-                    🎥 Learning Videos
-                </h2>
-
-                <p>
-
-                    Educational videos can complement Amigo
-                    Learning notes and study resources.
-
-                </p>
-
-            </div>
-
-
-            <div class="video-grid">
-
-
-                <!-- =================================================
-                 VIDEO 1
-
-                 Replace VIDEO_ID_1 with a real YouTube
-                 video ID.
-            ================================================== -->
-
-                <div class="video-card">
-
-                    <div class="video-wrapper">
-
-                        <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1"
-                            title="Amigo Learning Educational Video" loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-                    <div class="video-info">
-
-                        <h3>
-                            Featured Learning Video
-                        </h3>
-
+        </section>
+
+        <section class="section alt" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-copy">
+                        <span class="eyebrow">About Amigo Learning</span>
+                        <h2>More than a learning forum.</h2>
                         <p>
-
-                            Replace this placeholder with a
-                            high-quality educational video relevant
-                            to your students.
-
+                            Amigo Learning was started on <strong>14 August 2026</strong> as a student-led educational
+                            initiative intended to make learning resources, study support, videos, and interactive
+                            learning opportunities easier for students across South Sudan to access.
                         </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- =================================================
-                 VIDEO 2
-            ================================================== -->
-
-                <div class="video-card">
-
-                    <div class="video-wrapper">
-
-                        <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2"
-                            title="Amigo Learning Study Tutorial" loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-                    <div class="video-info">
-
-                        <h3>
-                            Recommended Study Tutorial
-                        </h3>
-
                         <p>
-
-                            Add another useful video covering
-                            Accounting, Economics, Business,
-                            Computing or Communication Skills.
-
+                            It is designed to grow into a complete learning hub. Students can discover verified
+                            university study paths, explore video tutorials, test their understanding with quizzes, and
+                            collaborate in peer study groups.
                         </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div style="
-                text-align:center;
-                margin-top:25px;
-            ">
-
-                <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="btn btn-blue">
-                    ▶ Explore YouTube Learning
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     WHATSAPP COMMUNITY
-====================================================== -->
-
-    <section class="community" id="community">
-
-        <div class="container">
-
-            <h2>
-                🤝 Join the Amigo Student Community
-            </h2>
-
-            <p class="community-description">
-
-                Amigo Learning is more than a learning forum.
-                We are building a student community where
-                learners can connect, ask questions, discuss
-                academic challenges, share knowledge and
-                encourage one another.
-
-            </p>
-
-
-            <div class="community-buttons">
-
-
-                <!--
-                IMPORTANT:
-
-                Replace the placeholder below with your
-                REAL WhatsApp group invitation link.
-
-                Example:
-
-                https://chat.whatsapp.com/XXXXXXXXXXXX
-            -->
-
-                <a href="YOUR_WHATSAPP_GROUP_INVITE_LINK" target="_blank" rel="noopener" class="whatsapp-button">
-                    📱 Join WhatsApp Study Group
-                </a>
-
-
-                <a href="https://wa.me/211927471234?text=Hello%20Amigo%20Learning!%20I%20would%20like%20to%20learn%20more."
-                    target="_blank" rel="noopener" class="whatsapp-chat-button">
-                    💬 Message Amigo Learning
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     RESOURCE REQUEST FORM
-====================================================== -->
-
-    <section class="request-section" id="request">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <h2>
-                    📚 Request a Learning Resource
-                </h2>
-
-                <p>
-
-                    Can't find the material you need?
-                    Tell Amigo Learning what students need.
-
-                </p>
-
-            </div>
-
-
-            <div class="form-box">
-
-                <!--
-                IMPORTANT:
-
-                This currently uses a placeholder Formspree
-                endpoint.
-
-                Replace YOUR-FORM-ID after creating your
-                Formspree form.
-            -->
-
-                <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
-
-                    <div class="form-group">
-
-                        <label for="name">
-                            Your Name
-                        </label>
-
-                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="institution">
-                            University / Institution
-                        </label>
-
-                        <input type="text" id="institution" name="institution"
-                            placeholder="Enter university or institution">
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="course">
-                            Course / Subject
-                        </label>
-
-                        <input type="text" id="course" name="course" placeholder="Example: Accounting" required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="requestText">
-                            What do you need?
-                        </label>
-
-                        <textarea id="requestText" name="request"
-                            placeholder="Describe the learning material you are looking for..." required></textarea>
-
-                    </div>
-
-
-                    <button type="submit" class="btn btn-primary">
-                        📤 Send Resource Request
-                    </button>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     FAQ
-====================================================== -->
-
-    <section id="faq">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <h2>
-                    Frequently Asked Questions
-                </h2>
-
-                <p>
-                    Some common questions about Amigo Learning.
-                </p>
-
-            </div>
-
-
-            <div class="faq">
-
-
-                <div class="faq-item">
-
-                    <button class="faq-question" type="button">
-
-                        <span>
-                            Is Amigo Learning free?
-                        </span>
-
-                        <span>
-                            +
-                        </span>
-
-                    </button>
-
-                    <div class="faq-answer">
-
                         <p>
-
-                            Amigo Learning is being developed
-                            around the goal of making useful
-                            educational resources accessible to
-                            students.
-
+                            The long-term vision is an online self-learning academy with structured lessons, student
+                            progress tracking, certificates, and personal learning dashboards.
                         </p>
-
+                        <div class="hero-actions">
+                            <a class="btn btn-blue" href="#academy">See Future Academy</a>
+                            <a class="btn btn-soft" href="#contact">Contact Amigo</a>
+                        </div>
                     </div>
 
+                    <aside class="founder">
+                        <div class="small">Founder & Platform Initiator</div>
+                        <h3>John Marial Chol</h3>
+                        <p>Second-Year Student</p>
+                        <p>Bachelor of Arts in Business Administration</p>
+                        <p>Catholic University of South Sudan</p>
+                        <p>Rumbek Campus, South Sudan</p>
+                        <span class="badge">AMIGO LEARNING • 2026</span>
+                    </aside>
                 </div>
-
-
-                <div class="faq-item">
-
-                    <button class="faq-question" type="button">
-
-                        <span>
-                            Who is Amigo Learning for?
-                        </span>
-
-                        <span>
-                            +
-                        </span>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            The initial focus is on university
-                            and college students, with the
-                            possibility of expanding to other
-                            learners in the future.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="faq-item">
-
-                    <button class="faq-question" type="button">
-
-                        <span>
-                            Can students request materials?
-                        </span>
-
-                        <span>
-                            +
-                        </span>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            Yes. Students can use the resource
-                            request form to suggest materials
-                            they need.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="faq-item">
-
-                    <button class="faq-question" type="button">
-
-                        <span>
-                            Will Amigo Learning offer online courses?
-                        </span>
-
-                        <span>
-                            +
-                        </span>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            Yes. Structured self-learning lessons,
-                            quizzes, student accounts and progress
-                            tracking are part of the future direction
-                            of Amigo Learning.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="faq-item">
-
-                    <button class="faq-question" type="button">
-
-                        <span>
-                            Can students join the community?
-                        </span>
-
-                        <span>
-                            +
-                        </span>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            Yes. Students can join the official
-                            Amigo Learning WhatsApp study community
-                            using the invitation link.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
             </div>
+        </section>
 
-        </div>
+        <section class="section" id="courses">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Course Directory</span>
+                    <h2>Explore Subjects & Programmes</h2>
+                    <p>Browse educational focus areas designed for university, college, and self-learning students.</p>
+                </div>
 
-    </section>
+                <div class="course-filters" id="courseCategoryFilters">
+                    <button class="filter active" data-cat="all">All Categories</button>
+                    <button class="filter" data-cat="business">Business & Finance</button>
+                    <button class="filter" data-cat="stem">Tech & STEM</button>
+                    <button class="filter" data-cat="social">Social Sciences & Humanities</button>
+                </div>
 
-
-    <!-- =====================================================
-     CONTACT
-====================================================== -->
-
-    <section class="contact" id="contact">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <h2>
-                    📞 Contact Amigo Learning
-                </h2>
-
-                <p>
-
-                    Questions, suggestions, partnerships and
-                    learning-resource contributions are welcome.
-
-                </p>
-
+                <div class="course-grid" id="courseContainer">
+                    <!-- Dynamic rendering via JS -->
+                </div>
             </div>
+        </section>
 
-
-            <div class="contact-grid">
-
-
-                <div class="contact-card">
-
-                    <div class="contact-icon">
-                        📱
-                    </div>
-
-                    <h3>
-                        WhatsApp
-                    </h3>
-
-                    <br>
-
-                    <a href="https://wa.me/211927471234" target="_blank" rel="noopener">
-                        +211 927 471 234
-                    </a>
-
+        <!-- Course Pathway Section -->
+        <section class="section alt">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Structured Learning</span>
+                    <h2>Course Learning Pathway</h2>
+                    <p>How Amigo Learning structures your academic success step-by-step.</p>
                 </div>
 
-
-                <div class="contact-card">
-
-                    <div class="contact-icon">
-                        📧
+                <div class="pathway-flow">
+                    <div class="path-step">
+                        <div class="step-icon">1</div>
+                        <strong>COURSE</strong>
+                        <p style="font-size:12px;color:var(--muted)">Select Focus</p>
                     </div>
+                    <div class="path-arrow">→</div>
+                    <div class="path-step">
+                        <div class="step-icon">2</div>
+                        <strong>TOPIC</strong>
+                        <p style="font-size:12px;color:var(--muted)">Choose Module</p>
+                    </div>
+                    <div class="path-arrow">→</div>
+                    <div class="path-step">
+                        <div class="step-icon">3</div>
+                        <strong>NOTES</strong>
+                        <p style="font-size:12px;color:var(--muted)">Read Guide</p>
+                    </div>
+                    <div class="path-arrow">→</div>
+                    <div class="path-step">
+                        <div class="step-icon">4</div>
+                        <strong>VIDEO</strong>
+                        <p style="font-size:12px;color:var(--muted)">Watch Tutorial</p>
+                    </div>
+                    <div class="path-arrow">→</div>
+                    <div class="path-step">
+                        <div class="step-icon">5</div>
+                        <strong>QUIZ</strong>
+                        <p style="font-size:12px;color:var(--muted)">Test Knowledge</p>
+                    </div>
+                    <div class="path-arrow">→</div>
+                    <div class="path-step">
+                        <div class="step-icon">6</div>
+                        <strong>RESULT</strong>
+                        <p style="font-size:12px;color:var(--muted)">Review Feedback</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <h3>
-                        Email
-                    </h3>
-
-                    <br>
-
-                    <!-- Replace with your actual email -->
-
-                    <a href="mailto:amigo.learning.ss@email.com">
-                        amigo.learning.ss@email.com
-                    </a>
-
+        <section class="section" id="universities">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Higher Education</span>
+                    <h2>Universities in South Sudan</h2>
+                    <p>Discover recognized higher institutions and explore verified academic programmes.</p>
                 </div>
 
+                <div class="univ-grid">
+                    <article class="univ-card">
+                        <h3>University of Juba</h3>
+                        <div class="loc">📍 Juba, South Sudan</div>
+                        <p><strong>Colleges:</strong> Business, Law, Medicine, Engineering, Computer Science, Social
+                            Studies.</p>
+                        <ul>
+                            <li>B.Sc. Accounting & Finance</li>
+                            <li>LL.B. Bachelor of Laws</li>
+                            <li>B.Sc. Computer Science</li>
+                        </ul>
+                        <a href="https://www.uj.edu.ss" target="_blank" rel="noopener" class="link">Official Website
+                            →</a>
+                        <div class="v-date">Verified: August 2026</div>
+                    </article>
 
-                <div class="contact-card">
+                    <article class="univ-card">
+                        <h3>Catholic University of South Sudan</h3>
+                        <div class="loc">📍 Juba, Rumbek, Wau Campuses</div>
+                        <p><strong>Faculties:</strong> Arts & Social Sciences, Business Administration, Education,
+                            Economics.</p>
+                        <ul>
+                            <li>B.A. Business Administration</li>
+                            <li>B.A. Economics</li>
+                            <li>Bachelor of Education</li>
+                        </ul>
+                        <a href="https://www.clujuba.org" target="_blank" rel="noopener" class="link">Official Source
+                            →</a>
+                        <div class="v-date">Verified: August 2026</div>
+                    </article>
 
-                    <div class="contact-icon">
-                        🇸🇸
+                    <article class="univ-card">
+                        <h3>Rumbek University of Science & Tech.</h3>
+                        <div class="loc">📍 Rumbek, Lakes State</div>
+                        <p><strong>Faculties:</strong> Education, Agriculture, Computer Science, Economics.</p>
+                        <ul>
+                            <li>B.Sc. Agriculture</li>
+                            <li>B.Sc. Computer Science</li>
+                            <li>B.Ed. Science & Arts</li>
+                        </ul>
+                        <span class="link" style="color:var(--muted)">Verified Official Source</span>
+                        <div class="v-date">Verified: August 2026</div>
+                    </article>
+
+                    <article class="univ-card">
+                        <h3>University of Bahr El Ghazal</h3>
+                        <div class="loc">📍 Wau, South Sudan</div>
+                        <p><strong>Colleges:</strong> Medicine, Education, Veterinary Sciences, Economics.</p>
+                        <ul>
+                            <li>MBBS Medicine & Surgery</li>
+                            <li>B.Sc. Economics & Business</li>
+                        </ul>
+                        <span class="link" style="color:var(--muted)">Verified Official Source</span>
+                        <div class="v-date">Verified: August 2026</div>
+                    </article>
+
+                    <article class="univ-card">
+                        <h3>Upper Nile University</h3>
+                        <div class="loc">📍 Malakal / Juba Campus</div>
+                        <p><strong>Colleges:</strong> Animal Production, Forestry, Education, Public Health.</p>
+                        <ul>
+                            <li>B.Sc. Public Health</li>
+                            <li>B.Sc. Agriculture</li>
+                        </ul>
+                        <span class="link" style="color:var(--muted)">Verified Official Source</span>
+                        <div class="v-date">Verified: August 2026</div>
+                    </article>
+
+                    <article class="univ-card">
+                        <h3>Dr. John Garang Memorial University</h3>
+                        <div class="loc">📍 Bor, Jonglei State</div>
+                        <p><strong>Colleges:</strong> Law, Environmental Studies, Agriculture, Management.</p>
+                        <ul>
+                            <li>B.Sc. Environmental Studies</li>
+                            <li>B.A. Management Studies</li>
+                        </ul>
+                        <span class="link" style="color:var(--muted)">Verified Official Source</span>
+                        <div class="v-date">Verified: August 2026</div>
+                    </article>
+                </div>
+
+                <div class="dir-box">
+                    <h3>Find Your University Course</h3>
+                    <p style="font-size:13px;color:var(--muted);margin-bottom:15px">Cross-reference verified programmes
+                        with Amigo Learning resources.</p>
+                    <div class="dir-controls">
+                        <input type="text" id="dirSearch" placeholder="Filter Programme or Subject..." class="field">
+                        <select id="dirUniv" class="field">
+                            <option value="all">All Universities</option>
+                            <option value="Juba">University of Juba</option>
+                            <option value="Catholic">Catholic University</option>
+                            <option value="Rumbek">Rumbek University</option>
+                        </select>
+                        <select id="dirDegree" class="field">
+                            <option value="all">All Degree Levels</option>
+                            <option value="Bachelor">Bachelor Degree</option>
+                            <option value="Diploma">Diploma</option>
+                        </select>
+                    </div>
+                    <div class="dir-table-wrap">
+                        <table class="dir-table">
+                            <thead>
+                                <tr>
+                                    <th>Programme</th>
+                                    <th>University</th>
+                                    <th>Degree Level</th>
+                                    <th>Duration</th>
+                                    <th>Amigo Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dirTableBody">
+                                <tr>
+                                    <td>Business Administration</td>
+                                    <td>Catholic University of South Sudan</td>
+                                    <td>Bachelor (4 Yrs)</td>
+                                    <td>Verified</td>
+                                    <td><span class="eyebrow" style="padding:2px 6px;font-size:10px">Notes & Quizzes
+                                            Ready</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Accounting & Finance</td>
+                                    <td>University of Juba</td>
+                                    <td>Bachelor (4 Yrs)</td>
+                                    <td>Verified</td>
+                                    <td><span class="eyebrow" style="padding:2px 6px;font-size:10px">Notes & Quizzes
+                                            Ready</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Computer Science</td>
+                                    <td>Rumbek University of Science & Tech.</td>
+                                    <td>Bachelor (4 Yrs)</td>
+                                    <td>Verified</td>
+                                    <td><span class="eyebrow" style="padding:2px 6px;font-size:10px">Videos & Quizzes
+                                            Ready</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Economics</td>
+                                    <td>Catholic University of South Sudan</td>
+                                    <td>Bachelor (4 Yrs)</td>
+                                    <td>Verified</td>
+                                    <td><span class="eyebrow" style="padding:2px 6px;font-size:10px">Notes & Quizzes
+                                            Ready</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Agriculture & Environmental Studies</td>
+                                    <td>Dr. John Garang Memorial University</td>
+                                    <td>Bachelor (4 Yrs)</td>
+                                    <td>Verified</td>
+                                    <td><span style="font-size:11px;color:var(--muted)">Materials coming soon</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt" id="resources">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Resource Library</span>
+                    <h2>Study Smarter with Organized Materials</h2>
+                    <p>Filter or search through downloadable notes, revision guides, and past papers.</p>
+                </div>
+
+                <div class="library-toolbar">
+                    <div class="count" id="resultCount">Showing all resources</div>
+                    <div class="filters" id="resourceFilters">
+                        <button class="filter active" data-filter="all">All</button>
+                        <button class="filter" data-filter="accounting">Accounting</button>
+                        <button class="filter" data-filter="economics">Economics</button>
+                        <button class="filter" data-filter="computing">Computing</button>
+                        <button class="filter" data-filter="communication">Communication</button>
+                    </div>
+                </div>
+
+                <div class="resources" id="resourceGrid">
+                    <article class="resource" data-subject="accounting">
+                        <div class="resource-top"><span class="resource-type">ACCOUNTING</span><span>PDF/ZIP</span>
+                        </div>
+                        <h3>Accounting Past Paper</h3>
+                        <p>Examination preparation and revision.</p>
+                        <a class="btn btn-soft download" href="Course-Materials.zip" download>⬇ Download File</a>
+                    </article>
+
+                    <article class="resource" data-subject="accounting">
+                        <div class="resource-top"><span class="resource-type">ACCOUNTING</span><span>NOTES</span></div>
+                        <h3>Student Accounting Notes</h3>
+                        <p>Core accounting study notes.</p>
+                        <a class="btn btn-soft download" href="Course-Materials.zip" download>⬇ Download File</a>
+                    </article>
+
+                    <article class="resource" data-subject="accounting">
+                        <div class="resource-top"><span class="resource-type">ACCOUNTING</span><span>TEST</span></div>
+                        <h3>Accounting Revision Test</h3>
+                        <p>Revision and practice questions.</p>
+                        <a class="btn btn-soft download" href="Course-Materials.zip" download>⬇ Download File</a>
+                    </article>
+
+                    <article class="resource" data-subject="economics">
+                        <div class="resource-top"><span class="resource-type">ECONOMICS</span><span>NOTES</span></div>
+                        <h3>Comprehensive Economics Notes</h3>
+                        <p>Economics study and revision notes.</p>
+                        <a class="btn btn-soft download" href="Course-Materials.zip" download>⬇ Download File</a>
+                    </article>
+
+                    <article class="resource" data-subject="economics">
+                        <div class="resource-top"><span class="resource-type">ECONOMICS</span><span>ANSWERS</span></div>
+                        <h3>Economics Q&A Guide</h3>
+                        <p>Questions and answers for examination preparation.</p>
+                        <a class="btn btn-soft download" href="Course-Materials.zip" download>⬇ Download File</a>
+                    </article>
+
+                    <article class="resource" data-subject="economics">
+                        <div class="resource-top"><span class="resource-type">ECONOMICS</span><span>MCQ</span></div>
+                        <h3>Principles of Economics MCQs</h3>
+                        <p>Multiple-choice revision questions.</p>
+                        <a class="btn btn-soft download" href="Course-Materials.zip" download>⬇ Download File</a>
+                    </article>
+
+                    <article class="resource" data-subject="computing">
+                        <div class="resource-top"><span class="resource-type">COMPUTING</span><span>STUDY</span></div>
+                        <h3>Business Computing Fundamentals</h3>
+                        <p>Business computing learning materials.</p>
+                        <a class="btn btn-soft download" href="Course-Materials.zip" download>⬇ Download File</a>
+                    </article>
+
+                    <article class="resource" data-subject="communication">
+                        <div class="resource-top"><span class="resource-type">COMMUNICATION</span><span>PAST
+                                PAPER</span></div>
+                        <h3>Communication Skills Past Paper</h3>
+                        <p>Examination preparation resource.</p>
+                        <a class="btn btn-soft download" href="Course-Materials.zip" download>⬇ Download File</a>
+                    </article>
+
+                    <article class="resource" data-subject="communication">
+                        <div class="resource-top"><span class="resource-type">COMMUNICATION</span><span>NOTES</span>
+                        </div>
+                        <h3>Comprehensive Communication Notes</h3>
+                        <p>Communication learning resources.</p>
+                        <a class="btn btn-soft download" href="Course-Materials.zip" download>⬇ Download File</a>
+                    </article>
+
+                    <!-- Placeholder entries for expansion -->
+                    <article class="resource" data-subject="law">
+                        <div class="resource-top"><span class="resource-type">LAW</span><span>PLACEHOLDER</span></div>
+                        <h3>Introduction to South Sudan Legal Systems</h3>
+                        <p>Core study materials being organized.</p>
+                        <button class="btn btn-soft" disabled style="opacity:0.6;cursor:not-allowed">Materials coming
+                            soon</button>
+                    </article>
+
+                    <article class="resource" data-subject="agriculture">
+                        <div class="resource-top"><span class="resource-type">AGRICULTURE</span><span>PLACEHOLDER</span>
+                        </div>
+                        <h3>Sustainable Agricultural Methods</h3>
+                        <p>Lecture outlines coming soon.</p>
+                        <button class="btn btn-soft" disabled style="opacity:0.6;cursor:not-allowed">Materials coming
+                            soon</button>
+                    </article>
+                </div>
+
+                <div style="margin-top:25px;text-align:center">
+                    <a class="btn btn-primary" href="Course-Materials.zip" download>📦 Download Current Resource
+                        Pack</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="videos">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Video Learning Hub</span>
+                    <h2>Curated Video Tutorials</h2>
+                    <p>Search and watch educational video lessons organized by subject area.</p>
+                </div>
+
+                <div class="search" style="max-width:500px;margin:0 auto 30px">
+                    <input type="search" id="videoSearch" placeholder="Search videos: Excel, Accounting, Python..."
+                        class="field">
+                </div>
+
+                <div class="video-grid" id="videoContainer">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt" id="quizzes">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Interactive Assessment</span>
+                    <h2>Interactive Quiz System</h2>
+                    <p>Test your knowledge with self-correcting quizzes that teach you as you learn.</p>
+                </div>
+
+                <div class="quiz-container" id="quizApp">
+                    <div id="quizSelector">
+                        <h3 style="margin-bottom:15px;color:var(--navy)">Select a Subject Quiz</h3>
+                        <div
+                            style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px">
+                            <button class="btn btn-soft" onclick="startQuiz('accounting')">Accounting (10 Qs)</button>
+                            <button class="btn btn-soft" onclick="startQuiz('economics')">Economics (10 Qs)</button>
+                            <button class="btn btn-soft" onclick="startQuiz('business')">Business Admin (10 Qs)</button>
+                            <button class="btn btn-soft" onclick="startQuiz('computing')">Business Computing (10
+                                Qs)</button>
+                        </div>
+                        <div style="text-align:center;margin-top:10px">
+                            <button class="btn btn-blue" onclick="startRandomQuiz()">🔀 Start Random Quiz (All
+                                Topics)</button>
+                        </div>
                     </div>
 
-                    <h3>
-                        Location
-                    </h3>
+                    <div id="quizActive" style="display:none">
+                        <div class="quiz-header">
+                            <div>
+                                <span id="quizSubjectBadge" class="eyebrow">Subject</span>
+                                <h4 id="quizProgressText" style="margin-top:5px;color:var(--navy)">Question 1 of 10</h4>
+                            </div>
+                            <div>
+                                <strong>Score: <span id="quizLiveScore">0</span></strong>
+                            </div>
+                        </div>
 
-                    <br>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" id="quizProgressBar"></div>
+                        </div>
 
+                        <h3 id="quizQuestionText" style="margin-bottom:15px;color:var(--navy)">Question text goes
+                            here...</h3>
+
+                        <div class="quiz-options" id="quizOptionsContainer">
+                            <!-- Option Buttons -->
+                        </div>
+
+                        <div class="feedback-box" id="quizFeedback">
+                            <h4 id="feedbackTitle"></h4>
+                            <p id="feedbackExplanation" style="margin-top:5px;font-size:14px"></p>
+                        </div>
+
+                        <div style="display:flex;justify-content:space-between;margin-top:20px">
+                            <button class="btn btn-outline" style="color:var(--navy);border-color:var(--line)"
+                                onclick="resetQuizView()">Quit Quiz</button>
+                            <button class="btn btn-blue" id="quizNextBtn" onclick="nextQuestion()"
+                                style="display:none">Next Question →</button>
+                        </div>
+                    </div>
+
+                    <div id="quizResult" style="display:none;text-align:center">
+                        <span class="eyebrow">QUIZ COMPLETED</span>
+                        <h2 style="margin:15px 0;color:var(--navy)" id="resultScoreText">Your Score: 80%</h2>
+                        <p id="resultPerformanceText" style="font-weight:700;margin-bottom:20px;color:var(--muted)">
+                            Performance: GOOD</p>
+
+                        <div style="text-align:left;margin:25px 0;max-height:300px;overflow-y:auto"
+                            id="quizReviewContainer">
+                            <!-- Incorrect items review -->
+                        </div>
+
+                        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+                            <button class="btn btn-blue" onclick="retryCurrentQuiz()">Retry Quiz</button>
+                            <button class="btn btn-soft" onclick="resetQuizView()">Choose Another Quiz</button>
+                            <a class="btn btn-primary" href="#courses">Back to Courses</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section future" id="academy">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow" style="background:rgba(255,255,255,.10);color:#fff">AMIGO ONLINE
+                        ACADEMY</span>
+                    <h2>COMING SOON</h2>
+                    <p>Today's resource platform will expand into a full digital self-learning environment.</p>
+                </div>
+
+                <div class="future-grid">
+                    <article class="future-card">
+                        <h3>📖 Structured Lessons</h3>
+                        <p>Follow organized, step-by-step online lessons at your own learning pace.</p><span
+                            class="future-label">PLANNED</span>
+                    </article>
+                    <article class="future-card">
+                        <h3>📝 Assessment Engine</h3>
+                        <p>Interactive exercises and automated assignments to validate subject mastery.</p><span
+                            class="future-label">PLANNED</span>
+                    </article>
+                    <article class="future-card">
+                        <h3>📊 Learning Dashboards</h3>
+                        <p>Personal student accounts with real-time score analytics and lesson completed indicators.</p>
+                        <span class="future-label">PLANNED</span>
+                    </article>
+                    <article class="future-card">
+                        <h3>🎥 Video Courses</h3>
+                        <p>Original video tutorials paired with interactive downloadable worksheets.</p><span
+                            class="future-label">PLANNED</span>
+                    </article>
+                    <article class="future-card">
+                        <h3>🏆 Completion Certificates</h3>
+                        <p>Verified digital completion certificates upon passing course modules.</p><span
+                            class="future-label">FUTURE</span>
+                    </article>
+                    <article class="future-card">
+                        <h3>👨‍🎓 Student Accounts</h3>
+                        <p>Personalized student login accounts to save study progress and bookmarked notes.</p><span
+                            class="future-label">FUTURE</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="dashboard">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Interactive Demo</span>
+                    <h2>Platform Dashboards</h2>
+                    <p>Preview the upcoming personalized experience for both students and platform administrators.</p>
+                </div>
+
+                <div style="display:flex;gap:10px;justify-content:center;margin-bottom:25px">
+                    <button class="filter active" onclick="switchDash('student')" id="btnDashStudent">DEMO STUDENT
+                        DASHBOARD</button>
+                    <button class="filter" onclick="switchDash('admin')" id="btnDashAdmin">DEMO ADMIN DASHBOARD</button>
+                </div>
+
+                <div class="dash-card" id="studentDashboard">
+                    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+                        <div>
+                            <span class="eyebrow">DEMO DASHBOARD</span>
+                            <h3 style="color:var(--navy);margin-top:5px">Welcome back, Student!</h3>
+                        </div>
+                        <span class="meta-pill" style="background:var(--sky);color:var(--blue)">Status: Active
+                            Student</span>
+                    </div>
+
+                    <div class="dash-grid">
+                        <div class="dash-stat"><b>5</b><span>Courses Started</span></div>
+                        <div class="dash-stat"><b>12</b><span>Lessons Completed</span></div>
+                        <div class="dash-stat"><b>78%</b><span>Quiz Average</span></div>
+                        <div class="dash-stat"><b>24</b><span>Resources Viewed</span></div>
+                    </div>
+
+                    <h4 style="color:var(--navy);margin-bottom:10px">Recent Quiz Activity</h4>
+                    <ul style="list-style:none;font-size:13px;color:var(--muted);margin-bottom:20px">
+                        <li style="padding:8px 0;border-bottom:1px solid var(--line)">✓ Accounting Fundamentals Quiz —
+                            <strong style="color:var(--green)">80%</strong></li>
+                        <li style="padding:8px 0;border-bottom:1px solid var(--line)">✓ Principles of Microeconomics —
+                            <strong style="color:var(--blue)">70%</strong></li>
+                        <li style="padding:8px 0;">✓ Business Computing Practical — <strong
+                                style="color:var(--green)">90%</strong></li>
+                    </ul>
+
+                    <h4 style="color:var(--navy);margin-bottom:10px">Recommended Learning</h4>
+                    <div style="display:flex;gap:10px;flex-wrap:wrap">
+                        <a href="#quizzes" onclick="startQuiz('accounting')" class="btn btn-soft"
+                            style="font-size:12px;padding:8px 12px">Practice Accounting</a>
+                        <a href="#resources" class="btn btn-soft" style="font-size:12px;padding:8px 12px">View Economics
+                            Notes</a>
+                    </div>
+                </div>
+
+                <div class="dash-card" id="adminDashboard" style="display:none">
+                    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+                        <div>
+                            <span class="eyebrow" style="background:#fde8e8;color:var(--danger)">DEMO ADMIN
+                                DASHBOARD</span>
+                            <h3 style="color:var(--navy);margin-top:5px">Amigo System Management</h3>
+                        </div>
+                        <span class="meta-pill" style="background:#e8f8f0;color:var(--green2)">Backend Ready
+                            Structure</span>
+                    </div>
+
+                    <div class="dash-grid">
+                        <div class="dash-stat"><b>1,240</b><span>Total Students</span></div>
+                        <div class="dash-stat"><b>20</b><span>Total Courses</span></div>
+                        <div class="dash-stat"><b>11</b><span>Resource Files</span></div>
+                        <div class="dash-stat"><b>40</b><span>Quiz Questions</span></div>
+                    </div>
+
+                    <h4 style="color:var(--navy);margin-bottom:10px">Admin Controls Overview</h4>
+                    <div
+                        style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;font-size:12px">
+                        <div style="background:var(--bg);padding:12px;border-radius:8px;border:1px solid var(--line)">
+                            Manage Courses</div>
+                        <div style="background:var(--bg);padding:12px;border-radius:8px;border:1px solid var(--line)">
+                            Manage Universities</div>
+                        <div style="background:var(--bg);padding:12px;border-radius:8px;border:1px solid var(--line)">
+                            Manage Resources</div>
+                        <div style="background:var(--bg);padding:12px;border-radius:8px;border:1px solid var(--line)">
+                            Manage Videos</div>
+                        <div style="background:var(--bg);padding:12px;border-radius:8px;border:1px solid var(--line)">
+                            Manage Quizzes</div>
+                        <div style="background:var(--bg);padding:12px;border-radius:8px;border:1px solid var(--line)">
+                            Manage Students</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt" id="community">
+            <div class="container">
+                <div class="community-box">
+                    <span class="eyebrow">AMIGO STUDY COMMUNITY</span>
+                    <h2>Connect & Succeed Together</h2>
                     <p>
-                        South Sudan
+                        Join our student study network to participate in academic discussions, access peer study groups,
+                        share revision notes, receive real-time announcements, and motivate fellow learners across South
+                        Sudan.
                     </p>
+                    <div class="community-actions">
+                        <a class="btn whatsapp" target="_blank" rel="noopener"
+                            href="https://chat.whatsapp.com/ADD_REAL_WHATSAPP_GROUP_LINK">📱 Join WhatsApp Study
+                            Group</a>
+                        <a class="btn btn-blue" href="#request">📝 Request Study Material</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="section" id="request">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Student Support</span>
+                    <h2>Request a Learning Resource</h2>
+                    <p>Tell Amigo Learning what materials or subject guides you need next.</p>
                 </div>
 
+                <div class="form-wrap">
+                    <aside class="info-panel">
+                        <h3>Help Us Expand Amigo</h3>
+                        <p>
+                            Your direct feedback guides our content priorities. Tell us what past papers, notes, or
+                            video tutorials you require for your university courses.
+                        </p>
+                        <ul class="info-list">
+                            <li>✓ Specify course or subject title</li>
+                            <li>✓ Detail exact notes or exam years needed</li>
+                            <li>✓ Include institution or campus details</li>
+                        </ul>
+                    </aside>
+
+                    <form class="form" id="requestForm">
+                        <div class="form-grid">
+                            <div class="field"><label for="name">Your Name</label><input id="name" name="name" required
+                                    placeholder="Full Name"></div>
+                            <div class="field"><label for="institution">University / Institution</label><input
+                                    id="institution" name="institution" placeholder="e.g. Catholic University"></div>
+                            <div class="field"><label for="subject">Subject / Course</label><input id="subject"
+                                    name="subject" required placeholder="e.g. Financial Accounting"></div>
+                            <div class="field"><label for="email">Your Email</label><input id="email" name="email"
+                                    type="email" placeholder="student@example.com"></div>
+                            <div class="field full"><label for="message">What specific material do you
+                                    need?</label><textarea id="message" name="message" required
+                                    placeholder="Describe requested notes, past papers, or topics..."></textarea></div>
+                            <div class="field full"><button class="btn btn-primary" type="submit">📤 Prepare Resource
+                                    Request</button></div>
+                        </div>
+                    </form>
+                </div>
             </div>
+        </section>
 
-        </div>
+        <section class="section alt" id="faq">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">FAQ</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Answers to common questions about Amigo Learning platform features.</p>
+                </div>
 
-    </section>
+                <div class="faq">
+                    <div class="faq-item">
+                        <button class="faq-q">What is Amigo Learning? <span>＋</span></button>
+                        <div class="faq-a">Amigo Learning is a student-centered digital learning hub founded in South
+                            Sudan on 14 August 2026 to make university courses, notes, video lessons, and interactive
+                            quizzes accessible to all learners.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Who is Amigo Learning for? <span>＋</span></button>
+                        <div class="faq-a">The platform is designed primarily for South Sudanese university and college
+                            students, academic candidates, and self-directed independent learners.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Are the learning resources free? <span>＋</span></button>
+                        <div class="faq-a">Yes. Core study notes, past papers, video guides, and practice quizzes
+                            provided on Amigo Learning are freely accessible.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">How can I access course notes? <span>＋</span></button>
+                        <div class="faq-a">Navigate to the Resource Library section to filter or search for available
+                            subject files, then click the download button.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">How can I join the study community? <span>＋</span></button>
+                        <div class="faq-a">Click any "Join WhatsApp Study Group" button on the website to connect with
+                            peer learning groups and study forums.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">When will online self-learning courses launch? <span>＋</span></button>
+                        <div class="faq-a">The Amigo Online Academy is currently in active development. Structured
+                            learning paths and certification modules will roll out progressively.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">How can I contribute materials or suggest a resource?
+                            <span>＋</span></button>
+                        <div class="faq-a">Use the "Request a Learning Resource" form on this page to suggest subjects
+                            or submit academic materials to share with fellow students.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Get in Touch</span>
+                    <h2>Contact Amigo Learning</h2>
+                    <p>Connect directly with the platform development team.</p>
+                </div>
 
-    <!-- =====================================================
-     FOOTER
-====================================================== -->
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="icon">📱</div>
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/ADD_REAL_WHATSAPP_NUMBER" target="_blank" rel="noopener">[ADD REAL
+                                WHATSAPP NUMBER]</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">📧</div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:ADD_REAL_EMAIL">[ADD REAL EMAIL]</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">📺</div>
+                        <h3>YouTube</h3>
+                        <p><a href="https://www.youtube.com/ADD_REAL_YOUTUBE_CHANNEL" target="_blank"
+                                rel="noopener">[ADD REAL YOUTUBE CHANNEL]</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer>
-
         <div class="container">
-
             <div class="footer-grid">
-
-
                 <div>
-
-                    <h3>
-                        📚 Amigo Learning
-                    </h3>
-
-                    <p>
-
-                        A growing student learning and knowledge
-                        community platform founded in South Sudan.
-
+                    <div class="footer-brand">Amigo Learning</div>
+                    <p style="margin-top:10px">
+                        A growing student learning, resource and knowledge-sharing platform founded in South Sudan.
                     </p>
-
-                    <br>
-
-                    <p>
-
-                        <strong>
-                            Founded:
-                        </strong>
-
-                        14 August 2026
-
-                    </p>
-
-                    <p>
-
-                        <strong>
-                            Founder:
-                        </strong>
-
-                        John Marial Chol
-
-                    </p>
-
+                    <p style="margin-top:10px;font-weight:700;color:var(--gold)">Learn • Connect • Grow • Succeed</p>
                 </div>
-
-
                 <div>
-
-                    <h3>
-                        Platform
-                    </h3>
-
+                    <h3>Quick Links</h3>
                     <ul>
-
-                        <li>
-                            <a href="#about">
-                                About
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#courses">
-                                Courses
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#materials">
-                                Resources
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#learning">
-                                Self-Learning
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#videos">
-                                Videos
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#community">
-                                Community
-                            </a>
-                        </li>
-
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#universities">Universities</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#videos">Videos</a></li>
                     </ul>
-
                 </div>
-
-
                 <div>
-
-                    <h3>
-                        Contact
-                    </h3>
-
+                    <h3>Interactive</h3>
                     <ul>
-
-                        <li>
-                            📱 +211 927 471 234
-                        </li>
-
-                        <li>
-                            📧 amigo.learning.ss@email.com
-                        </li>
-
-                        <li>
-                            🇸🇸 South Sudan
-                        </li>
-
+                        <li><a href="#quizzes">Quizzes</a></li>
+                        <li><a href="#academy">Future Academy</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
-
                 </div>
-
+                <div>
+                    <h3>Founder Details</h3>
+                    <ul>
+                        <li style="color:#fff;font-weight:700">John Marial Chol</li>
+                        <li>2nd-Year BA Business Admin</li>
+                        <li>Catholic University of South Sudan</li>
+                        <li>Rumbek Campus</li>
+                    </ul>
+                </div>
             </div>
-
-
             <div class="copyright">
-
-                <p>
-                    © 2026 Amigo Learning.
-                    All Rights Reserved.
-                </p>
-
-                <p>
-                    Learn • Connect • Grow • Succeed
-                </p>
-
+                <span>© 2026 Amigo Learning. All rights reserved.</span>
+                <span>Founded 14 August 2026 • South Sudan</span>
             </div>
-
         </div>
-
     </footer>
 
-
-    <!-- =====================================================
-     FLOATING WHATSAPP BUTTON
-====================================================== -->
-
-    <a href="https://wa.me/211927471234?text=Hello%20Amigo%20Learning!" target="_blank" rel="noopener"
-        class="floating-whatsapp" aria-label="Chat with Amigo Learning on WhatsApp" title="Chat with Amigo Learning">
-        💬
-    </a>
-
-
-    <!-- =====================================================
-     JAVASCRIPT
-====================================================== -->
+    <a class="float-wa" target="_blank" rel="noopener" href="https://chat.whatsapp.com/ADD_REAL_WHATSAPP_GROUP_LINK"
+        aria-label="Amigo Learning WhatsApp community" title="WhatsApp Community">💬</a>
 
     <script>
+        /* Mobile Navigation Toggle */
+        const menuBtn = document.getElementById('menuBtn');
+        const nav = document.getElementById('nav');
 
-        /* =====================================================
-           MOBILE MENU
-        ====================================================== */
+        menuBtn.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('open');
+            menuBtn.setAttribute('aria-expanded', isOpen);
+            menuBtn.textContent = isOpen ? '✕' : '☰';
+        });
 
-        const menuButton =
-            document.getElementById("menuButton");
+        document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => {
+            nav.classList.remove('open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.textContent = '☰';
+        }));
 
-        const navLinks =
-            document.getElementById("navLinks");
+        /* Course System Data */
+        const coursesData = [
+            { name: "Business Administration", cat: "business", desc: "Management principles, strategic planning, organizational behaviour.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
+            { name: "Accounting & Finance", cat: "business", desc: "Financial accounting, double-entry ledger, balance sheets, auditing.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
+            { name: "Economics", cat: "business", desc: "Microeconomics, macroeconomics, supply and demand models, market policy.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
+            { name: "Education", cat: "social", desc: "Pedagogy, curriculum development, instructional design, assessment.", level: "Degree", mat: "Pending", vid: "Ready", quiz: "Pending" },
+            { name: "Computer Science", cat: "stem", desc: "Programming, algorithms, data structures, software engineering.", level: "Degree / Diploma", mat: "Pending", vid: "Ready", quiz: "Ready" },
+            { name: "Information Technology", cat: "stem", desc: "Networking fundamentals, database design, hardware setup, security.", level: "Degree / Diploma", mat: "Pending", vid: "Ready", quiz: "Ready" },
+            { name: "Agriculture", cat: "stem", desc: "Crop science, soil management, sustainable agribusiness practices.", level: "Degree / Diploma", mat: "Pending", vid: "Pending", quiz: "Pending" },
+            { name: "Development Studies", cat: "social", desc: "Community development, economic policy, sustainable development goals.", level: "Degree", mat: "Pending", vid: "Ready", quiz: "Pending" },
+            { name: "Communication Skills", cat: "social", desc: "Academic writing, public speaking, business correspondence.", level: "All Levels", mat: "Ready", vid: "Ready", quiz: "Ready" },
+            { name: "Social Sciences", cat: "social", desc: "Sociology, political science, community research methodologies.", level: "Degree", mat: "Pending", vid: "Pending", quiz: "Pending" },
+            { name: "Law", cat: "social", desc: "Constitutional law, legal research, jurisprudence, commercial law.", level: "Degree", mat: "Pending", vid: "Ready", quiz: "Pending" },
+            { name: "Health & Medicine", cat: "stem", desc: "Public health, epidemiology, basic clinical science fundamentals.", level: "Degree", mat: "Pending", vid: "Pending", quiz: "Pending" },
+            { name: "Mathematics & Statistics", cat: "stem", desc: "Algebra, calculus, probability distributions, statistical analysis.", level: "All Levels", mat: "Pending", vid: "Ready", quiz: "Pending" },
+            { name: "Entrepreneurship", cat: "business", desc: "Business modeling, venture startup, pitch presentation, innovation.", level: "All Levels", mat: "Pending", vid: "Ready", quiz: "Pending" },
+            { name: "Procurement & Logistics", cat: "business", desc: "Supply chain management, inventory control, purchasing ethics.", level: "Diploma / Degree", mat: "Pending", vid: "Pending", quiz: "Pending" },
+            { name: "Public Administration", cat: "business", desc: "Governance models, public finance management, civic policy.", level: "Degree", mat: "Pending", vid: "Pending", quiz: "Pending" }
+        ];
 
+        function renderCourses(category = "all") {
+            const container = document.getElementById('courseContainer');
+            container.innerHTML = "";
+            coursesData.forEach(c => {
+                if (category !== "all" && c.cat !== category) return;
+                const card = document.createElement('article');
+                card.className = "course";
+                card.innerHTML = `
+            <div>
+                <div class="cat-tag">${c.cat}</div>
+                <h3>${c.name}</h3>
+                <p>${c.desc}</p>
+                <div class="course-meta">
+                    <span class="meta-pill">Level: ${c.level}</span>
+                    <span class="meta-pill">Notes: ${c.mat}</span>
+                    <span class="meta-pill">Quiz: ${c.quiz}</span>
+                </div>
+            </div>
+            <a href="#resources" onclick="filterResourceByCourse('${c.name.toLowerCase()}')" class="btn btn-soft" style="font-size:12px;width:100%">Explore Course →</a>
+        `;
+                container.appendChild(card);
+            });
+        }
+        renderCourses();
 
-        menuButton.addEventListener(
-            "click",
-            function () {
+        document.querySelectorAll('#courseCategoryFilters button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#courseCategoryFilters button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderCourses(btn.dataset.cat);
+            });
+        });
 
-                navLinks.classList.toggle("active");
+        /* Videos Data & Search */
+        const videosData = [
+            { title: "Financial Accounting Fundamentals", subject: "Accounting", level: "Beginner", desc: "Learn debit, credit, journal entries, and balance sheets.", url: "https://www.youtube.com/results?search_query=financial+accounting+basics" },
+            { title: "Principles of Microeconomics", subject: "Economics", level: "Intermediate", desc: "Understanding supply, demand, elasticity, and market structures.", url: "https://www.youtube.com/results?search_query=microeconomics+lecture" },
+            { title: "Business Computing & Excel", subject: "Computing", level: "All Levels", desc: "Practical formulas, spreadsheet design, and business tools.", url: "https://www.youtube.com/results?search_query=excel+for+business+beginners" },
+            { title: "Python Programming Basics", subject: "Computer Science", level: "Beginner", desc: "Variables, loops, and logic structure in Python.", url: "https://www.youtube.com/results?search_query=python+for+beginners+tutorial" },
+            { title: "Academic Communication & Writing", subject: "Communication", level: "All Levels", desc: "Structuring essays, business letters, and presentations.", url: "https://www.youtube.com/results?search_query=academic+writing+skills" },
+            { title: "Introduction to Business Management", subject: "Business", level: "Beginner", desc: "Core concepts of strategic planning and leadership.", url: "https://www.youtube.com/results?search_query=business+management+lecture" }
+        ];
 
-                if (
-                    navLinks.classList.contains("active")
-                ) {
-
-                    menuButton.innerHTML = "✕";
-
-                } else {
-
-                    menuButton.innerHTML = "☰";
-
-                }
-
+        function renderVideos(term = "") {
+            const container = document.getElementById('videoContainer');
+            container.innerHTML = "";
+            const filtered = videosData.filter(v =>
+                !term || v.title.toLowerCase().includes(term) || v.subject.toLowerCase().includes(term) || v.desc.toLowerCase().includes(term)
+            );
+            if (filtered.length === 0) {
+                container.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:30px;color:var(--muted)">No video topics match "${term}". Try searching "Accounting" or "Excel".</div>`;
+                return;
             }
-        );
+            filtered.forEach(v => {
+                const card = document.createElement('article');
+                card.className = "video";
+                card.innerHTML = `
+            <div class="video-cover">▶</div>
+            <div class="video-body">
+                <span class="eyebrow" style="padding:2px 8px;font-size:10px;margin-bottom:8px;width:max-content">${v.subject} • ${v.level}</span>
+                <h3>${v.title}</h3>
+                <p>${v.desc}</p>
+                <a class="btn btn-soft" target="_blank" rel="noopener" href="${v.url}">[ADD YOUTUBE VIDEO LINK]</a>
+            </div>
+        `;
+                container.appendChild(card);
+            });
+        }
+        renderVideos();
 
+        document.getElementById('videoSearch').addEventListener('input', (e) => {
+            renderVideos(e.target.value.toLowerCase().trim());
+        });
 
-        /* Close mobile menu when a link is clicked */
+        /* Comprehensive Quiz System */
+        const quizzes = {
+            accounting: [
+                { question: "What is the primary purpose of financial accounting?", options: ["To manage company employees", "To record and report financial transactions accurately", "To design software applications", "To conduct product marketing"], answer: 1, explanation: "Financial accounting focuses on systematically recording, summarizing, and reporting financial transactions to provide an accurate overview of a business." },
+                { question: "Which equation represents the basic accounting balance sheet formula?", options: ["Assets = Liabilities + Equity", "Assets = Liabilities - Equity", "Liabilities = Assets + Equity", "Equity = Revenue - Expenses"], answer: 0, explanation: "The fundamental accounting equation is Assets = Liabilities + Owner's Equity." },
+                { question: "What type of account is 'Unearned Revenue'?", options: ["Asset", "Expense", "Liability", "Equity"], answer: 2, explanation: "Unearned revenue is cash received before services are performed, representing an obligation (liability) to fulfill." },
+                { question: "Which financial statement reports revenue and expenses over a specific period?", options: ["Balance Sheet", "Income Statement", "Statement of Cash Flows", "Trial Balance"], answer: 1, explanation: "The Income Statement calculates net income or loss by subtracting expenses from revenues for a period." },
+                { question: "What does a debit entry increase in accounting?", options: ["Liabilities", "Equity", "Assets", "Revenue"], answer: 2, explanation: "Under double-entry bookkeeping, debit entries increase Asset and Expense accounts." },
+                { question: "What is depreciation in accounting?", options: ["Increase in asset value", "Systematic allocation of a tangible asset's cost over its useful life", "Cash set aside for buying inventory", "Tax paid on business profits"], answer: 1, explanation: "Depreciation allocates the cost of a long-term asset across the years it is used." },
+                { question: "What is the main purpose of a trial balance?", options: ["To calculate exact income taxes", "To prove total debits equal total credits", "To pay supplier invoices", "To list customer contacts"], answer: 1, explanation: "A trial balance checks mathematical equality between total debit balances and total credit balances." },
+                { question: "Which account increases with a credit entry?", options: ["Cash", "Equipment", "Accounts Payable", "Rent Expense"], answer: 2, explanation: "Credit entries increase liability accounts like Accounts Payable, equity, and revenue." },
+                { question: "What constitutes inventory in a merchandising company?", options: ["Office desks used by staff", "Goods purchased and held for resale", "Factory buildings", "Outstanding customer loans"], answer: 1, explanation: "Inventory consists of goods held specifically to sell to customers." },
+                { question: "What is 'Net Income'?", options: ["Revenues minus Expenses", "Total Cash in bank", "Assets minus Liabilities", "Gross Sales minus Taxes"], answer: 0, explanation: "Net Income is calculated as Total Revenue minus Total Expenses." }
+            ],
+            economics: [
+                { question: "According to the Law of Demand, what happens when price increases?", options: ["Quantity demanded increases", "Quantity demanded decreases", "Demand curve shifts right", "Supply automatically drops"], answer: 1, explanation: "The Law of Demand states that price and quantity demanded have an inverse relationship." },
+                { question: "What defines scarcity in economics?", options: ["Having no money in circulation", "Unlimited wants exceeding limited resources", "High taxation rates", "A decline in trade"], answer: 1, explanation: "Scarcity occurs because human wants are unlimited while productive resources are finite." },
+                { question: "What is opportunity cost?", options: ["The monetary cost of a product", "The value of the next best alternative given up", "The cost of labor per hour", "Tax imposed on imports"], answer: 1, explanation: "Opportunity cost represents the benefit forgone when choosing one alternative over another." },
+                { question: "What point is reached where Quantity Supplied equals Quantity Demanded?", options: ["Surplus point", "Shortage point", "Market Equilibrium", "Price Ceiling"], answer: 2, explanation: "Market Equilibrium occurs where the supply curve and demand curve intersect." },
+                { question: "What measures aggregate economic output in a country?", options: ["Consumer Price Index (CPI)", "Gross Domestic Product (GDP)", "Federal Reserve Rate", "Trade Balance"], answer: 1, explanation: "GDP measures the total monetary value of finished goods and services produced within a nation." },
+                { question: "What causes inflation?", options: ["Sustained rise in general price levels", "Drop in interest rates only", "Increase in agricultural yields", "Reduction in government debt"], answer: 0, explanation: "Inflation is a general, sustained increase in the overall price level of goods and services." },
+                { question: "What is a monopoly?", options: ["A market with many small sellers", "A market with only two buyers", "A single seller dominating the market", "A market with free entry and exit"], answer: 2, explanation: "A monopoly exists when a single business controls the supply of a product or service." },
+                { question: "Which tool is used in Monetary Policy?", options: ["Government spending changes", "Tax rate modifications", "Central bank interest rate adjustments", "Import quota setting"], answer: 2, explanation: "Central banks manage monetary policy through interest rates and money supply control." },
+                { question: "What characterises a public good?", options: ["Excludable and rival", "Non-excludable and non-rival", "Produced only by private firms", "Sold at high prices"], answer: 1, explanation: "Public goods (like street lighting) are non-excludable and non-rivalrous." },
+                { question: "What does microeconomics study?", options: ["National inflation rates", "Individual decision-making units like households and firms", "Global trade deficits", "Total national unemployment"], answer: 1, explanation: "Microeconomics examines individual consumers, households, and specific business decisions." }
+            ],
+            business: [
+                { question: "What is the primary function of Human Resource Management?", options: ["Designing company logos", "Recruiting, supporting, and managing employees", "Auditing tax forms", "Maintaining server rooms"], answer: 1, explanation: "HRM focuses on people management, recruitment, training, and workplace policies." },
+                { question: "SWOT analysis stands for Strengths, Weaknesses, Opportunities, and...?", options: ["Tactics", "Threats", "Timing", "Targets"], answer: 1, explanation: "SWOT stands for Strengths, Weaknesses, Opportunities, and Threats." },
+                { question: "What is a sole proprietorship?", options: ["A company owned by stockholders", "A business owned and run by one individual", "A government agency", "A partnership of ten people"], answer: 1, explanation: "A sole proprietorship is an unincorporated business owned by a single individual." },
+                { question: "Which management function involves establishing goals and strategies?", options: ["Leading", "Organizing", "Planning", "Controlling"], answer: 2, explanation: "Planning is setting organizational objectives and deciding steps to achieve them." },
+                { question: "What is the main goal of marketing?", options: ["Calculating payroll taxes", "Identifying and meeting customer needs profitably", "Fixing office machinery", "Writing legal contracts"], answer: 1, explanation: "Marketing creates, communicates, and delivers value to satisfy customer needs." },
+                { question: "What does 'Laissez-faire' leadership describe?", options: ["Strict micromanagement", "Hands-off leadership allowing group decision-making", "Military command style", "Democratic voting process"], answer: 1, explanation: "Laissez-faire leaders give members freedom to make decisions and complete tasks independently." },
+                { question: "What is corporate social responsibility (CSR)?", options: ["Maximizing short-term profit at any cost", "Voluntary business integration of social and environmental concerns", "Paying minimum wage", "Avoiding tax payments legally"], answer: 1, explanation: "CSR refers to business actions that benefit society and the environment beyond legal mandates." },
+                { question: "What is a business plan?", options: ["A daily employee attendance record", "A formal document outlining business goals and operational methods", "A tax exemption receipt", "A bank statement"], answer: 1, explanation: "A business plan outlines a company's goals, strategies, target market, and financial projections." },
+                { question: "What constitutes organizational culture?", options: ["The shared values, beliefs, and behaviors of a company", "The physical building blueprint", "The software used for accounting", "The price list of products"], answer: 0, explanation: "Organizational culture defines the shared atmosphere and behavioral norms within a company." },
+                { question: "What is benchmarking in operations?", options: ["Buying cheap office furniture", "Comparing company performance processes against industry standards", "Setting employee salary caps", "Firing underperforming staff"], answer: 1, explanation: "Benchmarking evaluates performance by comparing metrics against top industry peers." }
+            ],
+            computing: [
+                { question: "What does CPU stand for?", options: ["Central Performance Unit", "Control Power Unit", "Central Processing Unit", "Computer Program Utility"], answer: 2, explanation: "The CPU (Central Processing Unit) acts as the primary processing brain of a computer." },
+                { question: "Which application is best suited for financial spreadsheet calculations?", options: ["Microsoft Word", "Microsoft Excel", "Microsoft PowerPoint", "Adobe Photoshop"], answer: 1, explanation: "Microsoft Excel is designed specifically for numerical spreadsheets, formulas, and data analysis." },
+                { question: "What type of memory is volatile and loses data when powered off?", options: ["ROM", "RAM", "Hard Drive", "USB Flash Drive"], answer: 1, explanation: "RAM (Random Access Memory) provides temporary high-speed working storage that clears when turned off." },
+                { question: "What is the main function of an Operating System (OS)?", options: ["To write business letters", "To manage computer hardware and software resources", "To search YouTube videos", "To create websites automatically"], answer: 1, explanation: "An OS (like Windows or Linux) coordinates hardware resources and provides user interfaces." },
+                { question: "What does HTTP stand for in web browsing?", options: ["Hypertext Transfer Protocol", "High Tech Transfer Program", "Hyperlink Text Process", "Home Tool Transfer Protocol"], answer: 0, explanation: "HTTP (Hypertext Transfer Protocol) is the foundation protocol for communication on the Web." },
+                { question: "What is database software used for?", options: ["Editing audio files", "Storing, organizing, and retrieving structured data", "Printing paper documents", "Playing 3D games"], answer: 1, explanation: "Databases (like SQL or Access) manage structured collections of data efficiently." },
+                { question: "What protects an internal network from unauthorized external access?", options: ["Monitor", "Firewall", "Keyboard", "Printer"], answer: 1, explanation: "A Firewall monitors and controls incoming and outgoing network traffic based on security rules." },
+                { question: "What is a VLOOKUP function used for in Excel?", options: ["To change text colors", "To search for a value in a table column and return a corresponding value", "To print a sheet", "To delete blank rows"], answer: 1, explanation: "VLOOKUP searches for a value in the leftmost column and extracts data from the same row." },
+                { question: "What represents cloud computing?", options: ["Storing data locally on a floppy disk", "Delivering computing services over the Internet", "Unplugging routers at night", "Using typewriter machines"], answer: 1, explanation: "Cloud computing delivers servers, storage, databases, and software on-demand via the Internet." },
+                { question: "What is cybersecurity?", options: ["Building physical computer cases", "Protecting systems, networks, and data from digital attacks", "Cleaning computer screens", "Selling computer hardware"], answer: 1, explanation: "Cybersecurity safeguards digital systems, networks, and sensitive information from cyber threats." }
+            ]
+        };
 
-        document
-            .querySelectorAll(".nav-links a")
-            .forEach(
-                function (link) {
+        let currentQuizSubject = null;
+        let currentQuestions = [];
+        let currentQIdx = 0;
+        let userScore = 0;
+        let userAnswers = [];
 
-                    link.addEventListener(
-                        "click",
-                        function () {
-
-                            navLinks
-                                .classList
-                                .remove("active");
-
-                            menuButton.innerHTML = "☰";
-
-                        }
-                    );
-
-                }
-            );
-
-
-        /* =====================================================
-           RESOURCE SEARCH
-        ====================================================== */
-
-        const searchInput =
-            document.getElementById("searchInput");
-
-        const searchButton =
-            document.getElementById("searchButton");
-
-        const resourceCards =
-            document.querySelectorAll(".resource-card");
-
-
-        function searchResources() {
-
-            const searchText =
-                searchInput.value
-                    .toLowerCase()
-                    .trim();
-
-
-            resourceCards.forEach(
-                function (card) {
-
-                    const cardText =
-                        card.textContent.toLowerCase();
-
-
-                    if (
-                        cardText.includes(searchText)
-                    ) {
-
-                        card.style.display = "";
-
-                    } else {
-
-                        card.style.display = "none";
-
-                    }
-
-                }
-            );
-
+        function startQuiz(subjectKey) {
+            currentQuizSubject = subjectKey;
+            currentQuestions = [...quizzes[subjectKey]];
+            initQuizState();
         }
 
+        function startRandomQuiz() {
+            currentQuizSubject = "random";
+            const all = [...quizzes.accounting, ...quizzes.economics, ...quizzes.business, ...quizzes.computing];
+            // Shuffle array
+            currentQuestions = all.sort(() => 0.5 - Math.random()).slice(0, 10);
+            initQuizState();
+        }
 
-        searchButton.addEventListener(
-            "click",
-            searchResources
-        );
+        function initQuizState() {
+            currentQIdx = 0;
+            userScore = 0;
+            userAnswers = [];
+            document.getElementById('quizSelector').style.display = "none";
+            document.getElementById('quizResult').style.display = "none";
+            document.getElementById('quizActive').style.display = "block";
+            renderQuestion();
+        }
 
+        function renderQuestion() {
+            const q = currentQuestions[currentQIdx];
+            document.getElementById('quizSubjectBadge').textContent = currentQuizSubject.toUpperCase();
+            document.getElementById('quizProgressText').textContent = `Question ${currentQIdx + 1} of ${currentQuestions.length}`;
+            document.getElementById('quizLiveScore').textContent = userScore;
 
-        searchInput.addEventListener(
-            "keyup",
-            function (event) {
+            const pct = ((currentQIdx) / currentQuestions.length) * 100;
+            document.getElementById('quizProgressBar').style.width = pct + "%";
 
-                if (
-                    event.key === "Enter"
-                ) {
+            document.getElementById('quizQuestionText').textContent = q.question;
 
-                    searchResources();
+            const container = document.getElementById('quizOptionsContainer');
+            container.innerHTML = "";
 
+            document.getElementById('quizFeedback').style.display = "none";
+            document.getElementById('quizNextBtn').style.display = "none";
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "quiz-opt-btn";
+                btn.textContent = `${String.fromCharCode(65 + idx)}. ${opt}`;
+                btn.onclick = () => handleAnswerSelect(idx);
+                container.appendChild(btn);
+            });
+        }
+
+        function handleAnswerSelect(selectedIdx) {
+            const q = currentQuestions[currentQIdx];
+            const buttons = document.querySelectorAll('.quiz-opt-btn');
+            buttons.forEach(b => b.disabled = true);
+
+            const isCorrect = selectedIdx === q.answer;
+            userAnswers.push({ question: q.question, selected: selectedIdx, correct: q.answer, explanation: q.explanation, options: q.options });
+
+            const feedbackBox = document.getElementById('quizFeedback');
+            feedbackBox.style.display = "block";
+
+            if (isCorrect) {
+                userScore += 10;
+                buttons[selectedIdx].classList.add('correct');
+                feedbackBox.className = "feedback-box correct";
+                document.getElementById('feedbackTitle').textContent = "✓ CORRECT!";
+                document.getElementById('feedbackExplanation').textContent = "Excellent! " + q.explanation;
+            } else {
+                buttons[selectedIdx].classList.add('incorrect');
+                buttons[q.answer].classList.add('correct');
+                feedbackBox.className = "feedback-box incorrect";
+                document.getElementById('feedbackTitle').textContent = "✗ INCORRECT";
+                document.getElementById('feedbackExplanation').textContent = `Correct Answer: ${q.options[q.answer]}. ${q.explanation}`;
+            }
+
+            document.getElementById('quizLiveScore').textContent = userScore;
+            document.getElementById('quizNextBtn').style.display = "inline-flex";
+        }
+
+        function nextQuestion() {
+            currentQIdx++;
+            if (currentQIdx < currentQuestions.length) {
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quizActive').style.display = "none";
+            document.getElementById('quizResult').style.display = "block";
+
+            const totalMax = currentQuestions.length * 10;
+            const finalPct = Math.round((userScore / totalMax) * 100);
+
+            document.getElementById('resultScoreText').textContent = `Your Final Score: ${finalPct}% (${userScore}/${totalMax})`;
+
+            let perf = "";
+            if (finalPct >= 80) perf = "PERFORMANCE: EXCELLENT";
+            else if (finalPct >= 60) perf = "PERFORMANCE: GOOD";
+            else if (finalPct >= 40) perf = "PERFORMANCE: KEEP PRACTICING";
+            else perf = "PERFORMANCE: REVIEW THE TOPIC";
+
+            document.getElementById('resultPerformanceText').textContent = perf;
+
+            const reviewContainer = document.getElementById('quizReviewContainer');
+            reviewContainer.innerHTML = "<h4 style='color:var(--navy);margin-bottom:10px'>Review Incorrect Answers</h4>";
+
+            const incorrects = userAnswers.filter(a => a.selected !== a.correct);
+            if (incorrects.length === 0) {
+                reviewContainer.innerHTML += "<p style='color:var(--green);font-size:13px'>Congratulations! You answered all questions correctly.</p>";
+            } else {
+                incorrects.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = "quiz-review-item";
+                    div.innerHTML = `
+                <strong style="color:var(--navy);display:block;margin-bottom:5px">${item.question}</strong>
+                <p style="font-size:12px;color:var(--danger)">Your Answer: ${item.options[item.selected]}</p>
+                <p style="font-size:12px;color:var(--green2)">Correct Answer: ${item.options[item.correct]}</p>
+                <p style="font-size:12px;color:var(--muted);margin-top:4px"><em>${item.explanation}</em></p>
+            `;
+                    reviewContainer.appendChild(div);
+                });
+            }
+        }
+
+        function retryCurrentQuiz() {
+            if (currentQuizSubject === "random") startRandomQuiz();
+            else startQuiz(currentQuizSubject);
+        }
+
+        function resetQuizView() {
+            document.getElementById('quizActive').style.display = "none";
+            document.getElementById('quizResult').style.display = "none";
+            document.getElementById('quizSelector').style.display = "block";
+        }
+
+        /* Global Search Logic */
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+
+        function runSearch() {
+            const term = searchInput.value.toLowerCase().trim();
+            if (!term) return;
+
+            // Scroll to resources by default
+            document.getElementById('resources').scrollIntoView({ behavior: 'smooth' });
+
+            // Filter resources
+            const cards = document.querySelectorAll('.resource');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(term)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
                 }
+            });
 
+            document.getElementById('resultCount').textContent = `${visibleCount} resource(s) matched "${term}"`;
+
+            const existingMsg = document.getElementById('noResultsMsg');
+            if (existingMsg) existingMsg.remove();
+
+            if (visibleCount === 0) {
+                const msg = document.createElement('div');
+                msg.id = 'noResultsMsg';
+                msg.style.cssText = 'grid-column:1/-1;text-align:center;padding:35px;background:#fff;border:1px solid #e5ebf2;border-radius:16px;color:#66758a;';
+                msg.innerHTML = `<strong style="display:block;color:#082b52;font-size:18px;margin-bottom:7px;">No results found for "${term}"</strong>Try searching for <b>Accounting</b>, <b>Economics</b>, <b>Computing</b>, <b>Law</b>, or <b>Business</b>.`;
+                document.getElementById('resourceGrid').appendChild(msg);
             }
-        );
+        }
 
+        searchBtn.addEventListener('click', runSearch);
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                runSearch();
+            }
+        });
 
-        /* =====================================================
-           FAQ ACCORDION
-        ====================================================== */
+        searchInput.addEventListener('input', function () {
+            if (this.value.trim() === "") {
+                document.querySelectorAll('.resource').forEach(c => c.style.display = 'flex');
+                document.getElementById('resultCount').textContent = "Showing all resources";
+                const msg = document.getElementById('noResultsMsg');
+                if (msg) msg.remove();
+            }
+        });
 
-        const faqQuestions =
-            document.querySelectorAll(
-                ".faq-question"
-            );
+        /* Resource Filter Buttons */
+        document.querySelectorAll('#resourceFilters .filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#resourceFilters .filter').forEach(x => x.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
 
-
-        faqQuestions.forEach(
-            function (question) {
-
-                question.addEventListener(
-                    "click",
-                    function () {
-
-                        const answer =
-                            this.nextElementSibling;
-
-                        const icon =
-                            this.querySelector(
-                                "span:last-child"
-                            );
-
-
-                        const isOpen =
-                            answer.style.display === "block";
-
-
-                        /* Close all FAQs */
-
-                        document
-                            .querySelectorAll(".faq-answer")
-                            .forEach(
-                                function (item) {
-
-                                    item.style.display =
-                                        "none";
-
-                                }
-                            );
-
-
-                        document
-                            .querySelectorAll(
-                                ".faq-question span:last-child"
-                            )
-                            .forEach(
-                                function (item) {
-
-                                    item.textContent = "+";
-
-                                }
-                            );
-
-
-                        /* Open selected FAQ */
-
-                        if (!isOpen) {
-
-                            answer.style.display =
-                                "block";
-
-                            icon.textContent = "−";
-
-                        }
-
+                const cards = document.querySelectorAll('.resource');
+                let count = 0;
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.subject === filter) {
+                        card.style.display = 'flex';
+                        count++;
+                    } else {
+                        card.style.display = 'none';
                     }
-                );
+                });
+                document.getElementById('resultCount').textContent = `${count} resources shown`;
+            });
+        });
 
+        function filterResourceByCourse(courseName) {
+            const term = courseName.toLowerCase();
+            searchInput.value = term;
+            runSearch();
+        }
+
+        /* University Directory Filtering */
+        const dirSearch = document.getElementById('dirSearch');
+        const dirUniv = document.getElementById('dirUniv');
+        const dirDegree = document.getElementById('dirDegree');
+
+        function filterDir() {
+            const sTerm = dirSearch.value.toLowerCase();
+            const uTerm = dirUniv.value.toLowerCase();
+            const dTerm = dirDegree.value.toLowerCase();
+
+            const rows = document.querySelectorAll('#dirTableBody tr');
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                const matchesS = !sTerm || text.includes(sTerm);
+                const matchesU = uTerm === 'all' || text.includes(uTerm);
+                const matchesD = dTerm === 'all' || text.includes(dTerm);
+
+                row.style.display = (matchesS && matchesU && matchesD) ? '' : 'none';
+            });
+        }
+
+        dirSearch.addEventListener('input', filterDir);
+        dirUniv.addEventListener('change', filterDir);
+        dirDegree.addEventListener('change', filterDir);
+
+        /* Dashboard Toggle */
+        function switchDash(type) {
+            const sDash = document.getElementById('studentDashboard');
+            const aDash = document.getElementById('adminDashboard');
+            const btnS = document.getElementById('btnDashStudent');
+            const btnA = document.getElementById('btnDashAdmin');
+
+            if (type === 'student') {
+                sDash.style.display = 'block';
+                aDash.style.display = 'none';
+                btnS.classList.add('active');
+                btnA.classList.remove('active');
+            } else {
+                sDash.style.display = 'none';
+                aDash.style.display = 'block';
+                btnA.classList.add('active');
+                btnS.classList.remove('active');
             }
-        );
+        }
 
+        /* FAQ Accordion */
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                document.querySelectorAll('.faq-item').forEach(x => { if (x !== item) x.classList.remove('open'); });
+                item.classList.toggle('open');
+            });
+        });
 
-        /* =====================================================
-           CURRENT YEAR
-        ====================================================== */
-
-        const yearElements =
-            document.querySelectorAll(
-                ".current-year"
+        /* Resource Request Handler */
+        document.getElementById('requestForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const f = new FormData(e.target);
+            const subject = encodeURIComponent('Amigo Resource Request: ' + (f.get('subject') || ''));
+            const body = encodeURIComponent(
+                'Name: ' + (f.get('name') || '') + '\n' +
+                'Institution: ' + (f.get('institution') || '') + '\n' +
+                'Email: ' + (f.get('email') || '') + '\n\n' +
+                'Requested Material Details:\n' + (f.get('message') || '')
             );
-
-
-        yearElements.forEach(
-            function (element) {
-
-                element.textContent =
-                    new Date().getFullYear();
-
-            }
-        );
-
-
+            window.location.href = 'mailto:ADD_REAL_EMAIL?subject=' + subject + '&body=' + body;
+        });
     </script>
-
-
 </body>
 
 </html>
