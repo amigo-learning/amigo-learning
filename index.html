@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amigo Learning - Free University Materials SS</title>
+    <title>Amigo Learning - Free University Materials</title>
     <style>
         * {
             margin: 0;
@@ -14,218 +14,140 @@
 
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(to bottom, #1a5d1a, #2e8b57);
-            color: white;
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
         }
 
-        .header {
+        header {
+            background: #1a73e8;
+            color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 25px 20px;
         }
 
         .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-            border: 3px solid #FFD700;
+            max-width: 100px;
+            margin-bottom: 10px;
+            border-radius: 10px;
         }
 
-        h1 {
-            color: #FFD700;
-            font-size: 48px;
-            margin: 10px 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .tagline {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-
-        .welcome-section {
-            background: white;
-            padding: 50px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            flex-wrap: wrap;
-        }
-
-        .student-card {
-            text-align: center;
-        }
-
-        .student-card img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid #FFD700;
+        .banner {
+            width: 100%;
+            max-height: 350px;
             object-fit: cover;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .student-card p {
-            color: #1a5d1a;
-            font-weight: bold;
-            font-size: 20px;
-            margin-top: 15px;
+            display: block;
         }
 
         .container {
-            max-width: 1300px;
-            margin: 40px auto;
-            padding: 0 30px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .subject-section {
-            margin-bottom: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 20px;
+        h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
         }
 
         h2 {
-            color: #FFD700;
-            border-bottom: 3px solid #FFD700;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 28px;
+            color: #1a73e8;
+            margin: 25px 0 15px 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
         }
 
-        .downloads-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: white;
-            color: #1a5d1a;
-            padding: 18px 20px;
+        .download-btn {
+            display: inline-block;
+            background: #34a853;
+            color: white;
+            padding: 18px 40px;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 8px;
+            font-size: 20px;
             font-weight: bold;
-            transition: 0.3s;
-            font-size: 15px;
+            margin: 20px 0;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(52, 168, 83, 0.3);
         }
 
-        .btn:hover {
-            background: #FFD700;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        .download-btn:hover {
+            background: #2d9147;
+            transform: translateY(-2px);
         }
 
-        .counter {
+        ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        footer {
             text-align: center;
-            margin: 50px 0;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.4);
+            padding: 25px;
+            background: #1a73e8;
+            color: white;
             margin-top: 40px;
         }
     </style>
 </head>
 
 <body>
-    <!-- HEADER -->
-    <div class="header">
-        <img src="logo.png" class="logo" alt="Amigo Learning Logo">
-        <h1>AMIGO LEARNING</h1>
-        <p class="tagline">Free Past Papers & Notes for University Students</p>
-        <h2 style="border: none; color: white; font-size: 32px;">Welcome to Amigo Learning! 🎓</h2>
-        <p style="font-size: 20px;">Your Success Starts Here</p>
-    </div>
 
-    <!-- STUDENT PHOTOS -->
-    <div class="welcome-section">
-        <div class="student-card">
-            <img src="student-female.jpg" alt="Female Student">
-            <p>For Female Students</p>
-        </div>
-        <div class="student-card">
-            <img src="student-male.jpg" alt="Male Student">
-            <p>For Male Students</p>
-        </div>
-    </div>
+    <header>
+        <img src="logo.png" alt="Amigo Learning Logo" class="logo">
+        <h1>Amigo Learning</h1>
+        <p>Empowering Students in South Sudan with Free Education</p>
+    </header>
 
-    <!-- ALL DOCUMENTS -->
+    <img src="banner.png" alt="Amigo Learning Banner" class="banner">
+
     <div class="container">
+        <h2>Welcome to Amigo Learning</h2>
+        <p>
+            Get free access to university course materials, notes, and past papers.
+            Everything you need to succeed in Accounting, Economics, Management,
+            BCS, and Communication Skills - all in one place.
+        </p>
 
-        <!-- BUSINESS ADMINISTRATION -->
-        <div class="subject-section">
-            <h2>📊 BUSINESS ADMINISTRATION & ECONOMICS</h2>
-            <div class="downloads-grid">
-                <a href="Principles of Economics I MCQs.docx" class="btn">📄 Principles of Economics I MCQs</a>
-                <a href="Compressive Economic Notes.docx" class="btn">📚 Comprehensive Economic Notes</a>
-                <a href="Macroeconomics.docx" class="btn">📝 Macroeconomics</a>
-                <a href="Economics answers.docx" class="btn">✅ Economics Answers</a>
-                <a href="Principles of Economics sample questions and ...docx" class="btn">❓ Economics Sample
-                    Questions</a>
-                <a href="Introduction to Economics- Social Issues and E....pdf" class="btn">📖 Intro to Economics
-                    PDF</a>
-            </div>
-        </div>
+        <h2>Download All Materials</h2>
+        <p>Click the button below to download all courses as 1 zip file. Includes PDFs and Documents.</p>
 
-        <!-- ACCOUNTING -->
-        <div class="subject-section">
-            <h2>💰 ACCOUNTING & FINANCE</h2>
-            <div class="downloads-grid">
-                <a href="accounting past paper.docx" class="btn">📄 Accounting Past Paper</a>
-                <a href="accounting past paper 2.docx" class="btn">📄 Accounting Past Paper 2</a>
-                <a href="Basics-of-Accounting.pdf" class="btn">📕 Basics of Accounting PDF</a>
-                <a href="Student Accounting notes.docx" class="btn">📝 Student Accounting Notes</a>
-                <a href="Test for accounting.docx" class="btn">📋 Accounting Test</a>
-            </div>
-        </div>
+        <center>
+            <a href="Course-Materials.zip" download class="download-btn">
+                📚 DOWNLOAD ALL MATERIALS.zip
+            </a>
+        </center>
 
-        <!-- COMMUNICATION SKILLS -->
-        <div class="subject-section">
-            <h2>🗣️ COMMUNICATION SKILLS</h2>
-            <div class="downloads-grid">
-                <a href="Commprehensive Communication Skills I.docx" class="btn">📚 Comprehensive Communication Skills
-                    I</a>
-                <a href="Updated Commprehensive Communication Ski....docx" class="btn">📘 Updated Communication
-                    Skills</a>
-                <a href="communication skills past paper.docx" class="btn">📄 Communication Skills Past Paper</a>
-                <a href="Communication Skills Questions and answers....docx" class="btn">❓ Communication Q&A</a>
-                <a href="TYPES AND FORMS OF COMMUNICATION-1.p....pdf" class="btn">📕 Types of Communication PDF</a>
-            </div>
-        </div>
+        <h2>What's Inside the Zip File:</h2>
+        <ul>
+            <li><b>Accounting:</b> Notes, Past Papers, Exams</li>
+            <li><b>Economics:</b> Lecture Notes, Assignments</li>
+            <li><b>Management:</b> Course Materials</li>
+            <li><b>BCS:</b> Business Communication Skills</li>
+            <li><b>Communication Skills:</b> Guides and Examples</li>
+            <li><b>And More!</b></li>
+        </ul>
 
-        <!-- MANAGEMENT -->
-        <div class="subject-section">
-            <h2>👔 MANAGEMENT</h2>
-            <div class="downloads-grid">
-                <a href="Principles of Management 2.pdf" class="btn">📕 Principles of Management 2</a>
-                <a href="principles-of-management.pdf" class="btn">📕 Principles of Management</a>
-                <a href="Principles of management Handbook.pdf" class="btn">📖 Management Handbook</a>
-                <a href="BCS.docx" class="btn">💻 BCS Notes</a>
-            </div>
-        </div>
-
-        <!-- VISITOR COUNTER -->
-        <div class="counter">
-            <h3 style="color: #FFD700; font-size: 24px;">👥 Students Visited</h3>
-            <img src="https://www.cutercounter.com/hits.php?id=hvxqoax&nd=5&style=5" border="0"
-                alt="free visitor counter">
-        </div>
+        <h2>How to Use:</h2>
+        <p>
+            1. Click the green download button above<br>
+            2. Extract the .zip file on your computer or phone<br>
+            3. Open the folders and start studying!
+        </p>
     </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-        <p><strong>AMIGO LEARNING</strong> | Free Education for South Sudan Students</p>
-        <p>© 2026 Amigo Learning. Learn • Prepare • Succeed</p>
-    </div>
+    <footer>
+        <p>&copy; 2026 Amigo Learning. Built for Students in South Sudan.</p>
+        <p>Contact: amigo.learning.ss@email.com</p>
+    </footer>
+
 </body>
 
 </html>
