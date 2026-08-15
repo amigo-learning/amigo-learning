@@ -2064,6 +2064,18 @@
 .logo-fallback{display:none;width:72px;height:72px;border-radius:18px;background:linear-gradient(135deg,#0755a6,#168343);color:#f5d16b;align-items:center;justify-content:center;font-weight:900;font-size:18px;letter-spacing:.5px}
 @media(max-width:520px){.academy-logo,.brand-logo,.logo-image,.logo-fallback{width:58px;height:58px}}
 
+
+.revision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.revision-card{background:#fff;border:1px solid #e2e7ee;border-radius:12px;padding:17px;box-shadow:0 5px 15px rgba(15,35,65,.04)}
+.revision-card:hover{border-color:#d0ad54;box-shadow:0 10px 24px rgba(80,55,10,.08)}
+.revision-tag{font-size:10px;font-weight:900;letter-spacing:.5px;color:#9a7117}
+.revision-card h3{font-size:15px;margin:8px 0 7px}
+.revision-card p{font-size:12px;line-height:1.4;color:#687386;min-height:34px}
+.revision-card button{border:0;background:#f7f0dc;color:#7b5a0d;padding:9px 11px;border-radius:7px;font-size:12px;font-weight:800;cursor:pointer}
+.revision-card button:hover{background:#e9d59c}
+@media(max-width:900px){.revision-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.revision-grid{grid-template-columns:1fr}}
+
 </style>
 <style>
         .academy-badge {
@@ -2166,7 +2178,7 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
 <ul class="nav" id="nav">
 <li><a href="#home">🏠 Home</a></li>
 <li><a href="#subjects">🎓 Subjects</a></li>
-<li><a href="#resources">📝 Notes</a></li>
+<li><a href="#revision-library">📝 Revision Library</a></li>
 <li><a href="#quizzes">✅ Quizzes</a></li>
 <li><a href="#dashboard">🤖 AI Tutor</a></li>
 <li><a href="#about">ℹ️ About</a></li>
@@ -2181,7 +2193,7 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
 <h3 id="moduleModalTitle">Module</h3>
 <p id="moduleModalCourse"></p>
 <div class="module-tools">
-<a class="btn btn-soft" href="#resources" onclick="closeCourseModule()">📚 Notes</a>
+<a href="#revision-library">📝 Revision Library</a>
 <a class="btn btn-soft" href="#videos" onclick="closeCourseModule()">▶ Video</a>
 <a class="btn btn-soft" href="#quizzes" onclick="closeCourseModule()">📝 Quiz</a>
 </div>
@@ -2377,12 +2389,12 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
 <article class="feature">
 <div class="icon">📗</div>
 <h3>Primary 8</h3>
-<p>Subjects, revision papers, mock examinations and verified past papers.</p><a class="btn btn-soft" href="#resources">Explore P8 Resources</a>
+<p>Subjects, revision papers, mock examinations and verified past papers.</p><a href="#revision-library">📝 Revision Library</a>
 </article>
 <article class="feature">
 <div class="icon">📕</div>
 <h3>Senior 4</h3>
-<p>Senior 4 revision notes, practice papers, mock exams and verified papers.</p><a class="btn btn-soft" href="#resources">Explore S4 Resources</a>
+<p>Senior 4 revision notes, practice papers, mock exams and verified papers.</p><a href="#revision-library">📝 Revision Library</a>
 </article>
 <article class="feature">
 <div class="icon">🏛️</div>
@@ -2471,189 +2483,7 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
 </div>
 </section>
 
-<section class="section alt" id="resources">
-<div class="container">
-<div class="section-head">
-<span class="eyebrow">Resource Library</span>
-<h2>Study Smarter with Organized Materials</h2>
-<p>Filter or search through downloadable notes, revision guides, and past papers.</p>
-</div>
-<div class="library-toolbar">
-<div class="count" id="resultCount">Showing all resources</div>
-<div class="filters" id="resourceFilters">
-<button class="filter active" data-filter="all">All</button>
-<button class="filter" data-filter="accounting">Accounting</button>
-<button class="filter" data-filter="economics">Economics</button>
-<button class="filter" data-filter="computing">Computing</button>
-<button class="filter" data-filter="communication">Communication</button>
-</div>
-</div>
-<div class="resources" id="resourceGrid">
-<article class="resource" data-subject="accounting">
-<div class="resource-top"><span class="resource-type">ACCOUNTING</span><span>PDF/ZIP</span>
-</div>
-<h3>Accounting Past Paper</h3>
-<p>Examination preparation and revision.</p>
-<a class="btn btn-soft download" download="" href="Course-Materials.zip">⬇ Download File</a>
-</article>
-<article class="resource" data-subject="accounting">
-<div class="resource-top"><span class="resource-type">ACCOUNTING</span><span>NOTES</span></div>
-<h3>Student Accounting Notes</h3>
-<p>Core accounting study notes.</p>
-<a class="btn btn-soft download" download="" href="Course-Materials.zip">⬇ Download File</a>
-</article>
-<article class="resource" data-subject="accounting">
-<div class="resource-top"><span class="resource-type">ACCOUNTING</span><span>TEST</span></div>
-<h3>Accounting Revision Test</h3>
-<p>Revision and practice questions.</p>
-<a class="btn btn-soft download" download="" href="Course-Materials.zip">⬇ Download File</a>
-</article>
-<article class="resource" data-subject="economics">
-<div class="resource-top"><span class="resource-type">ECONOMICS</span><span>NOTES</span></div>
-<h3>Comprehensive Economics Notes</h3>
-<p>Economics study and revision notes.</p>
-<a class="btn btn-soft download" download="" href="Course-Materials.zip">⬇ Download File</a>
-</article>
-<article class="resource" data-subject="economics">
-<div class="resource-top"><span class="resource-type">ECONOMICS</span><span>ANSWERS</span></div>
-<h3>Economics Q&amp;A Guide</h3>
-<p>Questions and answers for examination preparation.</p>
-<a class="btn btn-soft download" download="" href="Course-Materials.zip">⬇ Download File</a>
-</article>
-<article class="resource" data-subject="economics">
-<div class="resource-top"><span class="resource-type">ECONOMICS</span><span>MCQ</span></div>
-<h3>Principles of Economics MCQs</h3>
-<p>Multiple-choice revision questions.</p>
-<a class="btn btn-soft download" download="" href="Course-Materials.zip">⬇ Download File</a>
-</article>
-<article class="resource" data-subject="computing">
-<div class="resource-top"><span class="resource-type">COMPUTING</span><span>STUDY</span></div>
-<h3>Business Computing Fundamentals</h3>
-<p>Business computing learning materials.</p>
-<a class="btn btn-soft download" download="" href="Course-Materials.zip">⬇ Download File</a>
-</article>
-<article class="resource" data-subject="communication">
-<div class="resource-top"><span class="resource-type">COMMUNICATION</span><span>PAST
-                                PAPER</span></div>
-<h3>Communication Skills Past Paper</h3>
-<p>Examination preparation resource.</p>
-<a class="btn btn-soft download" download="" href="Course-Materials.zip">⬇ Download File</a>
-</article>
-<article class="resource" data-subject="communication">
-<div class="resource-top"><span class="resource-type">COMMUNICATION</span><span>NOTES</span>
-</div>
-<h3>Comprehensive Communication Notes</h3>
-<p>Communication learning resources.</p>
-<a class="btn btn-soft download" download="" href="Course-Materials.zip">⬇ Download File</a>
-</article>
-<article class="resource" data-subject="business">
-<div class="resource-top"><span class="resource-type">QUIZ</span><span>DOCX</span></div>
-<h3>Principles of Management Quiz</h3>
-<p>Practice questions uploaded to Amigo Academy.</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-<a class="btn btn-soft download" download="" href="materials/quiz_principles_of_management.docx">⬇ Download</a>
-<a class="btn btn-primary" href="#quizzes" onclick="startQuiz('principles_management')">🧠
-                                Take Quiz</a>
-</div>
-</article>
-<article class="resource" data-subject="business">
-<div class="resource-top"><span class="resource-type">QUIZ</span><span>DOCX</span></div>
-<h3>Business Economics Quiz</h3>
-<p>Practice questions uploaded to Amigo Academy.</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-<a class="btn btn-soft download" download="" href="materials/quiz_business_economics.docx">⬇
-                                Download</a>
-<a class="btn btn-primary" href="#quizzes" onclick="startQuiz('business_economics')">🧠 Take
-                                Quiz</a>
-</div>
-</article>
-<article class="resource" data-subject="business">
-<div class="resource-top"><span class="resource-type">QUIZ</span><span>DOCX</span></div>
-<h3>Financial Accounting Quiz</h3>
-<p>Practice questions uploaded to Amigo Academy.</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-<a class="btn btn-soft download" download="" href="materials/quiz_financial_accounting.docx">⬇
-                                Download</a>
-<a class="btn btn-primary" href="#quizzes" onclick="startQuiz('financial_accounting')">🧠
-                                Take Quiz</a>
-</div>
-</article>
-<article class="resource" data-subject="business">
-<div class="resource-top"><span class="resource-type">QUIZ</span><span>DOCX</span></div>
-<h3>Financial Management Quiz</h3>
-<p>Practice questions uploaded to Amigo Academy.</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-<a class="btn btn-soft download" download="" href="materials/quiz_financial_management.docx">⬇
-                                Download</a>
-<a class="btn btn-primary" href="#quizzes" onclick="startQuiz('financial_management')">🧠
-                                Take Quiz</a>
-</div>
-</article>
-<article class="resource" data-subject="business">
-<div class="resource-top"><span class="resource-type">QUIZ</span><span>DOCX</span></div>
-<h3>Marketing Management Quiz</h3>
-<p>Practice questions uploaded to Amigo Academy.</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-<a class="btn btn-soft download" download="" href="materials/quiz_marketing_management.docx">⬇
-                                Download</a>
-<a class="btn btn-primary" href="#quizzes" onclick="startQuiz('marketing_management')">🧠
-                                Take Quiz</a>
-</div>
-</article>
-<article class="resource" data-subject="business">
-<div class="resource-top"><span class="resource-type">QUIZ</span><span>DOCX</span></div>
-<h3>Human Resource Management Quiz</h3>
-<p>Practice questions uploaded to Amigo Academy.</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-<a class="btn btn-soft download" download="" href="materials/quiz_human_resource_management.docx">⬇ Download</a>
-<a class="btn btn-primary" href="#quizzes" onclick="startQuiz('human_resource_management')">🧠 Take Quiz</a>
-</div>
-</article>
-<article class="resource" data-subject="business">
-<div class="resource-top"><span class="resource-type">QUIZ</span><span>DOCX</span></div>
-<h3>Operations Management Quiz</h3>
-<p>Practice questions uploaded to Amigo Academy.</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-<a class="btn btn-soft download" download="" href="materials/quiz_operations_management.docx">⬇
-                                Download</a>
-<a class="btn btn-primary" href="#quizzes" onclick="startQuiz('operations_management')">🧠
-                                Take Quiz</a>
-</div>
-</article>
-<article class="resource" data-subject="business">
-<div class="resource-top"><span class="resource-type">QUIZ</span><span>DOCX</span></div>
-<h3>Business Law Quiz</h3>
-<p>Practice questions uploaded to Amigo Academy.</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-<a class="btn btn-soft download" download="" href="materials/quiz_business_law.docx">⬇
-                                Download</a>
-<a class="btn btn-primary" href="#quizzes" onclick="startQuiz('business_law')">🧠 Take
-                                Quiz</a>
-</div>
-</article>
-<!-- Placeholder entries for expansion -->
-<article class="resource" data-subject="law">
-<div class="resource-top"><span class="resource-type">LAW</span><span>PLACEHOLDER</span></div>
-<h3>Introduction to South Sudan Legal Systems</h3>
-<p>Core study materials being organized.</p>
-<button class="btn btn-soft" disabled="" style="opacity:0.6;cursor:not-allowed">Materials coming
-                            soon</button>
-</article>
-<article class="resource" data-subject="agriculture">
-<div class="resource-top"><span class="resource-type">AGRICULTURE</span><span>PLACEHOLDER</span>
-</div>
-<h3>Sustainable Agricultural Methods</h3>
-<p>Lecture outlines coming soon.</p>
-<button class="btn btn-soft" disabled="" style="opacity:0.6;cursor:not-allowed">Materials coming
-                            soon</button>
-</article>
-</div>
-<div style="margin-top:25px;text-align:center">
-<a class="btn btn-primary" download="" href="Course-Materials.zip">📦 Download Current Resource
-                        Pack</a>
-</div>
-</div>
-</section>
+
 <section class="section" id="videos">
 <div class="container">
 <div class="section-head">
@@ -2837,8 +2667,7 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
 <h4 style="color:var(--navy);margin-bottom:10px">Recommended Learning</h4>
 <div style="display:flex;gap:10px;flex-wrap:wrap">
 <a class="btn btn-soft" href="#quizzes" onclick="startQuiz('accounting')" style="font-size:12px;padding:8px 12px">Practice Accounting</a>
-<a class="btn btn-soft" href="#resources" style="font-size:12px;padding:8px 12px">View Economics
-                            Notes</a>
+<a href="#revision-library">📝 Revision Library</a>
 </div>
 </div>
 <div class="dash-card" id="adminDashboard" style="display:none">
@@ -3021,7 +2850,7 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
 <li><a href="#about">About</a></li>
 <li><a href="#courses">Courses</a></li>
 <li></li>
-<li><a href="#resources">Resources</a></li>
+<li><a href="#revision-library">📝 Revision Library</a></li>
 <li><a href="#videos">Videos</a></li>
 </ul>
 </div>
@@ -3085,7 +2914,7 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
             if (!grid) return;
             const extra = academyCourses.filter(c => c.cat === cat);
             if (!extra.length) return;
-            grid.innerHTML = extra.map(c => `<article class="course"><div><div class="cat-tag">${c.cat}</div><h3>${c.name}</h3><p>${c.desc}</p><div class="module-count">8 Learning Modules • University Exam Preparation</div><div class="course-meta"><span class="meta-pill">Learning: ${c.level}</span><span class="meta-pill">Self-Learning & Exam Preparation</span></div></div><a href="#resources" class="btn btn-soft" style="font-size:12px;width:100%">Open 8 Learning Modules →</a></article>`).join("");
+            grid.innerHTML = extra.map(c => `<article class="course"><div><div class="cat-tag">${c.cat}</div><h3>${c.name}</h3><p>${c.desc}</p><div class="module-count">8 Learning Modules • University Exam Preparation</div><div class="course-meta"><span class="meta-pill">Learning: ${c.level}</span><span class="meta-pill">Self-Learning & Exam Preparation</span></div></div><a href="#revision-library">📝 Revision Library</a></article>`).join("");
         }
 
         const learningModulesData = [
@@ -3643,7 +3472,21 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
             setTimeout(() => {chat.innerHTML += `<div class="short-practice" style="background:#eaf4ff"><strong>Amigo Tutor</strong><p>This prototype is ready for a secure AI backend. I would break <em>${safe}</em> into simple steps, examples, practice questions and a short review.</p></div>`; chat.scrollTop = chat.scrollHeight;}, 250);
         }
 
-    </script>
+    
+function filterRevision(subject,btn){
+  document.querySelectorAll('#revision-library .filter').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.revision-card').forEach(card=>{
+    card.style.display=(subject==='All'||card.dataset.subject===subject)?'block':'none';
+  });
+}
+function openRevision(title){
+  document.getElementById('revisionTitle').textContent=title;
+  document.getElementById('revisionDescription').textContent='You selected '+title+'. This item is available through Amigo Academy’s Revision Library.';
+  document.getElementById('revisionModal').classList.add('open');
+}
+
+</script>
 <script>
 document.querySelectorAll('img[alt*="Amigo Academy"], img[src*="amigo-academy"]').forEach(function(img){
   img.addEventListener('error', function(){
