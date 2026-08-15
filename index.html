@@ -2076,6 +2076,15 @@
 @media(max-width:900px){.revision-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.revision-grid{grid-template-columns:1fr}}
 
+
+.revision-filters{margin-bottom:20px}
+.revision-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:0 5px 15px rgba(15,35,65,.04);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.revision-card:hover{border-color:#d0ad54;box-shadow:0 10px 24px rgba(80,55,10,.08);transform:translateY(-2px)}
+.revision-card h3{font-size:15px;margin:8px 0 7px;color:var(--navy)}
+.revision-card p{font-size:12px;line-height:1.5;color:var(--muted);min-height:48px}
+.revision-card button{border:0;background:#f7f0dc;color:#7b5a0d;padding:9px 11px;border-radius:7px;font-size:12px;font-weight:800;cursor:pointer}
+.revision-card button:hover{background:#e9d59c}
+#revisionModal{z-index:1200}
 </style>
 <style>
         .academy-badge {
@@ -2576,6 +2585,56 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
 </div>
 </div>
 </section>
+<section class="section" id="revision-library">
+<div class="container">
+<div class="section-head">
+<span class="eyebrow">EXAM PREPARATION CENTRE</span>
+<h2>Revision Library</h2>
+<p>Browse revision resources by education level. Select an item to view its current status and study purpose.</p>
+</div>
+<div class="course-filters revision-filters" role="group" aria-label="Revision resource filters">
+<button type="button" class="filter active" data-revision-filter="All" onclick="filterRevision('All', this)">All</button>
+<button type="button" class="filter" data-revision-filter="Primary 8" onclick="filterRevision('Primary 8', this)">Primary 8</button>
+<button type="button" class="filter" data-revision-filter="Senior 4" onclick="filterRevision('Senior 4', this)">Senior 4</button>
+<button type="button" class="filter" data-revision-filter="University" onclick="filterRevision('University', this)">University</button>
+</div>
+<div class="course-grid" id="revisionGrid">
+<article class="revision-card" data-subject="Primary 8">
+<div class="cat-tag">PRIMARY 8</div><h3>Primary 8 Revision</h3>
+<p>Subjects, revision papers, mock examinations and verified past-paper resources.</p>
+<button type="button" onclick="openRevision('Primary 8 Revision')">View Resource</button>
+</article>
+<article class="revision-card" data-subject="Senior 4">
+<div class="cat-tag">SENIOR 4</div><h3>Senior 4 Revision</h3>
+<p>Senior 4 revision notes, practice papers, mock examinations and verified papers.</p>
+<button type="button" onclick="openRevision('Senior 4 Revision')">View Resource</button>
+</article>
+<article class="revision-card" data-subject="University">
+<div class="cat-tag">UNIVERSITY</div><h3>University Revision</h3>
+<p>Organize study resources by university, faculty, programme, course, semester, year and paper.</p>
+<button type="button" onclick="openRevision('University Revision')">View Resource</button>
+</article>
+<article class="revision-card" data-subject="University">
+<div class="cat-tag">EXAM PRACTICE</div><h3>Notes + Videos + Quizzes</h3>
+<p>Combine learning modules, notes, videos and quizzes as a complete revision cycle.</p>
+<button type="button" onclick="openRevision('Notes, Videos and Quizzes')">View Resource</button>
+</article>
+</div>
+</div>
+</section>
+<div class="module-modal" id="revisionModal" role="dialog" aria-modal="true" aria-labelledby="revisionTitle" aria-describedby="revisionDescription">
+<div class="module-modal-card">
+<button type="button" class="module-modal-close" aria-label="Close" onclick="closeRevision()">×</button>
+<span class="eyebrow">Revision Library</span>
+<h3 id="revisionTitle">Revision Resource</h3>
+<p id="revisionDescription">Select a revision resource.</p>
+<div class="module-tools">
+<a class="btn btn-soft" href="#courses" onclick="closeRevision()">📚 Study Modules</a>
+<a class="btn btn-soft" href="#videos" onclick="closeRevision()">▶ Videos</a>
+<a class="btn btn-soft" href="#quizzes" onclick="closeRevision()">📝 Quizzes</a>
+</div>
+</div>
+</div>
 <section class="section alt" id="student-community">
 <div class="container">
 <div class="about-grid">
@@ -2666,7 +2725,7 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
 </ul>
 <h4 style="color:var(--navy);margin-bottom:10px">Recommended Learning</h4>
 <div style="display:flex;gap:10px;flex-wrap:wrap">
-<a class="btn btn-soft" href="#quizzes" onclick="startQuiz('accounting')" style="font-size:12px;padding:8px 12px">Practice Accounting</a>
+<a class="btn btn-soft" href="#quizzes" onclick="startQuiz('financial_accounting')" style="font-size:12px;padding:8px 12px">Practice Accounting</a>
 <a href="#revision-library">📝 Revision Library</a>
 </div>
 </div>
@@ -2715,7 +2774,7 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
                         Sudan.
                     </p>
 <div class="community-actions">
-<a class="btn whatsapp" href="https://wa.me/211927471234" rel="noopener" target="_blank">📱 Join
+<a class="btn whatsapp" href="https://wa.me/211927471234" rel="noopener noreferrer" target="_blank">📱 Join
                             WhatsApp Study
                             Group</a>
 <a class="btn btn-blue" href="#request">📝 Request Study Material</a>
@@ -2817,7 +2876,7 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
 <div class="contact-card">
 <div class="icon">📱</div>
 <h3>WhatsApp</h3>
-<p><a href="https://wa.me/211927471234" rel="noopener" target="_blank">+211 927 471 234</a></p>
+<p><a href="https://wa.me/211927471234" rel="noopener noreferrer" target="_blank">+211 927 471 234</a></p>
 </div>
 <div class="contact-card">
 <div class="icon">📧</div>
@@ -2880,7 +2939,7 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
 </div>
 </div>
 </footer>
-<a aria-label="Amigo Academy WhatsApp community" class="float-wa" href="https://wa.me/211927471234" rel="noopener" target="_blank" title="WhatsApp Community">💬</a>
+<a aria-label="Amigo Academy WhatsApp community" class="float-wa" href="https://wa.me/211927471234" rel="noopener noreferrer" target="_blank" title="WhatsApp Community">💬</a>
 <script>
         /* Mobile Navigation Toggle */
         const menuBtn = document.getElementById('menuBtn');
@@ -3213,7 +3272,7 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
             if (e.target.id === 'moduleModal') closeCourseModule();
         });
         document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') closeCourseModule();
+            if (e.key === 'Escape') { closeCourseModule(); closeRevision(); }
         });
 
         /* Videos Data & Search */
@@ -3423,18 +3482,33 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
             const grid = document.getElementById('resourceGrid');
             if (!grid) return;
             [...grid.querySelectorAll('.resource')].forEach(card => {
-                card.style.display = card.textContent.toLowerCase().includes(term) ? '' : '';
+                card.style.display = !term || card.textContent.toLowerCase().includes(term) ? '' : 'none';
             });
         }
 
-        document.getElementById('searchBtn')?.addEventListener('click', () => {
-            const term = document.getElementById('searchInput').value.trim().toLowerCase();
-            const targets = ['courses', 'resources', 'videos', 'quizzes'];
-            if (!term) return;
-            const hit = [...document.querySelectorAll('section')].find(s => s.textContent.toLowerCase().includes(term));
-            if (hit) hit.scrollIntoView({behavior: 'smooth'});
-            else alert('No matching Amigo Academy section found. Try Accounting, Economics, Business, Computing, Law, or Quiz.');
-        });
+        function performAcademySearch(){
+            const input=document.getElementById('searchInput');
+            const term=(input?.value || '').trim().toLowerCase();
+            if(!term){ input?.focus(); return; }
+            const searchable=[
+                {selector:'#courseContainer .course',target:'#courses'},
+                {selector:'#videoContainer .video',target:'#videos'},
+                {selector:'#revisionGrid .revision-card',target:'#revision-library'},
+                {selector:'#quizSelector button',target:'#quizzes'},
+                {selector:'#shortPractice .short-practice',target:'#student-community'}
+            ];
+            for(const group of searchable){
+                const match=[...document.querySelectorAll(group.selector)].find(el=>el.textContent.toLowerCase().includes(term));
+                if(match){
+                    document.querySelector(group.target)?.scrollIntoView({behavior:'smooth',block:'start'});
+                    match.focus?.({preventScroll:true});
+                    return;
+                }
+            }
+            alert('No matching Amigo Academy resource found. Try Accounting, Economics, Business, Computing, Law, Senior 4, Primary 8, or Quiz.');
+        }
+document.getElementById('searchBtn')?.addEventListener('click', performAcademySearch);
+document.getElementById('searchInput')?.addEventListener('keydown', e => { if(e.key==='Enter') performAcademySearch(); });
 
         document.querySelectorAll('.faq-q').forEach(btn => btn.addEventListener('click', () => {
             btn.parentElement.classList.toggle('open');
@@ -3473,18 +3547,29 @@ footer{border-top:4px solid rgba(215,166,43,.65) !important}
         }
 
     
-function filterRevision(subject,btn){
-  document.querySelectorAll('#revision-library .filter').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.revision-card').forEach(card=>{
-    card.style.display=(subject==='All'||card.dataset.subject===subject)?'block':'none';
+function filterRevision(subject, btn){
+  document.querySelectorAll('#revision-library .revision-filters .filter').forEach(b=>b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  document.querySelectorAll('#revisionGrid .revision-card').forEach(card=>{
+    const show = subject === 'All' || card.dataset.subject === subject;
+    card.hidden = !show;
+    card.style.display = show ? '' : 'none';
   });
 }
 function openRevision(title){
+  const modal=document.getElementById('revisionModal');
+  if(!modal) return;
   document.getElementById('revisionTitle').textContent=title;
-  document.getElementById('revisionDescription').textContent='You selected '+title+'. This item is available through Amigo Academy’s Revision Library.';
-  document.getElementById('revisionModal').classList.add('open');
+  document.getElementById('revisionDescription').textContent='You selected '+title+'. This item is available through Amigo Academy’s Revision Library. Use the study modules, videos and quizzes to continue revision.';
+  modal.classList.add('open');
+  modal.querySelector('.module-modal-close')?.focus();
 }
+function closeRevision(){
+  document.getElementById('revisionModal')?.classList.remove('open');
+}
+document.getElementById('revisionModal')?.addEventListener('click', function(e){
+  if(e.target === this) closeRevision();
+});
 
 </script>
 <script>
