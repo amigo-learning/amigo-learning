@@ -9,6 +9,7 @@
         content="Amigo Academy — a student learning, resource and knowledge-sharing platform founded in South Sudan on 14 August 2026.">
     <meta name="author" content="John Marial Chol">
     <title>Amigo Academy | Learn • Explore • Practice • Grow • Succeed</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
 
     <style>
         :root {
@@ -113,7 +114,7 @@
         .topline {
             background: var(--navy);
             color: #dcecff;
-            font-size: 13px
+            font-size: 12.5px
         }
 
         .topline .container {
@@ -121,10 +122,36 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px
+            gap: 20px;
+            flex-wrap: wrap
         }
 
         .topline strong {
+            color: #fff
+        }
+
+        .topline-left,
+        .topline-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap
+        }
+
+        .topline-sep {
+            opacity: .35
+        }
+
+        .topline-right a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #dcecff;
+            font-weight: 600;
+            transition: .2s
+        }
+
+        .topline-right a:hover {
             color: #fff
         }
 
@@ -138,18 +165,71 @@
         }
 
         .navbar {
-            height: 78px;
+            height: 84px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 24px
+            gap: 22px
+        }
+
+        .nav-search {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            min-width: 0;
+            max-width: 300px;
+            background: #f9fbfd;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 4px 4px 4px 14px
+        }
+
+        .nav-search svg {
+            flex-shrink: 0;
+            color: var(--muted)
+        }
+
+        .nav-search input {
+            flex: 1;
+            border: 0;
+            background: transparent;
+            outline: 0;
+            padding: 9px 0;
+            font-size: 13px;
+            color: var(--ink)
+        }
+
+        .nav-search button {
+            border: 0;
+            background: var(--blue);
+            color: #fff;
+            font-weight: 800;
+            font-size: 13px;
+            border-radius: 7px;
+            padding: 9px 16px;
+            cursor: pointer;
+            transition: .2s
+        }
+
+        .nav-search button:hover {
+            background: var(--blue2)
+        }
+
+        .nav .cta.green {
+            background: var(--green)
+        }
+
+        .nav .cta.green:hover {
+            background: var(--green2)
         }
 
         .brand {
             display: flex;
             align-items: center;
             gap: 11px;
-            min-width: 210px
+            min-width: 0;
+            flex-shrink: 0
         }
 
         .brand img {
@@ -176,15 +256,19 @@
         .nav {
             display: flex;
             align-items: center;
-            gap: 18px;
-            list-style: none
+            gap: 14px;
+            list-style: none;
+            flex-shrink: 0
         }
 
         .nav a {
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 750;
             color: #34465c;
-            transition: 0.2s
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px
         }
 
         .nav a:hover,
@@ -196,7 +280,8 @@
             background: var(--blue);
             color: #fff;
             padding: 11px 16px;
-            border-radius: 10px
+            border-radius: 10px;
+            white-space: nowrap
         }
 
         .nav .cta:hover {
@@ -212,67 +297,144 @@
             cursor: pointer
         }
 
-        .hero {
+        .hero-wrap {
+            padding: 22px 0 0
+        }
+
+        .hero-banner {
             position: relative;
-            min-height: 650px;
-            display: flex;
-            align-items: center;
-            color: #fff;
+            border-radius: 22px;
             overflow: hidden;
-            background:
-                linear-gradient(105deg, rgba(5, 31, 60, .94) 0%, rgba(8, 75, 137, .82) 52%, rgba(11, 91, 171, .67) 100%),
-                url("assets/banner.png") center/cover no-repeat;
+            background: linear-gradient(115deg, #0b5cab 0%, #0f6fc5 55%, #147bd1 100%);
+            color: #fff;
+            display: grid;
+            grid-template-columns: 1.05fr 1.15fr .62fr;
+            align-items: stretch;
+            gap: 0;
+            box-shadow: var(--shadow);
         }
 
-        .hero:after {
-            content: "";
-            position: absolute;
-            inset: auto -10% -120px -10%;
-            height: 250px;
-            background: var(--bg);
-            transform: rotate(-3deg)
-        }
-
-        .hero-content {
-            position: relative;
+        .hero-copy {
+            padding: 46px 20px 46px 46px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             z-index: 2;
-            padding: 95px 0 120px;
-            max-width: 850px
         }
 
-        .hero-kicker {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 13px;
-            border: 1px solid rgba(255, 255, 255, .22);
-            background: rgba(255, 255, 255, .10);
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 800
+        .hero-copy h1 {
+            font-size: clamp(30px, 3.4vw, 44px);
+            line-height: 1.14;
+            font-weight: 900;
+            margin: 0 0 16px;
+            color: #fff
         }
 
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 78px);
-            line-height: 1.02;
-            margin: 20px 0
+        .hero-copy h1 .l1 {
+            color: #fff;
+            display: block
         }
 
-        .hero h1 span {
-            color: var(--gold)
+        .hero-copy h1 .l2 {
+            color: var(--gold);
+            display: block
         }
 
-        .hero p {
-            max-width: 760px;
+        .hero-copy h1 .l3 {
+            color: #fff;
+            display: block
+        }
+
+        .hero-copy p {
+            max-width: 420px;
             color: #e7f3ff;
-            font-size: 18px
+            font-size: 15px;
+            margin-bottom: 26px
         }
 
         .hero-actions {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
-            margin-top: 30px
+        }
+
+        .hero-photo {
+            position: relative;
+            min-height: 320px;
+            background: #cfe3f7;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
+
+        .hero-side {
+            background: rgba(5, 33, 66, .30);
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            justify-content: center;
+            border-left: 1px solid rgba(255, 255, 255, .12)
+        }
+
+        .hero-side-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-flag {
+            display: block;
+            width: 42px;
+            height: 30px;
+            border-radius: 4px;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .25)
+        }
+
+        .hero-flag img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
+
+        .hero-side-head strong {
+            font-size: 16px;
+            line-height: 1.25;
+            font-weight: 800;
+        }
+
+        .hero-perks {
+            display: flex;
+            flex-direction: column;
+            gap: 16px
+        }
+
+        .hero-perk {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13.5px;
+            font-weight: 700;
+            line-height: 1.3
+        }
+
+        .hero-perk .ic {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px
         }
 
         .btn {
@@ -308,6 +470,16 @@
             color: var(--navy)
         }
 
+        .btn-outline-blue {
+            background: #fff;
+            color: var(--blue);
+            border: 1.5px solid #fff
+        }
+
+        .btn-outline-blue:hover {
+            background: rgba(255, 255, 255, .92)
+        }
+
         .btn-outline {
             border: 1px solid rgba(255, 255, 255, .35);
             color: #fff;
@@ -331,37 +503,18 @@
         .quick {
             position: relative;
             z-index: 10;
-            margin-top: -55px
+            margin-top: 26px
         }
 
         .quick-card {
             background: #fff;
             border: 1px solid var(--line);
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            padding: 18px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(8, 43, 82, .07);
+            padding: 22px 10px;
             display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 15px;
-            align-items: center
-        }
-
-        .search {
-            display: flex;
-            gap: 9px
-        }
-
-        .search input {
-            flex: 1;
-            border: 1px solid var(--line);
-            background: #f9fbfd;
-            border-radius: 10px;
-            padding: 13px 15px;
-            outline: 0
-        }
-
-        .search input:focus {
-            border-color: var(--blue)
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px
         }
 
         .quick-links {
@@ -382,6 +535,131 @@
         .quick-links a:hover {
             background: var(--sky);
             color: var(--blue)
+        }
+
+        .strip-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            padding: 8px 12px;
+            border-right: 1px solid var(--line);
+        }
+
+        .strip-item:last-child {
+            border-right: 0
+        }
+
+        .strip-ic {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px
+        }
+
+        .strip-item h4 {
+            font-size: 13.5px;
+            color: var(--navy);
+            margin-bottom: 2px
+        }
+
+        .strip-item p {
+            font-size: 11.5px;
+            color: var(--muted);
+            line-height: 1.35
+        }
+
+        .header-search-wrap {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 22px
+        }
+
+        .subject-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+
+        .pill-btn {
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--navy);
+            font-size: 12.5px;
+            font-weight: 750;
+            padding: 9px 16px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: .2s
+        }
+
+        .pill-btn:hover {
+            border-color: var(--blue);
+            color: var(--blue)
+        }
+
+        .pill-btn.active {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: #fff
+        }
+
+        .subject-tile-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-top: 26px
+        }
+
+        .subject-tile {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            gap: 13px;
+            transition: .2s;
+            cursor: pointer
+        }
+
+        .subject-tile:hover {
+            box-shadow: 0 12px 28px rgba(8, 43, 82, .09);
+            transform: translateY(-2px);
+            border-color: transparent
+        }
+
+        .subject-tile .tile-ic {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px
+        }
+
+        .subject-tile h4 {
+            font-size: 14.5px;
+            color: var(--navy);
+            margin-bottom: 5px
+        }
+
+        .subject-tile p {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.4;
+            margin-bottom: 8px
+        }
+
+        .subject-tile .tile-count {
+            font-size: 11.5px;
+            font-weight: 800
         }
 
         .stats {
@@ -1287,7 +1565,19 @@
         .footer-brand {
             font-size: 22px;
             color: #fff;
-            font-weight: 900
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .footer-brand img {
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #fff;
+            padding: 3px
         }
 
         .copyright {
@@ -1324,6 +1614,43 @@
             .feature-grid,
             .course-grid {
                 grid-template-columns: repeat(2, 1fr)
+            }
+
+            .hero-banner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-photo {
+                min-height: 260px;
+                order: 2
+            }
+
+            .hero-side {
+                order: 3;
+                border-left: 0;
+                border-top: 1px solid rgba(255, 255, 255, .12)
+            }
+
+            .hero-copy {
+                order: 1;
+                padding: 40px 34px 30px
+            }
+
+            .quick-card {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .strip-item {
+                border-right: 0;
+                border-bottom: 1px solid var(--line)
+            }
+
+            .subject-tile-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .nav-search {
+                display: none
             }
 
             .resources,
@@ -1395,7 +1722,16 @@
             }
 
             .quick-card {
-                grid-template-columns: 1fr
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .subject-tile-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .header-search-wrap {
+                flex-direction: column;
+                align-items: stretch
             }
 
             .pathway-flow {
@@ -1429,16 +1765,13 @@
                 font-size: 8px
             }
 
-            .hero {
-                min-height: 600px
+            .hero-copy {
+                padding: 34px 22px 26px
             }
 
-            .hero-content {
-                padding: 75px 0 110px
-            }
-
-            .hero p {
-                font-size: 16px
+            .hero-copy p {
+                font-size: 14px;
+                max-width: 100%
             }
 
             .hero-actions {
@@ -1447,6 +1780,18 @@
 
             .hero-actions .btn {
                 width: 100%
+            }
+
+            .quick-card {
+                grid-template-columns: 1fr
+            }
+
+            .strip-item {
+                border-right: 0
+            }
+
+            .subject-tile-grid {
+                grid-template-columns: 1fr
             }
 
             .stats,
@@ -1520,12 +1865,8 @@
                 width: 90%
             }
 
-            .hero h1 {
-                font-size: 38px
-            }
-
-            .hero-kicker {
-                font-size: 10px
+            .hero-copy h1 {
+                font-size: 30px
             }
 
             .footer-grid {
@@ -1752,8 +2093,16 @@
 
     <div class="topline">
         <div class="container">
-            <span>🇸🇸 <strong>Amigo Academy</strong> — built for learners in South Sudan</span>
-            <span>Founded <strong>14 August 2026</strong></span>
+            <div class="topline-left">
+                <span>📍 Founded in South Sudan on <strong>14 August 2026</strong></span>
+                <span class="topline-sep">|</span>
+                <span>🎓 Learn • Explore • Practice • Grow • Succeed</span>
+            </div>
+            <div class="topline-right">
+                <a href="#academy">💬 Ask Amigo Tutor</a>
+                <a href="#dashboard">📱 Download App</a>
+                <a href="#" onclick="return false">🌐 English ▾</a>
+            </div>
         </div>
     </div>
 
@@ -1764,22 +2113,26 @@
                     onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\' viewBox=\'0 0 48 48\'><rect width=\'48\' height=\'48\' rx=\'12\' fill=\'%230b5cab\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-weight=\'bold\' font-size=\'20\'>AL</text></svg>'">
                 <div>
                     <div class="brand-name">Amigo Academy</div>
-                    <div class="brand-tag">LEARN • EXPLORE • PRACTICE • GROW • SUCCEED</div>
+                    <div class="brand-tag">Your Learning Companion</div>
                 </div>
             </a>
+
+            <div class="nav-search" role="search">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input id="searchInput" type="search" placeholder="Search notes, quizzes, subjects..." aria-label="Search resources">
+                <button class="btn btn-blue" id="searchBtn" type="button" style="min-height:auto">Search</button>
+            </div>
 
             <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
 
             <ul class="nav" id="nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#academies">Academies</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#past-papers">Past Papers</a></li>
-                <li><a href="#quizzes">Quizzes</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#universities">University</a></li>
-                <li><a href="#academy">AI Tutor</a></li>
-                <li><a href="#dashboard" class="cta">My Learning</a></li>
+                <li><a href="#home">🏠 Home</a></li>
+                <li><a href="#subjects">🎓 Subjects</a></li>
+                <li><a href="#resources">📝 Notes</a></li>
+                <li><a href="#quizzes">✅ Quizzes</a></li>
+                <li><a href="#academy">🤖 AI Tutor</a></li>
+                <li><a href="#about">ℹ️ About</a></li>
+                <li><a href="#dashboard" class="cta green">👤 Login / Sign Up</a></li>
             </ul>
         </div>
     </header>
@@ -1800,17 +2153,35 @@
 
     <main>
 
-        <section class="hero" id="home">
+        <section class="hero-wrap" id="home">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-kicker">🇸🇸 FREE LEARNING • PRESCHOOL TO UNIVERSITY • SOUTH SUDAN</div>
-                    <h1>From <span>Preschool</span> to University.<br>Learn Without Limits.</h1>
-                    <p>A professional, free learning platform for structured lessons, notes, quizzes, videos, revision
-                        and academic resources — built to grow with South Sudanese learners.</p>
-                    <div class="hero-actions">
-                        <a class="btn btn-primary" href="#courses">📚 Explore Courses</a>
-                        <a class="btn btn-white" href="#quizzes">📝 Take a Quiz</a>
-                        <a class="btn btn-outline" href="#resources">📂 Study Resources</a>
+                <div class="hero-banner">
+                    <div class="hero-copy">
+                        <h1><span class="l1">Learn Today.</span><span class="l2">Excel Tomorrow.</span><span class="l3">Succeed Always.</span></h1>
+                        <p>Free learning modules, notes, quizzes and videos to help South Sudan students learn, revise
+                            and prepare for university and college exams.</p>
+                        <div class="hero-actions">
+                            <a class="btn btn-blue" href="#subjects">📚 Explore Subjects</a>
+                            <a class="btn btn-outline-blue" href="#courses">▶ Start Learning Now</a>
+                        </div>
+                    </div>
+                    <div class="hero-photo">
+                        <img src="assets/banner.png" alt="South Sudanese students learning together"
+                            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'><rect width=\'600\' height=\'400\' fill=\'%23cfe3f7\'/></svg>'">
+                    </div>
+                    <div class="hero-side">
+                        <div class="hero-side-head">
+                            <span class="hero-flag" aria-hidden="true">
+                                <img src="assets/flag-south-sudan.webp" alt="Flag of South Sudan">
+                            </span>
+                            <strong>Empowering South Sudan<br>Through Education</strong>
+                        </div>
+                        <div class="hero-perks">
+                            <div class="hero-perk"><span class="ic">📖</span> Free Learning Resources</div>
+                            <div class="hero-perk"><span class="ic">🎓</span> University &amp; College Study Support</div>
+                            <div class="hero-perk"><span class="ic">📝</span> Exam Preparation &amp; Practice</div>
+                            <div class="hero-perk"><span class="ic">🌍</span> Anytime, Anywhere Learning</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1819,19 +2190,53 @@
         <section class="quick">
             <div class="container">
                 <div class="quick-card">
-                    <div class="search">
-                        <input id="searchInput" type="search"
-                            placeholder="Search Accounting, Economics, Computing, Business, Law..."
-                            aria-label="Search resources">
-                        <button class="btn btn-blue" id="searchBtn" type="button">Search</button>
+                    <div class="strip-item">
+                        <div class="strip-ic" style="background:#e3ecfb;color:#1a56b0">📘</div>
+                        <div><h4>Learning Modules</h4><p>8 modules per subject step-by-step learning</p></div>
                     </div>
-                    <div class="quick-links">
-                        <a href="#courses">Courses</a>
-                        <a href="#resources">Resources</a>
-                        <a href="#videos">Videos</a>
-                        <a href="#quizzes">Quizzes</a>
-                        <a href="https://wa.me/211927471234" target="_blank" rel="noopener">WhatsApp Community</a>
+                    <div class="strip-item">
+                        <div class="strip-ic" style="background:#e2f3e8;color:#0c8a4c">📄</div>
+                        <div><h4>Study Notes</h4><p>Well-structured notes for easy understanding</p></div>
                     </div>
+                    <div class="strip-item">
+                        <div class="strip-ic" style="background:#ede3fb;color:#6c2bd9">📋</div>
+                        <div><h4>Practice Quizzes</h4><p>Test yourself and improve your score</p></div>
+                    </div>
+                    <div class="strip-item">
+                        <div class="strip-ic" style="background:#fbe3e6;color:#d9364f">▶️</div>
+                        <div><h4>Free YouTube Videos</h4><p>Watch quality videos on the same window</p></div>
+                    </div>
+                    <div class="strip-item">
+                        <div class="strip-ic" style="background:#fbecd6;color:#c9821a">🏅</div>
+                        <div><h4>Exam Preparation</h4><p>Past questions &amp; tips to pass your exams</p></div>
+                    </div>
+                    <div class="strip-item">
+                        <div class="strip-ic" style="background:#dcf3ef;color:#0c8a7a">🤖</div>
+                        <div><h4>AI Tutor</h4><p>Ask questions and get smart explanations</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="subjects" style="padding-top:56px">
+            <div class="container">
+                <div class="header-search-wrap">
+                    <div style="max-width:640px">
+                        <h2 style="font-size:clamp(24px,3vw,32px);color:var(--navy);margin-bottom:8px">Explore Subjects &amp; Learning Modules</h2>
+                        <p style="color:var(--muted);font-size:14.5px">Select a subject below to access 8 comprehensive learning modules with notes, quizzes and free YouTube videos.</p>
+                    </div>
+                    <div class="subject-pills" id="subjectQuickFilters">
+                        <button class="pill-btn active" data-cat="all">All Categories</button>
+                        <button class="pill-btn" data-cat="business">Business</button>
+                        <button class="pill-btn" data-cat="stem">STEM</button>
+                        <button class="pill-btn" data-cat="social">Social Sciences</button>
+                        <button class="pill-btn" data-cat="all">General</button>
+                        <button class="pill-btn" data-cat="all">All Levels</button>
+                    </div>
+                </div>
+                <div class="subject-tile-grid" id="subjectQuickGrid"></div>
+                <div style="text-align:center;margin-top:30px">
+                    <a href="#courses" class="btn btn-outline" style="border-color:var(--line);color:var(--blue)" onclick="renderCourses('all')">View All Subjects →</a>
                 </div>
             </div>
         </section>
@@ -2884,7 +3289,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-brand">Amigo Academy</div>
+                    <div class="footer-brand"><img src="assets/logo.png" alt="Amigo Academy logo">Amigo Academy</div>
                     <p style="margin-top:10px">
                         A professional free learning platform growing from South Sudan for learners everywhere.
                     </p>
@@ -3179,6 +3584,63 @@
             });
         }
         renderCourses();
+
+        // Subject quick-grid (matches the homepage banner design) — reuses learningModulesData.
+        const subjectIconMap = {
+            "Business Administration": {icon: "💼", bg: "#e3ecfb", fg: "#1a56b0"},
+            "Accounting & Finance": {icon: "🧮", bg: "#e2f3e8", fg: "#0c8a4c"},
+            "Economics": {icon: "📈", bg: "#fbe9dc", fg: "#d9640c"},
+            "Education": {icon: "🎓", bg: "#ede3fb", fg: "#6c2bd9"},
+            "Computer Science": {icon: "💻", bg: "#e3ecfb", fg: "#1a3fa6"},
+            "Information Technology": {icon: "🖥️", bg: "#dcf3ef", fg: "#0c8a7a"},
+            "Agriculture": {icon: "🌱", bg: "#e2f3e8", fg: "#0c8a4c"},
+            "Development Studies": {icon: "🤝", bg: "#fbe3e6", fg: "#d9364f"},
+            "Communication Skills": {icon: "💬", bg: "#fbecd6", fg: "#c9821a"},
+            "Social Sciences": {icon: "👥", bg: "#dcf3ef", fg: "#0c8a7a"},
+            "Law": {icon: "⚖️", bg: "#ede3fb", fg: "#6c2bd9"},
+            "Health & Medicine": {icon: "⚕️", bg: "#fbe3e6", fg: "#d9364f"},
+            "Mathematics & Statistics": {icon: "➗", bg: "#e3ecfb", fg: "#1a56b0"},
+            "Entrepreneurship": {icon: "🚀", bg: "#fbecd6", fg: "#c9821a"},
+            "Procurement & Logistics": {icon: "📦", bg: "#e2f3e8", fg: "#0c8a4c"},
+            "Public Administration": {icon: "🏛️", bg: "#e3ecfb", fg: "#1a56b0"}
+        };
+
+        function renderSubjectQuickGrid(category = "all") {
+            const grid = document.getElementById('subjectQuickGrid');
+            if (!grid) return;
+            const items = learningModulesData.filter(c => category === "all" || c.cat === category);
+            grid.innerHTML = items.map(c => {
+                const meta = subjectIconMap[c.name] || {icon: "📘", bg: "#e3ecfb", fg: "#1a56b0"};
+                return `
+                    <a class="subject-tile" href="#courses" onclick="jumpToSubject('${c.name.replace(/'/g, "\\'")}')">
+                        <div class="tile-ic" style="background:${meta.bg};color:${meta.fg}">${meta.icon}</div>
+                        <div>
+                            <h4>${c.name}</h4>
+                            <p>${c.desc}</p>
+                            <div class="tile-count" style="color:${meta.fg}">8 Modules</div>
+                        </div>
+                    </a>`;
+            }).join('');
+        }
+        renderSubjectQuickGrid();
+
+        function jumpToSubject(name) {
+            const course = learningModulesData.find(c => c.name === name);
+            if (course) {
+                document.querySelectorAll('#courseCategoryFilters button').forEach(b => b.classList.remove('active'));
+                renderCourses(course.cat);
+                const match = document.querySelectorAll('#courseCategoryFilters button')[0];
+                if (match) match.classList.remove('active');
+            }
+        }
+
+        document.querySelectorAll('#subjectQuickFilters .pill-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#subjectQuickFilters .pill-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderSubjectQuickGrid(btn.dataset.cat);
+            });
+        });
 
         document.querySelectorAll('#courseCategoryFilters button').forEach(btn => {
             btn.addEventListener('click', () => {
