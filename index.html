@@ -1540,25 +1540,211 @@
             }
         }
 
-        .founder-with-photo { padding-top: 18px; }
-        .founder-photo { width: 118px; height: 118px; object-fit: cover; border-radius: 50%; border: 4px solid rgba(255,255,255,.8); margin-bottom: 18px; }
-        .quiz-subject-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; margin-bottom:20px; }
-        .quiz-subject-grid .btn { min-height:60px; }
-        .quiz-subject-grid .btn span { opacity:.7; font-size:11px; }
-        .short-practice { border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin:10px 0; background:#fff; }
-        .short-practice summary { cursor:pointer; font-weight:750; color:var(--navy); }
-        .short-practice summary span { float:right; font-size:10px; color:var(--blue); background:var(--sky); padding:4px 7px; border-radius:99px; }
-        .short-practice p { color:var(--muted); font-size:13px; margin-top:10px; }
-        #quizOptionsContainer .quiz-opt-btn:disabled { cursor:default; opacity:1; }
-        @media(max-width:650px) { .quiz-subject-grid { grid-template-columns:1fr; } }
+
+        .module-list {
+            display: grid;
+            gap: 7px;
+            margin-top: 14px
+        }
+
+        .module-item {
+            display: grid;
+            grid-template-columns: 34px 1fr 20px;
+            align-items: center;
+            gap: 9px;
+            width: 100%;
+            text-align: left;
+            border: 1px solid var(--line);
+            background: #f9fbfd;
+            border-radius: 10px;
+            padding: 9px 10px;
+            cursor: pointer;
+            color: var(--ink);
+            font-size: 12px;
+            font-weight: 700;
+            transition: .2s
+        }
+
+        .module-item:hover {
+            background: var(--sky);
+            border-color: var(--blue);
+            transform: translateX(2px)
+        }
+
+        .module-number {
+            display: grid;
+            place-items: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: var(--sky);
+            color: var(--blue);
+            font-size: 10px;
+            font-weight: 900
+        }
+
+        .module-arrow {
+            color: var(--blue);
+            font-weight: 900
+        }
+
+        .course {
+            min-height: unset
+        }
+
+        .module-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 31, 59, .65);
+            z-index: 2000;
+            display: none;
+            place-items: center;
+            padding: 20px
+        }
+
+        .module-modal.open {
+            display: grid
+        }
+
+        .module-modal-card {
+            width: min(720px, 100%);
+            max-height: 90vh;
+            overflow: auto;
+            background: #fff;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .25)
+        }
+
+        .module-modal-card h3 {
+            color: var(--navy);
+            font-size: 26px;
+            margin: 7px 0
+        }
+
+        .module-modal-card p {
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .module-modal-close {
+            float: right;
+            border: 0;
+            background: #f0f4f8;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            font-size: 20px
+        }
+
+        .module-tools {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px
+        }
+
+        @media(max-width:650px) {
+            .module-tools {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .founder-with-photo {
+            padding-top: 18px;
+        }
+
+        .founder-photo {
+            width: 118px;
+            height: 118px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, .8);
+            margin-bottom: 18px;
+        }
+
+        .quiz-subject-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-subject-grid .btn {
+            min-height: 60px;
+        }
+
+        .quiz-subject-grid .btn span {
+            opacity: .7;
+            font-size: 11px;
+        }
+
+        .short-practice {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin: 10px 0;
+            background: #fff;
+        }
+
+        .short-practice summary {
+            cursor: pointer;
+            font-weight: 750;
+            color: var(--navy);
+        }
+
+        .short-practice summary span {
+            float: right;
+            font-size: 10px;
+            color: var(--blue);
+            background: var(--sky);
+            padding: 4px 7px;
+            border-radius: 99px;
+        }
+
+        .short-practice p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        #quizOptionsContainer .quiz-opt-btn:disabled {
+            cursor: default;
+            opacity: 1;
+        }
+
+        @media(max-width:650px) {
+            .quiz-subject-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 
-<style>
-  .academy-badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#eaf4ff;color:#0b5cab;font-size:10px;font-weight:900;text-transform:uppercase}
-  .feature a.btn{margin-top:12px}
-  .short-practice{line-height:1.5}
-  #aiChat .short-practice + .short-practice{margin-top:8px}
-</style>
+    <style>
+        .academy-badge {
+            display: inline-block;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: #eaf4ff;
+            color: #0b5cab;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase
+        }
+
+        .feature a.btn {
+            margin-top: 12px
+        }
+
+        .short-practice {
+            line-height: 1.5
+        }
+
+        #aiChat .short-practice+.short-practice {
+            margin-top: 8px
+        }
+    </style>
 
 </head>
 
@@ -1598,6 +1784,20 @@
         </div>
     </header>
 
+    <div class="module-modal" id="moduleModal" role="dialog" aria-modal="true" aria-labelledby="moduleModalTitle">
+        <div class="module-modal-card">
+            <button class="module-modal-close" type="button" onclick="closeCourseModule()" aria-label="Close">×</button>
+            <span class="eyebrow">Learning Module</span>
+            <h3 id="moduleModalTitle">Module</h3>
+            <p id="moduleModalCourse"></p>
+            <div class="module-tools">
+                <a class="btn btn-soft" href="#resources" onclick="closeCourseModule()">📚 Notes</a>
+                <a class="btn btn-soft" href="#videos" onclick="closeCourseModule()">▶ Video</a>
+                <a class="btn btn-soft" href="#quizzes" onclick="closeCourseModule()">📝 Quiz</a>
+            </div>
+        </div>
+    </div>
+
     <main>
 
         <section class="hero" id="home">
@@ -1605,7 +1805,8 @@
                 <div class="hero-content">
                     <div class="hero-kicker">🇸🇸 FREE LEARNING • PRESCHOOL TO UNIVERSITY • SOUTH SUDAN</div>
                     <h1>From <span>Preschool</span> to University.<br>Learn Without Limits.</h1>
-                    <p>A professional, free learning platform for structured lessons, notes, quizzes, videos, revision and academic resources — built to grow with South Sudanese learners.</p>
+                    <p>A professional, free learning platform for structured lessons, notes, quizzes, videos, revision
+                        and academic resources — built to grow with South Sudanese learners.</p>
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="#courses">📚 Explore Courses</a>
                         <a class="btn btn-white" href="#quizzes">📝 Take a Quiz</a>
@@ -1672,7 +1873,8 @@
                         </div>
                     </div>
                     <aside class="founder founder-with-photo">
-                        <img class="founder-photo" src="assets/founder.jpg" alt="John Marial Chol, founder of Amigo Academy">
+                        <img class="founder-photo" src="assets/founder.jpg"
+                            alt="John Marial Chol, founder of Amigo Academy">
                         <div class="small">Founder & Platform Initiator</div>
                         <h3>John Marial Chol</h3>
                         <p>Second-Year Student</p>
@@ -1686,49 +1888,103 @@
             </div>
         </section>
 
-        
-<section class="section" id="academies">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">AMIGO ACADEMY • LEARNING PATHWAYS</span>
-      <h2>One platform. Every stage of learning.</h2>
-      <p>Choose a pathway and move from foundation learning to advanced academic and professional skills.</p>
-    </div>
-    <div class="feature-grid">
-      <a class="feature" href="#courses" onclick="academyFilter('ecd')"><div class="icon">🌱</div><h3>Early Learning / Preschool</h3><p>Foundational literacy, numeracy, creativity and school readiness.</p></a>
-      <a class="feature" href="#courses" onclick="academyFilter('primary')"><div class="icon">📘</div><h3>Primary Academy</h3><p>Primary 1–8 subjects, revision, practice and examination preparation.</p></a>
-      <a class="feature" href="#courses" onclick="academyFilter('secondary')"><div class="icon">🎓</div><h3>Secondary Academy</h3><p>Secondary 1–4 learning, revision and Senior 4 preparation.</p></a>
-      <a class="feature" href="#universities"><div class="icon">🏛️</div><h3>University Academy</h3><p>University courses, notes, quizzes, videos and past-paper organization.</p></a>
-      <a class="feature" href="#courses"><div class="icon">💼</div><h3>Professional Skills</h3><p>Business, entrepreneurship, communication, leadership and career skills.</p></a>
-      <a class="feature" href="#videos"><div class="icon">💻</div><h3>Digital Academy</h3><p>Computing, programming, databases, Excel, digital literacy and technology.</p></a>
-      <a class="feature" href="#past-papers"><div class="icon">📝</div><h3>Exam & Past Papers</h3><p>Dedicated Primary 8, Senior 4 and university revision centre.</p></a>
-      <a class="feature" href="#quizzes"><div class="icon">🧠</div><h3>Quiz Centre</h3><p>Free practice quizzes with instant feedback and score review.</p></a>
-    </div>
-  </div>
-</section>
 
-<section class="section alt" id="past-papers">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">EXAM PREPARATION CENTRE</span>
-      <h2>Past Papers & Revision</h2>
-      <p>Organized by education level. Official materials should only be labeled official after their source is verified.</p>
-    </div>
-    <div class="feature-grid">
-      <article class="feature"><div class="icon">📗</div><h3>Primary 8</h3><p>Subjects, revision papers, mock examinations and verified past papers.</p><a class="btn btn-soft" href="#resources">Explore P8 Resources</a></article>
-      <article class="feature"><div class="icon">📕</div><h3>Senior 4</h3><p>Senior 4 revision notes, practice papers, mock exams and verified papers.</p><a class="btn btn-soft" href="#resources">Explore S4 Resources</a></article>
-      <article class="feature"><div class="icon">🏛️</div><h3>University</h3><p>University → Faculty → Programme → Course → Semester → Year → Paper.</p><a class="btn btn-soft" href="#universities">Explore University Hub</a></article>
-      <article class="feature"><div class="icon">📚</div><h3>Revision Library</h3><p>Use notes, videos and quizzes alongside papers for a complete revision cycle.</p><a class="btn btn-soft" href="#quizzes">Practise Now</a></article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="courses">
+        <section class="section" id="academies">
             <div class="container">
                 <div class="section-head">
-                    <span class="eyebrow">Course Directory</span>
-                    <h2>Explore Subjects & Programmes</h2>
-                    <p>Browse educational focus areas designed for university, college, and self-learning students.</p>
+                    <span class="eyebrow">AMIGO ACADEMY • LEARNING PATHWAYS</span>
+                    <h2>One platform. Every stage of learning.</h2>
+                    <p>Choose a pathway and move from foundation learning to advanced academic and professional skills.
+                    </p>
+                </div>
+                <div class="feature-grid">
+                    <a class="feature" href="#courses" onclick="academyFilter('ecd')">
+                        <div class="icon">🌱</div>
+                        <h3>Early Learning / Preschool</h3>
+                        <p>Foundational literacy, numeracy, creativity and school readiness.</p>
+                    </a>
+                    <a class="feature" href="#courses" onclick="academyFilter('primary')">
+                        <div class="icon">📘</div>
+                        <h3>Primary Academy</h3>
+                        <p>Primary 1–8 subjects, revision, practice and examination preparation.</p>
+                    </a>
+                    <a class="feature" href="#courses" onclick="academyFilter('secondary')">
+                        <div class="icon">🎓</div>
+                        <h3>Secondary Academy</h3>
+                        <p>Secondary 1–4 learning, revision and Senior 4 preparation.</p>
+                    </a>
+                    <a class="feature" href="#universities">
+                        <div class="icon">🏛️</div>
+                        <h3>University Academy</h3>
+                        <p>University courses, notes, quizzes, videos and past-paper organization.</p>
+                    </a>
+                    <a class="feature" href="#courses">
+                        <div class="icon">💼</div>
+                        <h3>Professional Skills</h3>
+                        <p>Business, entrepreneurship, communication, leadership and career skills.</p>
+                    </a>
+                    <a class="feature" href="#videos">
+                        <div class="icon">💻</div>
+                        <h3>Digital Academy</h3>
+                        <p>Computing, programming, databases, Excel, digital literacy and technology.</p>
+                    </a>
+                    <a class="feature" href="#past-papers">
+                        <div class="icon">📝</div>
+                        <h3>Exam & Past Papers</h3>
+                        <p>Dedicated Primary 8, Senior 4 and university revision centre.</p>
+                    </a>
+                    <a class="feature" href="#quizzes">
+                        <div class="icon">🧠</div>
+                        <h3>Quiz Centre</h3>
+                        <p>Free practice quizzes with instant feedback and score review.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt" id="past-papers">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">EXAM PREPARATION CENTRE</span>
+                    <h2>Past Papers & Revision</h2>
+                    <p>Organized by education level. Official materials should only be labeled official after their
+                        source is verified.</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature">
+                        <div class="icon">📗</div>
+                        <h3>Primary 8</h3>
+                        <p>Subjects, revision papers, mock examinations and verified past papers.</p><a
+                            class="btn btn-soft" href="#resources">Explore P8 Resources</a>
+                    </article>
+                    <article class="feature">
+                        <div class="icon">📕</div>
+                        <h3>Senior 4</h3>
+                        <p>Senior 4 revision notes, practice papers, mock exams and verified papers.</p><a
+                            class="btn btn-soft" href="#resources">Explore S4 Resources</a>
+                    </article>
+                    <article class="feature">
+                        <div class="icon">🏛️</div>
+                        <h3>University</h3>
+                        <p>University → Faculty → Programme → Course → Semester → Year → Paper.</p><a
+                            class="btn btn-soft" href="#universities">Explore University Hub</a>
+                    </article>
+                    <article class="feature">
+                        <div class="icon">📚</div>
+                        <h3>Revision Library</h3>
+                        <p>Use notes, videos and quizzes alongside papers for a complete revision cycle.</p><a
+                            class="btn btn-soft" href="#quizzes">Practise Now</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="courses">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Learning Modules</span>
+                    <h2>Subjects & Programmes</h2>
+                    <p>Choose a subject and study it through eight structured learning modules.</p>
                 </div>
 
                 <div class="course-filters" id="courseCategoryFilters">
@@ -1738,6 +1994,15 @@
                     <button class="filter" data-cat="social">Social Sciences & Humanities</button>
                 </div>
 
+                <div class="module-purpose"
+                    style="grid-column:1/-1;margin-bottom:18px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#f8fafc;">
+                    <strong>Learn. Practise. Revise. Prepare.</strong>
+                    <p style="margin:6px 0 0;color:var(--muted);">
+                        Amigo Academy provides learning modules and examination preparation resources.
+                        It does not award degrees or diplomas. Students use the modules to study independently,
+                        strengthen understanding, revise university topics, and prepare for examinations.
+                    </p>
+                </div>
                 <div class="course-grid" id="courseContainer">
                     <!-- Dynamic rendering via JS -->
                 </div>
@@ -1894,9 +2159,9 @@
                             <option value="Catholic">Catholic University</option>
                             <option value="Rumbek">Rumbek University</option>
                         </select>
-                        <select id="dirDegree" class="field">
-                            <option value="all">All Degree Levels</option>
-                            <option value="Bachelor">Bachelor Degree</option>
+                        <select id="dirUniversity Learning" class="field">
+                            <option value="all">All University Learning Levels</option>
+                            <option value="Bachelor">Bachelor University Learning</option>
                             <option value="Diploma">Diploma</option>
                         </select>
                     </div>
@@ -1906,7 +2171,7 @@
                                 <tr>
                                     <th>Programme</th>
                                     <th>University</th>
-                                    <th>Degree Level</th>
+                                    <th>University Learning Level</th>
                                     <th>Duration</th>
                                     <th>Amigo Status</th>
                                 </tr>
@@ -2051,8 +2316,10 @@
                         <h3>Principles of Management Quiz</h3>
                         <p>Practice questions uploaded to Amigo Academy.</p>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-                            <a class="btn btn-soft download" href="materials/quiz_principles_of_management.docx" download>⬇ Download</a>
-                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('principles_management')">🧠 Take Quiz</a>
+                            <a class="btn btn-soft download" href="materials/quiz_principles_of_management.docx"
+                                download>⬇ Download</a>
+                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('principles_management')">🧠
+                                Take Quiz</a>
                         </div>
                     </article>
 
@@ -2061,8 +2328,10 @@
                         <h3>Business Economics Quiz</h3>
                         <p>Practice questions uploaded to Amigo Academy.</p>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-                            <a class="btn btn-soft download" href="materials/quiz_business_economics.docx" download>⬇ Download</a>
-                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('business_economics')">🧠 Take Quiz</a>
+                            <a class="btn btn-soft download" href="materials/quiz_business_economics.docx" download>⬇
+                                Download</a>
+                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('business_economics')">🧠 Take
+                                Quiz</a>
                         </div>
                     </article>
 
@@ -2071,8 +2340,10 @@
                         <h3>Financial Accounting Quiz</h3>
                         <p>Practice questions uploaded to Amigo Academy.</p>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-                            <a class="btn btn-soft download" href="materials/quiz_financial_accounting.docx" download>⬇ Download</a>
-                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('financial_accounting')">🧠 Take Quiz</a>
+                            <a class="btn btn-soft download" href="materials/quiz_financial_accounting.docx" download>⬇
+                                Download</a>
+                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('financial_accounting')">🧠
+                                Take Quiz</a>
                         </div>
                     </article>
 
@@ -2081,8 +2352,10 @@
                         <h3>Financial Management Quiz</h3>
                         <p>Practice questions uploaded to Amigo Academy.</p>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-                            <a class="btn btn-soft download" href="materials/quiz_financial_management.docx" download>⬇ Download</a>
-                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('financial_management')">🧠 Take Quiz</a>
+                            <a class="btn btn-soft download" href="materials/quiz_financial_management.docx" download>⬇
+                                Download</a>
+                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('financial_management')">🧠
+                                Take Quiz</a>
                         </div>
                     </article>
 
@@ -2091,8 +2364,10 @@
                         <h3>Marketing Management Quiz</h3>
                         <p>Practice questions uploaded to Amigo Academy.</p>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-                            <a class="btn btn-soft download" href="materials/quiz_marketing_management.docx" download>⬇ Download</a>
-                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('marketing_management')">🧠 Take Quiz</a>
+                            <a class="btn btn-soft download" href="materials/quiz_marketing_management.docx" download>⬇
+                                Download</a>
+                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('marketing_management')">🧠
+                                Take Quiz</a>
                         </div>
                     </article>
 
@@ -2101,8 +2376,10 @@
                         <h3>Human Resource Management Quiz</h3>
                         <p>Practice questions uploaded to Amigo Academy.</p>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-                            <a class="btn btn-soft download" href="materials/quiz_human_resource_management.docx" download>⬇ Download</a>
-                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('human_resource_management')">🧠 Take Quiz</a>
+                            <a class="btn btn-soft download" href="materials/quiz_human_resource_management.docx"
+                                download>⬇ Download</a>
+                            <a class="btn btn-primary" href="#quizzes"
+                                onclick="startQuiz('human_resource_management')">🧠 Take Quiz</a>
                         </div>
                     </article>
 
@@ -2111,8 +2388,10 @@
                         <h3>Operations Management Quiz</h3>
                         <p>Practice questions uploaded to Amigo Academy.</p>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-                            <a class="btn btn-soft download" href="materials/quiz_operations_management.docx" download>⬇ Download</a>
-                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('operations_management')">🧠 Take Quiz</a>
+                            <a class="btn btn-soft download" href="materials/quiz_operations_management.docx" download>⬇
+                                Download</a>
+                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('operations_management')">🧠
+                                Take Quiz</a>
                         </div>
                     </article>
 
@@ -2121,8 +2400,10 @@
                         <h3>Business Law Quiz</h3>
                         <p>Practice questions uploaded to Amigo Academy.</p>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">
-                            <a class="btn btn-soft download" href="materials/quiz_business_law.docx" download>⬇ Download</a>
-                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('business_law')">🧠 Take Quiz</a>
+                            <a class="btn btn-soft download" href="materials/quiz_business_law.docx" download>⬇
+                                Download</a>
+                            <a class="btn btn-primary" href="#quizzes" onclick="startQuiz('business_law')">🧠 Take
+                                Quiz</a>
                         </div>
                     </article>
 
@@ -2184,17 +2465,26 @@
 
                         <h3 style="margin-bottom:15px;color:var(--navy)">Select a Subject Quiz</h3>
                         <div class="quiz-subject-grid">
-                            <button class="btn btn-soft" onclick="startQuiz('principles_management')">Principles of Management <span>(6 Qs)</span></button>
-                            <button class="btn btn-soft" onclick="startQuiz('business_economics')">Business Economics <span>(6 Qs)</span></button>
-                            <button class="btn btn-soft" onclick="startQuiz('financial_accounting')">Financial Accounting <span>(6 Qs)</span></button>
-                            <button class="btn btn-soft" onclick="startQuiz('financial_management')">Financial Management <span>(6 Qs)</span></button>
-                            <button class="btn btn-soft" onclick="startQuiz('marketing_management')">Marketing Management <span>(6 Qs)</span></button>
-                            <button class="btn btn-soft" onclick="startQuiz('human_resource_management')">Human Resource Management <span>(6 Qs)</span></button>
-                            <button class="btn btn-soft" onclick="startQuiz('operations_management')">Operations Management <span>(6 Qs)</span></button>
-                            <button class="btn btn-soft" onclick="startQuiz('business_law')">Business Law <span>(6 Qs)</span></button>
+                            <button class="btn btn-soft" onclick="startQuiz('principles_management')">Principles of
+                                Management <span>(6 Qs)</span></button>
+                            <button class="btn btn-soft" onclick="startQuiz('business_economics')">Business Economics
+                                <span>(6 Qs)</span></button>
+                            <button class="btn btn-soft" onclick="startQuiz('financial_accounting')">Financial
+                                Accounting <span>(6 Qs)</span></button>
+                            <button class="btn btn-soft" onclick="startQuiz('financial_management')">Financial
+                                Management <span>(6 Qs)</span></button>
+                            <button class="btn btn-soft" onclick="startQuiz('marketing_management')">Marketing
+                                Management <span>(6 Qs)</span></button>
+                            <button class="btn btn-soft" onclick="startQuiz('human_resource_management')">Human Resource
+                                Management <span>(6 Qs)</span></button>
+                            <button class="btn btn-soft" onclick="startQuiz('operations_management')">Operations
+                                Management <span>(6 Qs)</span></button>
+                            <button class="btn btn-soft" onclick="startQuiz('business_law')">Business Law <span>(6
+                                    Qs)</span></button>
                         </div>
                         <div style="text-align:center;margin-top:14px">
-                            <button class="btn btn-blue" onclick="startRandomQuiz()">🔀 Start Random Quiz (All Topics)</button>
+                            <button class="btn btn-blue" onclick="startRandomQuiz()">🔀 Start Random Quiz (All
+                                Topics)</button>
                         </div>
                     </div>
 
@@ -2260,7 +2550,8 @@
                 <div class="about-grid">
                     <div>
                         <span class="eyebrow">Our Learning Community</span>
-                        <h2 style="font-size:clamp(30px,4vw,44px);line-height:1.12;color:var(--navy);margin:12px 0 18px">
+                        <h2
+                            style="font-size:clamp(30px,4vw,44px);line-height:1.12;color:var(--navy);margin:12px 0 18px">
                             Built with students, for students.
                         </h2>
                         <p style="color:var(--muted);margin-bottom:15px">
@@ -2271,7 +2562,8 @@
                         <a class="btn btn-primary" href="#community">Join the Community →</a>
                     </div>
                     <div style="border-radius:22px;overflow:hidden;box-shadow:var(--shadow);background:#fff">
-                        <img src="assets/students.jpg" alt="Amigo Academy student community" style="width:100%;height:100%;min-height:300px;object-fit:cover">
+                        <img src="assets/students.jpg" alt="Amigo Academy student community"
+                            style="width:100%;height:100%;min-height:300px;object-fit:cover">
                     </div>
 
                     <div style="margin-top:30px;border-top:1px solid var(--line);padding-top:25px">
@@ -2285,27 +2577,32 @@
             </div>
         </section>
 
-        
-<section class="section alt" id="ai-tutor">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">AMIGO AI TUTOR</span>
-      <h2>Learn with guidance, not just answers.</h2>
-      <p>Prototype interface for explanations, examples, summaries and practice questions. Connect a secure backend later.</p>
-    </div>
-    <div class="quiz-container">
-      <div id="aiChat" style="min-height:180px;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:15px;overflow:auto">
-        <div class="short-practice"><strong>Amigo Tutor</strong><p>Ask me to explain a topic step-by-step, create practice questions, or simplify a difficult concept.</p></div>
-      </div>
-      <div class="search" style="margin-top:15px">
-        <input id="aiInput" placeholder="e.g. Explain double-entry bookkeeping simply">
-        <button class="btn btn-blue" onclick="askAmigoTutor()">Ask Tutor</button>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section future" id="academy">
+        <section class="section alt" id="ai-tutor">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">AMIGO AI TUTOR</span>
+                    <h2>Learn with guidance, not just answers.</h2>
+                    <p>Prototype interface for explanations, examples, summaries and practice questions. Connect a
+                        secure backend later.</p>
+                </div>
+                <div class="quiz-container">
+                    <div id="aiChat"
+                        style="min-height:180px;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:15px;overflow:auto">
+                        <div class="short-practice"><strong>Amigo Tutor</strong>
+                            <p>Ask me to explain a topic step-by-step, create practice questions, or simplify a
+                                difficult concept.</p>
+                        </div>
+                    </div>
+                    <div class="search" style="margin-top:15px">
+                        <input id="aiInput" placeholder="e.g. Explain double-entry bookkeeping simply">
+                        <button class="btn btn-blue" onclick="askAmigoTutor()">Ask Tutor</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section future" id="academy">
             <div class="container">
                 <div class="section-head">
                     <span class="eyebrow" style="background:rgba(255,255,255,.10);color:#fff">AMIGO ONLINE
@@ -2591,7 +2888,8 @@
                     <p style="margin-top:10px">
                         A professional free learning platform growing from South Sudan for learners everywhere.
                     </p>
-                    <p style="margin-top:10px;font-weight:700;color:var(--gold)">Learn • Explore • Practice • Grow • Succeed</p>
+                    <p style="margin-top:10px;font-weight:700;color:var(--gold)">Learn • Explore • Practice • Grow •
+                        Succeed</p>
                 </div>
                 <div>
                     <h3>Quick Links</h3>
@@ -2652,62 +2950,231 @@
 
         /* Course System Data */
         const academyCourses = [
- {name:"ECD & Preschool Foundations",cat:"ecd",desc:"Early literacy, numeracy, creativity, communication and school readiness.",level:"ECD / Preschool"},
- {name:"Primary 1–4 Core Learning",cat:"primary",desc:"English, Mathematics, Science, Social Studies and foundational skills.",level:"Primary 1–4"},
- {name:"Primary 5–7 Core Learning",cat:"primary",desc:"Core subjects, revision and preparation for upper-primary progression.",level:"Primary 5–7"},
- {name:"Primary 8 Examination Preparation",cat:"primary",desc:"Revision, practice questions, mock examinations and past-paper organization.",level:"Primary 8"},
- {name:"Secondary 1–3 Core Learning",cat:"secondary",desc:"Progressive subject learning and examination preparation.",level:"Secondary 1–3"},
- {name:"Senior 4 Examination Preparation",cat:"secondary",desc:"Revision resources, practice papers, quizzes and examination preparation.",level:"Senior 4"},
- {name:"University Course Library",cat:"university",desc:"Course notes, quizzes, videos and past-paper organization across programmes.",level:"University"},
- {name:"Professional & Career Skills",cat:"skills",desc:"Entrepreneurship, communication, leadership, business and workplace skills.",level:"All Levels"}
-];
-function academyFilter(cat){
-  const grid=document.getElementById('courseContainer');
-  if(!grid)return;
-  const extra=academyCourses.filter(c=>c.cat===cat);
-  if(!extra.length)return;
-  grid.innerHTML=extra.map(c=>`<article class="course"><div><div class="cat-tag">${c.cat}</div><h3>${c.name}</h3><p>${c.desc}</p><div class="course-meta"><span class="meta-pill">Level: ${c.level}</span><span class="meta-pill">Free Learning</span></div></div><a href="#resources" class="btn btn-soft" style="font-size:12px;width:100%">Explore Resources →</a></article>`).join("");
-}
+            {name: "ECD & Preschool Foundations", cat: "ecd", desc: "Early literacy, numeracy, creativity, communication and school readiness.", level: "ECD / Preschool"},
+            {name: "Primary 1–4 Core Learning", cat: "primary", desc: "English, Mathematics, Science, Social Studies and foundational skills.", level: "Primary 1–4"},
+            {name: "Primary 5–7 Core Learning", cat: "primary", desc: "Core subjects, revision and preparation for upper-primary progression.", level: "Primary 5–7"},
+            {name: "Primary 8 Examination Preparation", cat: "primary", desc: "Revision, practice questions, mock examinations and past-paper organization.", level: "Primary 8"},
+            {name: "Secondary 1–3 Core Learning", cat: "secondary", desc: "Progressive subject learning and examination preparation.", level: "Secondary 1–3"},
+            {name: "Senior 4 Examination Preparation", cat: "secondary", desc: "Revision resources, practice papers, quizzes and examination preparation.", level: "Senior 4"},
+            {name: "University Course Library", cat: "university", desc: "Course notes, quizzes, videos and past-paper organization across programmes.", level: "University"},
+            {name: "Professional & Career Skills", cat: "skills", desc: "Entrepreneurship, communication, leadership, business and workplace skills.", level: "All Learners"}
+        ];
+        function academyFilter(cat) {
+            const grid = document.getElementById('courseContainer');
+            if (!grid) return;
+            const extra = academyCourses.filter(c => c.cat === cat);
+            if (!extra.length) return;
+            grid.innerHTML = extra.map(c => `<article class="course"><div><div class="cat-tag">${c.cat}</div><h3>${c.name}</h3><p>${c.desc}</p><div class="module-count">8 Learning Modules • University Exam Preparation</div><div class="course-meta"><span class="meta-pill">Learning: ${c.level}</span><span class="meta-pill">Self-Learning & Exam Preparation</span></div></div><a href="#resources" class="btn btn-soft" style="font-size:12px;width:100%">Open 8 Learning Modules →</a></article>`).join("");
+        }
 
-const coursesData = [
-            { name: "Business Administration", cat: "business", desc: "Management principles, strategic planning, organizational behaviour.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
-            { name: "Accounting & Finance", cat: "business", desc: "Financial accounting, double-entry ledger, balance sheets, auditing.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
-            { name: "Economics", cat: "business", desc: "Microeconomics, macroeconomics, supply and demand models, market policy.", level: "Degree / Diploma", mat: "Ready", vid: "Ready", quiz: "Ready" },
-            { name: "Education", cat: "social", desc: "Pedagogy, curriculum development, instructional design, assessment.", level: "Degree", mat: "Pending", vid: "Ready", quiz: "Pending" },
-            { name: "Computer Science", cat: "stem", desc: "Programming, algorithms, data structures, software engineering.", level: "Degree / Diploma", mat: "Pending", vid: "Ready", quiz: "Ready" },
-            { name: "Information Technology", cat: "stem", desc: "Networking fundamentals, database design, hardware setup, security.", level: "Degree / Diploma", mat: "Pending", vid: "Ready", quiz: "Ready" },
-            { name: "Agriculture", cat: "stem", desc: "Crop science, soil management, sustainable agribusiness practices.", level: "Degree / Diploma", mat: "Pending", vid: "Pending", quiz: "Pending" },
-            { name: "Development Studies", cat: "social", desc: "Community development, economic policy, sustainable development goals.", level: "Degree", mat: "Pending", vid: "Ready", quiz: "Pending" },
-            { name: "Communication Skills", cat: "social", desc: "Academic writing, public speaking, business correspondence.", level: "All Levels", mat: "Ready", vid: "Ready", quiz: "Ready" },
-            { name: "Social Sciences", cat: "social", desc: "Sociology, political science, community research methodologies.", level: "Degree", mat: "Pending", vid: "Pending", quiz: "Pending" },
-            { name: "Law", cat: "social", desc: "Constitutional law, legal research, jurisprudence, commercial law.", level: "Degree", mat: "Pending", vid: "Ready", quiz: "Pending" },
-            { name: "Health & Medicine", cat: "stem", desc: "Public health, epidemiology, basic clinical science fundamentals.", level: "Degree", mat: "Pending", vid: "Pending", quiz: "Pending" },
-            { name: "Mathematics & Statistics", cat: "stem", desc: "Algebra, calculus, probability distributions, statistical analysis.", level: "All Levels", mat: "Pending", vid: "Ready", quiz: "Pending" },
-            { name: "Entrepreneurship", cat: "business", desc: "Business modeling, venture startup, pitch presentation, innovation.", level: "All Levels", mat: "Pending", vid: "Ready", quiz: "Pending" },
-            { name: "Procurement & Logistics", cat: "business", desc: "Supply chain management, inventory control, purchasing ethics.", level: "Diploma / Degree", mat: "Pending", vid: "Pending", quiz: "Pending" },
-            { name: "Public Administration", cat: "business", desc: "Governance models, public finance management, civic policy.", level: "Degree", mat: "Pending", vid: "Pending", quiz: "Pending" }
+        const learningModulesData = [
+            {
+                name: "Business Administration", cat: "business",
+                desc: "Management principles, strategic planning, organizational behaviour.",
+                level: "University & College Learning",
+                modules: [
+                    "Introduction to Business Administration", "Principles of Management",
+                    "Organizational Behaviour", "Business Environment",
+                    "Strategic Management", "Human Resource Management",
+                    "Operations & Quality Management", "Business Ethics & Corporate Governance"
+                ]
+            },
+            {
+                name: "Accounting & Finance", cat: "business",
+                desc: "Financial accounting, double-entry ledger, balance sheets, auditing.",
+                level: "University & College Learning",
+                modules: [
+                    "Introduction to Accounting", "Double-Entry Bookkeeping",
+                    "Journal, Ledger & Trial Balance", "Financial Statements",
+                    "Cash & Bank Reconciliation", "Cost & Management Accounting",
+                    "Auditing Fundamentals", "Financial Analysis & Decision-Making"
+                ]
+            },
+            {
+                name: "Economics", cat: "business",
+                desc: "Microeconomics, macroeconomics, supply and demand models, market policy.",
+                level: "University & College Learning",
+                modules: [
+                    "Introduction to Economics", "Demand, Supply & Market Equilibrium",
+                    "Elasticity", "Consumer & Producer Behaviour",
+                    "Production & Costs", "Market Structures",
+                    "Macroeconomic Indicators", "Fiscal, Monetary Policy & Development"
+                ]
+            },
+            {
+                name: "Education", cat: "social",
+                desc: "Pedagogy, curriculum development, instructional design, assessment.",
+                level: "University Learning",
+                modules: [
+                    "Foundations of Education", "Educational Psychology",
+                    "Teaching & Learning Theories", "Curriculum Development",
+                    "Instructional Design", "Classroom Management",
+                    "Assessment & Evaluation", "Educational Research & Practice"
+                ]
+            },
+            {
+                name: "Computer Science", cat: "stem",
+                desc: "Programming, algorithms, data structures, software engineering.",
+                level: "University & College Learning",
+                modules: [
+                    "Computing Fundamentals", "Programming Fundamentals",
+                    "Object-Oriented Programming", "Data Structures",
+                    "Algorithms", "Database Systems",
+                    "Software Engineering", "Web & Application Development"
+                ]
+            },
+            {
+                name: "Information Technology", cat: "stem",
+                desc: "Networking fundamentals, database design, hardware setup, security.",
+                level: "University & College Learning",
+                modules: [
+                    "IT Fundamentals", "Computer Hardware & Operating Systems",
+                    "Networking Fundamentals", "Database Fundamentals",
+                    "Systems Analysis & Design", "Cybersecurity Fundamentals",
+                    "IT Support & Troubleshooting", "Cloud & Emerging Technologies"
+                ]
+            },
+            {
+                name: "Agriculture", cat: "stem",
+                desc: "Crop science, soil management, sustainable agribusiness practices.",
+                level: "University & College Learning",
+                modules: [
+                    "Introduction to Agriculture", "Crop Production",
+                    "Soil Science & Fertility", "Pest & Disease Management",
+                    "Water & Irrigation Management", "Livestock Production",
+                    "Agribusiness & Value Chains", "Sustainable & Climate-Smart Agriculture"
+                ]
+            },
+            {
+                name: "Development Studies", cat: "social",
+                desc: "Community development, economic policy, sustainable development goals.",
+                level: "University Learning",
+                modules: [
+                    "Introduction to Development Studies", "Development Theories",
+                    "Poverty & Inequality", "Community Development",
+                    "Gender & Social Inclusion", "Governance & Public Policy",
+                    "Sustainable Development Goals", "Development Research & Project Management"
+                ]
+            },
+            {
+                name: "Communication Skills", cat: "social",
+                desc: "Academic writing, public speaking, business correspondence.",
+                level: "All Learners",
+                modules: [
+                    "Communication Fundamentals", "Academic Reading",
+                    "Academic Writing", "Essay & Report Writing",
+                    "Public Speaking & Presentation", "Business Correspondence",
+                    "Interpersonal & Workplace Communication", "Research, Referencing & Study Skills"
+                ]
+            },
+            {
+                name: "Social Sciences", cat: "social",
+                desc: "Sociology, political science, community research methodologies.",
+                level: "University Learning",
+                modules: [
+                    "Introduction to Social Sciences", "Sociological Perspectives",
+                    "Political Science Fundamentals", "Society, Culture & Institutions",
+                    "Social Change & Development", "Research Methodology",
+                    "Data Collection & Analysis", "Social Policy & Community Studies"
+                ]
+            },
+            {
+                name: "Law", cat: "social",
+                desc: "Constitutional law, legal research, jurisprudence, commercial law.",
+                level: "University Learning",
+                modules: [
+                    "Introduction to Law", "Legal Systems & Institutions",
+                    "Constitutional Law", "Law of Contract",
+                    "Criminal Law", "Commercial & Business Law",
+                    "Legal Research & Writing", "Jurisprudence & Professional Ethics"
+                ]
+            },
+            {
+                name: "Health & Medicine", cat: "stem",
+                desc: "Public health, epidemiology, basic clinical science fundamentals.",
+                level: "University Learning",
+                modules: [
+                    "Introduction to Health Sciences", "Human Anatomy & Physiology",
+                    "Basic Microbiology", "Public Health Fundamentals",
+                    "Epidemiology", "Health Promotion & Prevention",
+                    "Nutrition & Community Health", "Health Research & Professional Practice"
+                ]
+            },
+            {
+                name: "Mathematics & Statistics", cat: "stem",
+                desc: "Algebra, calculus, probability distributions, statistical analysis.",
+                level: "All Learners",
+                modules: [
+                    "Algebra & Functions", "Geometry & Trigonometry",
+                    "Sequences & Series", "Differential Calculus",
+                    "Integral Calculus", "Probability",
+                    "Descriptive & Inferential Statistics", "Statistical Data Analysis"
+                ]
+            },
+            {
+                name: "Entrepreneurship", cat: "business",
+                desc: "Business modeling, venture startup, pitch presentation, innovation.",
+                level: "All Learners",
+                modules: [
+                    "Entrepreneurship Fundamentals", "Opportunity Identification",
+                    "Business Ideas & Feasibility", "Business Models",
+                    "Business Planning", "Marketing & Customer Development",
+                    "Financial Planning & Funding", "Pitching, Innovation & Growth"
+                ]
+            },
+            {
+                name: "Procurement & Logistics", cat: "business",
+                desc: "Supply chain management, inventory control, purchasing ethics.",
+                level: "Diploma / University Learning",
+                modules: [
+                    "Procurement Fundamentals", "Procurement Planning",
+                    "Sourcing & Supplier Management", "Tendering & Evaluation",
+                    "Contract Management", "Inventory Management",
+                    "Warehousing & Logistics", "Procurement Ethics & Compliance"
+                ]
+            },
+            {
+                name: "Public Administration", cat: "business",
+                desc: "Governance models, public finance management, civic policy.",
+                level: "University Learning",
+                modules: [
+                    "Introduction to Public Administration", "Public Organizations & Management",
+                    "Governance & Accountability", "Public Policy",
+                    "Public Financial Management", "Human Resource Management",
+                    "Local Government & Decentralization", "Ethics, Leadership & Public Service"
+                ]
+            }
         ];
 
         function renderCourses(category = "all") {
             const container = document.getElementById('courseContainer');
             container.innerHTML = "";
-            coursesData.forEach(c => {
+            learningModulesData.forEach(c => {
                 if (category !== "all" && c.cat !== category) return;
+
                 const card = document.createElement('article');
                 card.className = "course";
                 card.innerHTML = `
-            <div>
-                <div class="cat-tag">${c.cat}</div>
-                <h3>${c.name}</h3>
-                <p>${c.desc}</p>
-                <div class="course-meta">
-                    <span class="meta-pill">Level: ${c.level}</span>
-                    <span class="meta-pill">Notes: ${c.mat}</span>
-                    <span class="meta-pill">Quiz: ${c.quiz}</span>
-                </div>
-            </div>
-            <a href="#resources" onclick="filterResourceByCourse('${c.name.toLowerCase()}')" class="btn btn-soft" style="font-size:12px;width:100%">Explore Course →</a>
-        `;
+      <div>
+        <div class="cat-tag">${c.cat}</div>
+        <h3>${c.name}</h3>
+        <p>${c.desc}</p>
+        <div class="course-meta">
+          <span class="meta-pill">Learning: ${c.level}</span>
+          <span class="meta-pill">8 Learning Modules</span>
+        </div>
+        <div class="module-list">
+          ${c.modules.map((m, i) => `
+            <button type="button" class="module-item"
+              onclick="openCourseModule('${c.name.replace(/'/g, "\\'")}',${i})">
+              <span class="module-number">${String(i + 1).padStart(2, '0')}</span>
+              <span>${m}</span>
+              <span class="module-arrow">→</span>
+            </button>
+          `).join("")}
+        </div>
+      </div>
+    `;
                 container.appendChild(card);
             });
         }
@@ -2721,14 +3188,35 @@ const coursesData = [
             });
         });
 
+        function openCourseModule(courseName, index) {
+            const course = learningModulesData.find(c => c.name === courseName);
+            if (!course) return;
+            document.getElementById('moduleModalTitle').textContent =
+                `Module ${index + 1}: ${course.modules[index]}`;
+            document.getElementById('moduleModalCourse').textContent =
+                `${courseName} • ${course.level} • Structured self-learning module`;
+            document.getElementById('moduleModal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeCourseModule() {
+            document.getElementById('moduleModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('moduleModal')?.addEventListener('click', e => {
+            if (e.target.id === 'moduleModal') closeCourseModule();
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeCourseModule();
+        });
+
         /* Videos Data & Search */
         const videosData = [
-            { title: "Financial Accounting Fundamentals", subject: "Accounting", level: "Beginner", desc: "Learn debit, credit, journal entries, and balance sheets.", url: "https://www.youtube.com/results?search_query=financial+accounting+basics" },
-            { title: "Principles of Microeconomics", subject: "Economics", level: "Intermediate", desc: "Understanding supply, demand, elasticity, and market structures.", url: "https://www.youtube.com/results?search_query=microeconomics+lecture" },
-            { title: "Business Computing & Excel", subject: "Computing", level: "All Levels", desc: "Practical formulas, spreadsheet design, and business tools.", url: "https://www.youtube.com/results?search_query=excel+for+business+beginners" },
-            { title: "Python Programming Basics", subject: "Computer Science", level: "Beginner", desc: "Variables, loops, and logic structure in Python.", url: "https://www.youtube.com/results?search_query=python+for+beginners+tutorial" },
-            { title: "Academic Communication & Writing", subject: "Communication", level: "All Levels", desc: "Structuring essays, business letters, and presentations.", url: "https://www.youtube.com/results?search_query=academic+writing+skills" },
-            { title: "Introduction to Business Management", subject: "Business", level: "Beginner", desc: "Core concepts of strategic planning and leadership.", url: "https://www.youtube.com/results?search_query=business+management+lecture" }
+            {title: "Financial Accounting Fundamentals", subject: "Accounting", level: "Beginner", desc: "Learn debit, credit, journal entries, and balance sheets.", url: "https://www.youtube.com/results?search_query=financial+accounting+basics"},
+            {title: "Principles of Microeconomics", subject: "Economics", level: "Intermediate", desc: "Understanding supply, demand, elasticity, and market structures.", url: "https://www.youtube.com/results?search_query=microeconomics+lecture"},
+            {title: "Business Computing & Excel", subject: "Computing", level: "All Learners", desc: "Practical formulas, spreadsheet design, and business tools.", url: "https://www.youtube.com/results?search_query=excel+for+business+beginners"},
+            {title: "Python Programming Basics", subject: "Computer Science", level: "Beginner", desc: "Variables, loops, and logic structure in Python.", url: "https://www.youtube.com/results?search_query=python+for+beginners+tutorial"},
+            {title: "Academic Communication & Writing", subject: "Communication", level: "All Learners", desc: "Structuring essays, business letters, and presentations.", url: "https://www.youtube.com/results?search_query=academic+writing+skills"},
+            {title: "Introduction to Business Management", subject: "Business", level: "Beginner", desc: "Core concepts of strategic planning and leadership.", url: "https://www.youtube.com/results?search_query=business+management+lecture"}
         ];
 
         function renderVideos(term = "") {
@@ -2750,7 +3238,7 @@ const coursesData = [
                 <span class="eyebrow" style="padding:2px 8px;font-size:10px;margin-bottom:8px;width:max-content">${v.subject} • ${v.level}</span>
                 <h3>${v.title}</h3>
                 <p>${v.desc}</p>
-                <a class="btn btn-soft" target="_blank" rel="noopener" href="${v.url}">▶ Watch / Search Video</a>
+                <a class="btn btn-soft" target="_self" href="${v.url}">▶ Watch / Search Video</a>
             </div>
         `;
                 container.appendChild(card);
@@ -2785,13 +3273,13 @@ const coursesData = [
             document.getElementById('quizActive').style.display = 'block';
             document.getElementById('quizSubjectBadge').textContent = quizzes[key].title;
             renderQuestion();
-            document.getElementById('quizzes').scrollIntoView({behavior:'smooth', block:'start'});
+            document.getElementById('quizzes').scrollIntoView({behavior: 'smooth', block: 'start'});
         }
 
         function startRandomQuiz() {
             const all = [];
             Object.entries(quizzes).forEach(([key, data]) => {
-                data.questions.forEach(q => all.push({...q, subject:data.title}));
+                data.questions.forEach(q => all.push({...q, subject: data.title}));
             });
             currentQuizKey = 'random';
             currentQuestions = all.sort(() => Math.random() - 0.5).slice(0, 10);
@@ -2844,7 +3332,7 @@ const coursesData = [
 
             const correct = selected === q.answer;
             if (correct) currentScore++;
-            quizHistory.push({question:q.question, selected, correct, answer:q.answer, options:q.options, explanation:q.explanation});
+            quizHistory.push({question: q.question, selected, correct, answer: q.answer, options: q.options, explanation: q.explanation});
 
             const feedback = document.getElementById('quizFeedback');
             feedback.style.display = 'block';
@@ -2878,9 +3366,9 @@ const coursesData = [
                 `Your Score: ${currentScore}/${currentQuestions.length} — ${pct}%`;
             document.getElementById('resultPerformanceText').textContent =
                 pct >= 80 ? 'Performance: EXCELLENT 🎉' :
-                pct >= 70 ? 'Performance: VERY GOOD 👍' :
-                pct >= 50 ? 'Performance: GOOD — Keep practising 📚' :
-                'Performance: KEEP LEARNING — Review the material and try again 💪';
+                    pct >= 70 ? 'Performance: VERY GOOD 👍' :
+                        pct >= 50 ? 'Performance: GOOD — Keep practising 📚' :
+                            'Performance: KEEP LEARNING — Review the material and try again 💪';
 
             const review = document.getElementById('quizReviewContainer');
             review.innerHTML = quizHistory.map((item, i) => `
@@ -2913,7 +3401,7 @@ const coursesData = [
         function renderShortPractice() {
             const wrap = document.getElementById('shortPractice');
             if (!wrap) return;
-            const all = Object.values(quizzes).flatMap(q => q.short.map(s => ({...s, subject:q.title})));
+            const all = Object.values(quizzes).flatMap(q => q.short.map(s => ({...s, subject: q.title})));
             wrap.innerHTML = all.slice(0, 16).map((s, i) => `
                 <details class="short-practice">
                     <summary>${i + 1}. ${s.question} <span>${s.subject}</span></summary>
@@ -2934,10 +3422,10 @@ const coursesData = [
 
         document.getElementById('searchBtn')?.addEventListener('click', () => {
             const term = document.getElementById('searchInput').value.trim().toLowerCase();
-            const targets = ['courses','resources','videos','quizzes'];
+            const targets = ['courses', 'resources', 'videos', 'quizzes'];
             if (!term) return;
             const hit = [...document.querySelectorAll('section')].find(s => s.textContent.toLowerCase().includes(term));
-            if (hit) hit.scrollIntoView({behavior:'smooth'});
+            if (hit) hit.scrollIntoView({behavior: 'smooth'});
             else alert('No matching Amigo Academy section found. Try Accounting, Economics, Business, Computing, Law, or Quiz.');
         });
 
@@ -2965,17 +3453,17 @@ const coursesData = [
             e.target.reset();
         });
 
-    
-function askAmigoTutor(){
-  const input=document.getElementById('aiInput'), chat=document.getElementById('aiChat');
-  if(!input||!chat)return;
-  const q=input.value.trim();
-  if(!q)return;
-  const safe=q.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
-  chat.innerHTML += `<div class="short-practice"><strong>You</strong><p>${safe}</p></div>`;
-  input.value='';
-  setTimeout(()=>{chat.innerHTML += `<div class="short-practice" style="background:#eaf4ff"><strong>Amigo Tutor</strong><p>This prototype is ready for a secure AI backend. I would break <em>${safe}</em> into simple steps, examples, practice questions and a short review.</p></div>`;chat.scrollTop=chat.scrollHeight;},250);
-}
+
+        function askAmigoTutor() {
+            const input = document.getElementById('aiInput'), chat = document.getElementById('aiChat');
+            if (!input || !chat) return;
+            const q = input.value.trim();
+            if (!q) return;
+            const safe = q.replace(/[&<>"']/g, m => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'}[m]));
+            chat.innerHTML += `<div class="short-practice"><strong>You</strong><p>${safe}</p></div>`;
+            input.value = '';
+            setTimeout(() => {chat.innerHTML += `<div class="short-practice" style="background:#eaf4ff"><strong>Amigo Tutor</strong><p>This prototype is ready for a secure AI backend. I would break <em>${safe}</em> into simple steps, examples, practice questions and a short review.</p></div>`; chat.scrollTop = chat.scrollHeight;}, 250);
+        }
 
     </script>
 </body>
